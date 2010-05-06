@@ -1,0 +1,8 @@
+%h1 Students
+%p
+  %a{:href => new_student_path} add student
+
+%ul#students
+  - Student.all.each do |student|
+    %li.student
+      %span.name= link_to student.name, student

@@ -1,0 +1,23 @@
+#student
+  %dl
+    %dt Name
+    %dd.name= @student.name
+
+    %dt DOB
+    %dd.date-of-birth= @student.date_of_birth
+  
+    %dt Village
+    %dd.village= @student.village
+  
+    %dt Gender
+    %dd.gender= @student.gender
+
+    %dt Notes
+    %dd.notes= @student.notes
+    
+  - unless @student.siblings.blank?
+    .siblings
+      %p Siblings
+      %ul
+        - @student.siblings.split("\n").each do |sibling|
+          %li.sibling= sibling

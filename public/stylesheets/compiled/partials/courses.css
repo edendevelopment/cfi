@@ -1,0 +1,10 @@
+/* line 2, ../../../../app/stylesheets/partials/courses.sass */
+.courses-section #students {
+  margin-bottom: 10px; }
+  /* line 5, ../../../../app/stylesheets/partials/courses.sass */
+  .courses-section #students a {
+    float: left; }
+  /* line 8, ../../../../app/stylesheets/partials/courses.sass */
+  .courses-section #students form.button_to {
+    float: left;
+    padding-left: 10px; }

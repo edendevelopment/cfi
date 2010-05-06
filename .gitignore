@@ -1,0 +1,8 @@
+.rvmrc
+log/*
+config/database.yml
+public/stylesheets/*.css
+tmp
+rerun.txt
+webrat-*
+capybara-*

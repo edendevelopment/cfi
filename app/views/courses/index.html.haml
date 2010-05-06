@@ -1,0 +1,5 @@
+%h1 Courses
+%p
+  %a{:href => new_course_path} add course
+%ul#courses
+  = render :partial => 'course', :collection => Course.all

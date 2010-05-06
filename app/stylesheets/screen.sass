@@ -1,0 +1,118 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset.sass
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint.sass
+// Import the non-default scaffolding module.
+@import blueprint/scaffolding.css
+
+@import partials/students.sass
+@import partials/courses.sass
+
+*
+  margin: 0
+  padding: 0
+
+body
+  color: #333
+
+  font-family: Helvetica, non-serif
+  font-size: 16px
+  line-height: 1.5em
+
+  .site
+    +container
+
+  #wrapper
+    background-color: #fff
+
+    #header
+      background-color: #cfb0c2
+
+      h1, h2
+        margin-bottom: 0.25em
+
+      .site
+        padding-top: 1em
+        padding-bottom: 1.1em
+
+    #menu
+      +clearfix
+      background-color: #873967
+      font-size: 120%
+      font-weight: bold
+
+      li
+        float: left
+        list-style-type: none
+        padding-right: 5px
+
+        a
+          color: white
+          display: inline-block
+          padding: 8px 3px
+          text-decoration: none
+
+          &:hover
+            color: #333
+
+    #content
+      color: #555
+      margin-top: 1em
+
+      h1, h2, h3, h4
+        margin-bottom: 0.5em
+
+      p
+        margin-bottom: 0.8em
+
+      input[type=text]
+        font-size: 1em
+        padding: 3px
+        color: #555
+        border: 1px solid #555
+
+        &:focus
+          background-color: #e7d4df
+
+      label
+        font-weight: bold
+
+
+      .site
+        padding-top: 0.5em
+
+      ul#courses
+        display: table
+
+        li.course
+          display: table-row
+
+          &:nth-child(odd)
+            background-color: #e7cddc
+
+          span
+            display: table-cell
+            padding: 3px
+
+
+      
+
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body.three-col
+  #container
+    +container
+  #header, #footer
+    +column(!blueprint_grid_columns)
+  #sidebar
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    !sidebar_columns = floor(!blueprint_grid_columns / 3)
+    +column(!sidebar_columns)
+  #content
+    // Two thirds of the grid columns, rounding up.
+    // With 24 cols, this is 16.
+    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
+    // true means it's the last column in the row
+    +column(!content_columns, true)
+
