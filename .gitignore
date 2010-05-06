@@ -1,8 +1,9 @@
 .rvmrc
 log/*
 config/database.yml
-public/stylesheets/*.css
+public/stylesheets/compiled/*.css
 tmp
 rerun.txt
 webrat-*
 capybara-*
+.bundle
