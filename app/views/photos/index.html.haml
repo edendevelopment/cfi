@@ -1,13 +1,20 @@
-= link_to "Back to student", student_path(@student)
-- @student.photos.each do |photo|
-  .photo
-    = image_tag photo.image.url
-    %p.comment
-      = photo.comment
+%h2= "Photos for #{@student.name}"
+= link_to "Back to profile", student_path(@student)
 
+%ul.photos
+  - @student.photos.each do |photo|
+    %li.photo
+      = image_tag photo.image.url
+      %p.comment
+        = photo.comment
+
+%h3 Add new photo
 - form_for [@student, Photo.new], :html => {:multipart => true} do |f|
-  = f.label :image
-  = f.file_field :image
-  = f.label :comment
-  = f.text_area :comment
-  = f.submit "Add"
+  %div
+    = f.label :image
+    = f.file_field :image
+  %div
+    = f.label :comment
+    = f.text_area :comment
+  %div
+    = f.submit "Add"
