@@ -8,6 +8,8 @@ gem "mysql"
 gem 'haml'
 gem 'compass'
 
+gem 'resource_controller'
+
 group :test do
   gem "rspec-rails"
   gem 'capybara'
