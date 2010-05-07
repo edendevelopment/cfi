@@ -1,5 +1,5 @@
-Feature: Add a student
-  after assessing the child at a home visit, the social worker would enter the person(s) to be supported into the system
+Feature: Manage a student
+  after assessing the child at a home visit, the social worker would enter the person(s) to be supported into the system and change their details
 
   Scenario: Add a new student
     When I go to the student list page
@@ -30,3 +30,10 @@ Feature: Add a student
 
     When I go to the student list page
     Then I should see the student "Oum Bora"
+
+  Scenario: Change student details
+    Given a student called "Oum Bora"
+    When I go to the student page for "Oum Bora"
+    And I update the student with the following details
+      | Name | Oum Botam |
+    Then I should be on the student page for "Oum Botam"

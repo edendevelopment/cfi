@@ -1,31 +1,4 @@
 %h1 Add a new student
-- form_for :student, :url => { :action => :create } do |form|
-  %p.field
-    = form.label :name
-    %br
-    = form.text_field :name
-  %p.field
-    = form.label :date_of_birth
-    %br
-    = form.text_field :date_of_birth
-  %p.field
-    = form.label :village
-    %br
-    = form.text_field :village
-  %p.field
-    %label
-      = form.radio_button :gender, 'Female'
-      Female
-    %label
-      = form.radio_button :gender, 'Male'
-      Male
-  %p.field
-    = form.label :siblings
-    %br
-    = form.text_area :siblings
-  %p.field
-    = form.label :notes
-    %br
-    = form.text_area :notes
-  %p.controls
-    = form.submit 'add student'
+- form_for @student do |form|
+  = render 'form', :submit_text => 'add student', :form => form
+

@@ -21,3 +21,5 @@
       %ul
         - @student.siblings.split("\n").each do |sibling|
           %li.sibling= sibling
+  
+  %p= link_to 'Edit', edit_student_path(@student)

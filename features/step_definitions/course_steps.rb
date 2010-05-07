@@ -1,4 +1,8 @@
 Then /^I fill in the following fields with$/ do |table|
+  fill_in_fields(table)
+end
+
+def fill_in_fields(table)
   table.rows_hash.each do |label, value|
     fill_in label, :with => value
   end

@@ -41,3 +41,9 @@ end
 Given /^a student called "([^\"]*)"$/ do |name|
   Factory.create :student, :name => name
 end
+
+When /^I update the student with the following details$/ do |table|
+  click_link('Edit')
+  fill_in_fields(table)
+  click_button('Update')
+end
