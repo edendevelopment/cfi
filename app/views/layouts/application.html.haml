@@ -20,6 +20,9 @@
           %li= link_to 'courses', courses_path
 
       #content 
+        %p.notice= flash[:notice]
+        %p.alert= flash[:alert]
+        %p.error= flash[:error]
         .site
           = yield
       #footer

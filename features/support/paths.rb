@@ -22,6 +22,8 @@ module NavigationHelpers
       student_path(Student.find_by_name($1))
     when /the page for course "([^\"]+)"/
       course_path(Course.find_by_name($1))
+    when 'login'
+      new_user_session_path
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

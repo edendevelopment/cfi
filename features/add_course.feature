@@ -2,6 +2,7 @@ Feature: Manage a course
   Administrators create a course of study
 
   Scenario: Add a new course
+    Given I am a new, authenticated user
     When I go to the course list page
     And I follow "add course"
     Then I should be on the new course page

@@ -4,14 +4,16 @@ Feature: Add a student to a class
   I want to add a student to a class
   
   Scenario: User adds student to class
-    Given a course called "Khmer 1"
+    Given I am a new, authenticated user
+    And a course called "Khmer 1"
     And a student called "Oum Bora"
     When I go to the page for course "Khmer 1"
     And I add "Oum Bora" to the course
     Then "Oum Bora" should be taking the course "Khmer 1"
   
   Scenario: User removes a student from a class
-    Given a course called "Khmer 1"
+    Given I am a new, authenticated user
+    And a course called "Khmer 1"
     And a student called "Oum Bora"
     When I go to the page for course "Khmer 1"
     And I add "Oum Bora" to the course

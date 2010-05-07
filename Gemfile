@@ -13,6 +13,8 @@ gem 'resource_controller'
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly'
+gem 'devise'
+gem 'cancan'
 
 group :test do
   gem "rspec-rails"
