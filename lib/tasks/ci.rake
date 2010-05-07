@@ -1,6 +1,6 @@
 namespace :ci do
   task :copy_yml do
-    system("cp #{Rails.root}/config/database.yml.example #{Rails.root}/config/database.yml")
+    system("cp #{Rails.root}/config/database.yml.sample #{Rails.root}/config/database.yml")
   end
 
   task :link_metrics do
