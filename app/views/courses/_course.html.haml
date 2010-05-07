@@ -1,5 +1,11 @@
 %li.course
-  %span.name= link_to course.name, course_path(course)
-  %span.time= course.time
-  %span.schedule= course.schedule
-  %span.teacher= course.teacher
+  %div
+    %span.name= link_to course.name, course_path(course)
+    %span.time= course.time
+    %span.schedule= course.schedule
+    %span.teacher= course.teacher
+    %span.students
+      = link_to "students", course_path(course)
+  
+  .student_list
+    = render :partial => 'students', :locals => { :course => course }

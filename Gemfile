@@ -16,6 +16,7 @@ gem 'dragonfly'
 gem 'devise'
 gem 'formtastic'
 gem 'validation_reflection'
+gem 'jelly'
 
 group :test do
   gem "rspec-rails"
