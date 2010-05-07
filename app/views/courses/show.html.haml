@@ -1,5 +1,15 @@
 %h1= @course.name
 
+%dl
+  %dt Time
+  %dd= @course.time
+  
+  %dt Schedule
+  %dd= @course.schedule
+  
+  %dt Teacher
+  %dd= @course.teacher
+
 #students
   %h2 Students
   %ul

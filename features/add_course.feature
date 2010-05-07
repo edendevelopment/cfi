@@ -1,4 +1,4 @@
-Feature: Add a course
+Feature: Manage a course
   Administrators create a course of study
 
   Scenario: Add a new course

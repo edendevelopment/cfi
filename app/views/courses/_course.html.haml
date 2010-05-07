@@ -1,5 +1,5 @@
 %li.course
-  %span.name= course.name
+  %span.name= link_to course.name, course_path(course)
   %span.time= course.time
   %span.schedule= course.schedule
   %span.teacher= course.teacher
