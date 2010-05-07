@@ -15,7 +15,6 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'cucumber-rails'
-  gem 'test-unit'
   gem 'metric_fu'
   gem 'reek'
   gem 'roodi'
