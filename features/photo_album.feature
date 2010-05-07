@@ -3,9 +3,9 @@ Feature: Photo album
   As a user
   I want to upload photos of their life
 
-  @wip
   Scenario: User uploads photo
-    Given a student called "Oum Bora"
+    Given I am a new, authenticated user
+    And a student called "Oum Bora"
     When I go to the photos page for "Oum Bora"
     And I add the photo "sample.jpg" with comment "This is a photo"
     Then I should see the photo "sample.jpg" with comment "This is a photo"

@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Courses::StudentsController do
   before(:each) do
+    log_in
     @course = mock_model(Course, :add_student => true, :remove_student => true)
     Course.stub_find!(@course)
   end

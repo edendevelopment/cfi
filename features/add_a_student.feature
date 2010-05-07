@@ -1,6 +1,9 @@
 Feature: Manage a student
   after assessing the child at a home visit, the social worker would enter the person(s) to be supported into the system and change their details
-
+  
+  Background:
+    Given I am a new, authenticated user
+  
   Scenario: Add a new student
     When I go to the student list page
     And I follow "add student"
@@ -32,7 +35,7 @@ Feature: Manage a student
     Then I should see the student "Oum Bora"
 
   Scenario: Change student details
-    Given a student called "Oum Bora"
+    And a student called "Oum Bora"
     When I go to the student page for "Oum Bora"
     And I update the student with the following details
       | Name | Oum Botam |

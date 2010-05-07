@@ -61,3 +61,7 @@ class ActiveRecord::Base
 end
 
 require Rails.root.join('features', 'support', 'factories')
+
+def log_in
+  controller.stub!(:authenticate_user!)
+end
