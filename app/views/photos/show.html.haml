@@ -3,3 +3,6 @@
 
 %div.photo= image_tag(@photo.image.url)
 %p.comment= @photo.comment
+
+= link_to "edit", edit_student_photo_path(@student, @photo)
+= link_to "delete", student_photo_path(@student, @photo), :method => :delete, :confirm => 'Are you sure you want to delete this photo?'
