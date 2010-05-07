@@ -10,6 +10,10 @@ gem 'compass'
 
 gem 'resource_controller'
 
+gem 'rmagick',    :require => 'RMagick'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly'
+
 group :test do
   gem "rspec-rails"
   gem 'capybara'

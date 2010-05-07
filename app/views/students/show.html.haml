@@ -15,6 +15,8 @@
     %dt Notes
     %dd.notes= @student.notes
     
+  %p= image_tag @student.image.url('200x200')
+    
   - unless @student.siblings.blank?
     .siblings
       %p Siblings
