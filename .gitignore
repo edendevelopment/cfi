@@ -8,3 +8,4 @@ rerun.txt
 webrat-*
 capybara-*
 .bundle
+public/system/*
