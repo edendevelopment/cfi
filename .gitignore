@@ -2,6 +2,7 @@
 log/*
 config/database.yml
 public/stylesheets/compiled/*.css
+public/stylesheets/compiled/partials/*.css
 tmp
 rerun.txt
 webrat-*
