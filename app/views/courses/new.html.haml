@@ -1,20 +1,3 @@
 %h1 Add a new course
-- form_for :course, :url => { :action => :create } do |form|
-  %p.field
-    = form.label :name
-    %br
-    = form.text_field :name
-  %p.field
-    = form.label :time
-    %br
-    = form.text_field :time
-  %p.field
-    = form.label :schedule
-    %br
-    = form.text_field :schedule
-  %p.field
-    = form.label :teacher
-    %br
-    = form.text_field :teacher
-  %p.controls
-    = form.submit 'add course'
+- form_for @course do |form|
+  = render 'form', :form => form, :submit_text => 'add course'

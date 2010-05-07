@@ -1,23 +1,26 @@
 %h1= @course.name
 
-%dl
-  %dt Time
-  %dd= @course.time
+#course
+  %dl
+    %dt Time
+    %dd= @course.time
   
-  %dt Schedule
-  %dd= @course.schedule
+    %dt Schedule
+    %dd= @course.schedule
   
-  %dt Teacher
-  %dd= @course.teacher
+    %dt Teacher
+    %dd= @course.teacher
 
-#students
-  %h2 Students
-  %ul
-    - @course.students.each do |student|
-      %li[student]
-        = link_to student.name, student
-        = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => @course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{@course.name}?", :method => :delete
+  %p= link_to 'Edit', edit_course_path(@course)
+  
+  #students
+    %h2 Students
+    %ul
+      - @course.students.each do |student|
+        %li[student]
+          = link_to student.name, student
+          = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => @course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{@course.name}?", :method => :delete
 
-- form_tag course_students_path(@course), :method => :post do
-  = select_tag 'student_id', options_from_collection_for_select(@course.eligible_students, :id, :name)
-  = submit_tag "Add"
+  - form_tag course_students_path(@course), :method => :post do
+    = select_tag 'student_id', options_from_collection_for_select(@course.eligible_students, :id, :name)
+    = submit_tag "Add"
