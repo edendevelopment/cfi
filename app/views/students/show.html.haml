@@ -17,6 +17,8 @@
 
   - unless @student.image.nil?    
     %p= image_tag @student.image.url('200x200')
+  
+  = link_to "View more photos", student_photos_path(@student)
     
   - unless @student.siblings.blank?
     .siblings
