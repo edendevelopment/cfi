@@ -2,6 +2,7 @@
 %html
   %head
     %title Childrens' Future International - Students Records
+    = formtastic_stylesheet_link_tag
     = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
@@ -18,6 +19,7 @@
         .site
           %li= link_to 'students', students_path
           %li= link_to 'courses', courses_path
+          %li= link_to 'admin', users_path
 
       #content 
         %p.notice= flash[:notice]

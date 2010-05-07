@@ -9,3 +9,4 @@ webrat-*
 capybara-*
 .bundle
 public/system/*
+clean/*

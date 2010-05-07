@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
+  
+  map.resources :users
 
   map.resources :courses do |course|
     course.resources :students, :controller => 'courses/students'

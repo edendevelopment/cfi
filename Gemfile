@@ -14,6 +14,8 @@ gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly'
 gem 'devise'
+gem 'formtastic'
+gem 'validation_reflection'
 
 group :test do
   gem "rspec-rails"
