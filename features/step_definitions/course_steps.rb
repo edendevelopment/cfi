@@ -34,9 +34,7 @@ Then /^"([^\"]*)" should be taking the course "([^\"]*)"$/ do |student_name, cou
 end
 
 Then /^"([^\"]*)" should not be taking the course "([^\"]*)"$/ do |student_name, course_name|
-  within("#students") do
-    page.should have_no_content(student_name)
-  end
+    page.should have_no_css("#students a:contains('#{student_name}')")
 end
 
 When /^I remove "([^\"]*)" from the course$/ do |student_name|
