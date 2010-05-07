@@ -20,6 +20,8 @@ module NavigationHelpers
       new_student_path
     when /the student page for "([^\"]+)"/
       student_path(Student.find_by_name($1))
+    when /the photos page for "([^\"]+)"/
+      student_photos_path(Student.find_by_name($1))
     when /the page for course "([^\"]+)"/
       course_path(Course.find_by_name($1))
     when 'login'
