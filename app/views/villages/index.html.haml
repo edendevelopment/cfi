@@ -1,0 +1,10 @@
+%h2 Villages
+
+- form_for Village.new do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.submit "Add village"
+  
+%ul#villages
+  - @villages.each do |village|
+    %li= village.name

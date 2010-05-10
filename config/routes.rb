@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :students do |student|
     student.resources :photos
   end
+  map.resources :villages
   
   map.root :controller => :courses
 end
