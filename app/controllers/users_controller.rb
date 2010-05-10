@@ -1,16 +1,17 @@
-class UsersController < ResourceController::Base
+class UsersController < ApplicationController
+  resource_controller
   
-    new_action.wants.html { render :edit }
-    
-    create.failure.wants.html { render :edit }
-    create.wants.html { redirect_to users_path }
+  new_action.wants.html { render :edit }
+  
+  create.failure.wants.html { render :edit }
+  create.wants.html { redirect_to users_path }
 
-    update.before do
-      if params[:user] && params[:user][:password].blank? && params[:user][:password_confirmation].blank?
-        params[:user].delete(:password)
-        params[:user].delete(:password_confirmation)
-      end
+  update.before do
+    if params[:user] && params[:user][:password].blank? && params[:user][:password_confirmation].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
     end
-    update.wants.html { redirect_to users_path }
+  end
+  update.wants.html { redirect_to users_path }
 
 end

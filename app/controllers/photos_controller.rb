@@ -1,4 +1,5 @@
-class PhotosController < ResourceController::Base
+class PhotosController < ApplicationController
+  resource_controller
   belongs_to :student
   
   create.wants.html do

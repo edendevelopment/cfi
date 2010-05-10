@@ -1,3 +1,4 @@
-class StudentsController < ResourceController::Base
+class StudentsController < ApplicationController
+  resource_controller
 end
 

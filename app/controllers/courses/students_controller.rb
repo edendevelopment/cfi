@@ -1,4 +1,5 @@
 class Courses::StudentsController < ApplicationController
+  resource_controller
   before_filter :find_course
   before_filter :find_student
   
