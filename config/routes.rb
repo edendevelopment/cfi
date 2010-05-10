@@ -11,5 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.resources :villages
   
+  map.admin '/admin', :controller => :admin, :action => :index
+  
   map.root :controller => :courses
 end
