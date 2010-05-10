@@ -3,8 +3,18 @@ Then /^I fill in the following fields with$/ do |table|
 end
 
 def fill_in_fields(table)
-  table.rows_hash.each do |label, value|
-    fill_in label, :with => value
+  table.hashes.each do |row|
+    label = row["Field"]
+    value = row["Value"]
+    type = row["Type"]
+    case type
+      when "Text"
+        fill_in label, :with => value
+      when "Select"
+        select value, :from => label
+      else
+        raise "Invalid type: #{type}"
+    end
   end
 end
 

@@ -7,9 +7,9 @@
   %br
   = form.text_field :date_of_birth
 %p.field
-  = form.label :village
+  = form.label :village_id
   %br
-  = form.text_field :village
+  = form.select :village_id, Village.all.map { |village| [village.name, village.id] }
 %p.field
   %label
     = form.radio_button :gender, 'Female'

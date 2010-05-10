@@ -8,10 +8,11 @@ Feature: Manage a course
     Then I should be on the new course page
     And I should see "Add a new course"
     And I fill in the following fields with
-      | Name     | Khmer 1       |
-      | Time     | 08:30 - 09:30 |
-      | Schedule | M-F           |
-      | Teacher  | Genev         |
+      | Field    | Type | Value         |
+      | Name     | Text | Khmer 1       |
+      | Time     | Text | 08:30 - 09:30 |
+      | Schedule | Text | M-F           |
+      | Teacher  | Text | Genev         |
     And I press "add course"
     Then I should be on the course list page
     And I should see the course 
