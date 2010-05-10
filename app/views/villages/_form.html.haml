@@ -1,0 +1,6 @@
+- form_for @village do |f|
+  = f.error_messages
+  = f.label :name
+  = f.text_field :name
+  
+  = f.submit @village.new_record? ? "Add village" : "Save"

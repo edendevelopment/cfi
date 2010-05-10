@@ -1,11 +1,9 @@
 %h2 Villages
 
-- form_for @village || Village.new do |f|
-  = f.error_messages
-  = f.label :name
-  = f.text_field :name
-  = f.submit "Add village"
-  
+= render :partial => "form"
+
 %ul#villages
   - Village.all.each do |village|
-    %li= village.name
+    %li
+      = village.name
+      = link_to "Edit", edit_village_path(village)
