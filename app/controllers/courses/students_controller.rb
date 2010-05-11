@@ -1,5 +1,4 @@
 class Courses::StudentsController < ApplicationController
-  resource_controller
   before_filter :find_course
   before_filter :find_student
   
@@ -12,7 +11,8 @@ class Courses::StudentsController < ApplicationController
     @course.remove_student(@student)
     redirect_to course_path(@course)
   end
-  
+
+private  
   def find_course
     @course = Course.find(params[:course_id])
   end
