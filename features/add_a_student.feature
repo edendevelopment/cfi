@@ -22,8 +22,7 @@ Feature: Manage a student
       | Oum Phhoung |
     And I press "add student"
     Then I should be on the student page for "Oum Bora"
-    And I should see the student
-      | Name          | Oum Bora                                                                   | 
+    And I should see the student "Oum Bora" with
       | Date of birth | 1998-11-13                                                                 |    
       | Village       | Ta Mau Leu                                                                 |
       | Gender        | Male                                                                       |

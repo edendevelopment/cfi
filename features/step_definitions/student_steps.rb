@@ -4,7 +4,8 @@ Then /^I add the following siblings$/ do |table|
   And %Q{I fill in "Siblings" with "#{siblings}"}
 end
 
-Then /^I should see the student$/ do |table|
+Then /^I should see the student "([^\"]*)" with$/ do |name, table|
+  page.should have_css(".name:contains('#{name}')")
   output = []
   table.raw.each do |key, value|
     output << [key, find("#student .#{key.parameterize}").try(:text)]

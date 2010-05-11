@@ -1,8 +1,9 @@
+%h2.name= @student.name
 #student
-  %dl
-    %dt Name
-    %dd.name= @student.name
+  - unless @student.image.nil?    
+    %p= image_tag @student.image.url('200x200')
 
+  %dl
     %dt DOB
     %dd.date-of-birth= @student.date_of_birth
   
@@ -14,9 +15,6 @@
 
     %dt Notes
     %dd.notes= @student.notes
-
-  - unless @student.image.nil?    
-    %p= image_tag @student.image.url('200x200')
   
   = link_to "View more photos", student_photos_path(@student)
     
