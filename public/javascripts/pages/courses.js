@@ -7,5 +7,9 @@ Jelly.Pages.add("Courses", {
     });
     
     $('.course .students .button-to').ajaxDelete();
+  },
+  
+  show: function() {
+    $('.students .button-to').ajaxDelete();
   }
 });

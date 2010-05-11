@@ -28,4 +28,15 @@ describe Course do
       @course.reload.students.should == []
     end
   end
+  
+  describe "eligible students" do
+    it "returns all students not already in the class" do
+      alice = Factory.create :student
+      bob = Factory.create :student
+      charles = Factory.create :student
+      course = Factory.create :course
+      course.add_student(bob)
+      course.eligible_students.sort_by(&:name).should == [alice, charles].sort_by(&:name)
+    end
+  end
 end

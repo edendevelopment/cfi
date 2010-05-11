@@ -2,7 +2,7 @@ class Course < ActiveRecord::Base
   has_and_belongs_to_many :students
   
   def eligible_students
-    Student.all
+    Student.all - students
   end
   
   def add_student(student)
