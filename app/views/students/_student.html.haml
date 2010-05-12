@@ -1,5 +1,11 @@
-- if student.image
-  = image_tag student.image.url('40x40#')
-- else
-  = image_tag "default-person-40.png"
-= link_to student.name, student
+.student
+  .image
+    - if student.image
+      = image_tag student.image.url('40x40#')
+    - else
+      = image_tag "default-person-40.png"
+  .name
+    = link_to student.name, student
+  .village
+    Village: 
+    = link_to student.village_name, student.village

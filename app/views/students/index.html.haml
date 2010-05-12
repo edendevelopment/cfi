@@ -4,6 +4,6 @@
 
 %h2 List of students
 
-%ul#students
+%ul.students
   - Student.all.each do |student|
-    %li.student= render :partial => "students/student", :locals => {:student => student}
+    %li= render :partial => "students/student", :locals => {:student => student}

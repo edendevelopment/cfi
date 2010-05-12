@@ -22,7 +22,7 @@ Then /^I should see the following siblings$/ do |table|
 end
 
 Then /^I should see the student "([^\"]*)"$/ do |name|
-  within('#students .student') do
+  within('.students .student') do
     page.should have_content(name)
     page.should have_css('img')
   end
@@ -35,7 +35,7 @@ end
 def find_student_details_in_student_list(keys)
   actual = []
   actual << keys.inject({}) do |student_details, key|
-    student_details[key] = find_css_text("#students .student .#{key.parameterize}")
+    student_details[key] = find_css_text(".students .student .#{key.parameterize}")
     student_details
   end
 end
