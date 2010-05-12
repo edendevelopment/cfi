@@ -6,18 +6,18 @@ class VillagesController < ApplicationController
   end
   
   create do
-    wants.html do
-      flash[:notice] = "Village #{@village.name} created"
-      redirect_to villages_path
-    end
+    wants.html { back_to_view(@village.name, :created) }
     
     failure.wants.html { render :template => "villages/index" }
   end
   
   update do
-    wants.html do
-      flash[:notice] = "Village #{@village.name} saved"
-      redirect_to villages_path
-    end
+    wants.html { back_to_view(@village_name, :saved) }
+  end
+
+  private
+  def back_to_view(name, action)
+    flash[:notice] = "Village #{name} #{action}"
+    redirect_to villages_path
   end
 end
