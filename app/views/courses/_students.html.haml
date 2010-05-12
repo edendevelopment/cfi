@@ -1,9 +1,10 @@
-%ul.students
-  - course.students.each do |student|
-    %li[student]
-      = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
-      = render :partial => "students/student", :locals => {:student => student}
+.student_management
+  %ul.students
+    - course.students.each do |student|
+      %li[student]
+        = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
+        = render :partial => "students/student", :locals => {:student => student}
       
-- form_tag course_students_path(course), :method => :post, :class => "add_student" do
-  = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village)
-  = submit_tag "Add"
+  - form_tag course_students_path(course), :method => :post, :class => "add_student" do
+    = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village)
+    = submit_tag "Add"

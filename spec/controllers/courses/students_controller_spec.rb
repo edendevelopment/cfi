@@ -13,18 +13,36 @@ describe Courses::StudentsController do
       Student.stub_find!(@student)
     end
     
-    def do_request
-      post :create, :course_id => @course.id, :student_id => @student.id
+    context "via html" do
+      def do_request
+        post :create, :course_id => @course.id, :student_id => @student.id
+      end
+
+      it "adds the student to the course" do
+        @course.should_receive(:add_student).with(@student)
+        do_request
+      end
+    
+      it "redirects to the course page" do
+        do_request
+        response.should redirect_to(course_path(@course))
+      end
     end
     
-    it "should add the student to the course" do
-      @course.should_receive(:add_student).with(@student)
-      do_request
-    end
+    context "via ajax" do
+      def do_request
+        xhr :post, :create, :course_id => @course.id, :student_id => @student.id
+      end
+      
+      it "adds the student to the course" do
+        @course.should_receive(:add_student).with(@student)
+        do_request
+      end
     
-    it "redirects to the course page" do
-      do_request
-      response.should redirect_to(course_path(@course))
+      it "sends the student list partial to the page" do
+        do_request
+        response.should render_template('courses/_students')
+      end
     end
   end
   
@@ -33,19 +51,37 @@ describe Courses::StudentsController do
       @student = mock_model(Student)
       Student.stub_find!(@student)
     end
+    
+    context "via html" do
+      def do_request
+        delete :destroy, :course_id => @course.id, :id => @student.id
+      end
   
-    def do_request
-      delete :destroy, :course_id => @course.id, :id => @student.id
+      it "should add the student to the course" do
+        @course.should_receive(:remove_student).with(@student)
+        do_request
+      end
+  
+      it "redirects to the course page" do
+        do_request
+        response.should redirect_to(course_path(@course))
+      end
     end
+    
+    context "via js" do
+      def do_request
+        xhr :delete, :destroy, :course_id => @course.id, :id => @student.id
+      end
   
-    it "should add the student to the course" do
-      @course.should_receive(:remove_student).with(@student)
-      do_request
-    end
+      it "should add the student to the course" do
+        @course.should_receive(:remove_student).with(@student)
+        do_request
+      end
   
-    it "redirects to the course page" do
-      do_request
-      response.should redirect_to(course_path(@course))
+      it "sends the student list partial to the page" do
+        do_request
+        response.should render_template('courses/_students')
+      end
     end
   end
 end

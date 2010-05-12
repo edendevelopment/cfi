@@ -6,10 +6,10 @@ Jelly.Pages.add("Courses", {
       return false;
     });
     
-    $('.course .students .button-to').ajaxDelete();
+    $('.course .students .button-to').ajaxDelete('.student_management');
   },
   
   show: function() {
-    $('.students .button-to').ajaxDelete();
+    $('.students .button-to').ajaxDelete('.student_management');
   }
 });
