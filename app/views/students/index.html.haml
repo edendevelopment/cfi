@@ -6,5 +6,4 @@
 
 %ul#students
   - Student.all.each do |student|
-    %li.student
-      %span.name= link_to student.name, student
+    %li.student= render :partial => "students/student", :locals => {:student => student}

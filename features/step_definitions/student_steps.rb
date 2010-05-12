@@ -24,6 +24,7 @@ end
 Then /^I should see the student "([^\"]*)"$/ do |name|
   within('#students .student') do
     page.should have_content(name)
+    page.should have_css('img')
   end
 end
 
