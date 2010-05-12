@@ -5,11 +5,5 @@ Jelly.Pages.add("Courses", {
       $(this).closest('li').find('.student_list').toggle();
       return false;
     });
-    
-    $('.course .students .button-to').ajaxDelete('.student_management');
-  },
-  
-  show: function() {
-    $('.students .button-to').ajaxDelete('.student_management');
   }
 });

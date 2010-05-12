@@ -8,3 +8,20 @@
   - form_tag course_students_path(course), :method => :post, :class => "add_student" do
     = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village)
     = submit_tag "Add"
+
+:javascript
+  $('document').ready(function() {
+    $('.students .button-to').ajaxDelete('.student_management');
+    $('.add_student').each(function(index, element) {
+      element = $(element);
+      var course_element = element.closest('.student_management');
+      element.ajaxForm({
+        url: element.attr('action') + ".js",
+        success: function(responseText) {
+          var data = $(responseText);
+          course_element.html(data);
+          ajax_up_add_student_form(data.find('.add_student'));
+        }
+      });
+    })
+  });

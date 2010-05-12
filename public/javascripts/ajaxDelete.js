@@ -10,9 +10,7 @@ $.fn.ajaxDelete = function(target) {
           data: { _method: 'delete'},
           type: 'POST',
           success: function(responseText) {
-            var newDiv = $(responseText)
-            delete_link.closest(target).replaceWith(newDiv);
-            newDiv.find('.button-to').ajaxDelete(target);
+            delete_link.closest(target).replaceWith(responseText);
            }
         });
       }
