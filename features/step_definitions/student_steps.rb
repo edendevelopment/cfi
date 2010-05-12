@@ -22,7 +22,7 @@ Then /^I should see the following siblings$/ do |table|
 end
 
 Then /^I should see the student "([^\"]*)"$/ do |name|
-  within('#students .student .name') do
+  within('#students .student') do
     page.should have_content(name)
   end
 end
@@ -41,6 +41,14 @@ end
 
 Given /^a student called "([^\"]*)"$/ do |name|
   Factory.create :student, :name => name
+end
+
+Given /^a student called "([^\"]*)" in (village "[^\"]*")$/ do |student_name, village|
+  Factory.create :student, :name => student_name, :village => village
+end
+
+Transform /^village "([^\"]*)"$/ do |village_name|
+  Village.find_by_name(village_name)
 end
 
 When /^I update the student with the following details$/ do |table|

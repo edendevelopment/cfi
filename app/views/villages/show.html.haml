@@ -1,0 +1,5 @@
+%h1= @village.name
+%h2 Students living in this village
+%ul#students
+  - @village.students.each do |student|
+    %li.student= student.name
