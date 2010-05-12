@@ -2,4 +2,7 @@
 %h2 Students living in this village
 %ul#students
   - @village.students.each do |student|
-    %li.student= student.name
+    %li.student= link_to student.name, student
+    
+%h2 Actions
+= link_to "Edit", edit_village_path(@village)

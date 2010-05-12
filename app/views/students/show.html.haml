@@ -1,4 +1,4 @@
-%h2.name= @student.name
+%h1.name= @student.name
 #student
   - unless @student.image.nil?    
     %p= image_tag @student.image.url('200x200')

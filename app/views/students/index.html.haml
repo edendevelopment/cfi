@@ -2,6 +2,8 @@
 %p
   %a{:href => new_student_path} add student
 
+%h2 List of students
+
 %ul#students
   - Student.all.each do |student|
     %li.student

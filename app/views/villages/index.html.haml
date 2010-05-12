@@ -1,9 +1,13 @@
-%h2 Villages
+%h1 Villages
 
-= render :partial => "form"
+#add_village
+  %h2 Add a village
+  = render :partial => "form"
+
+%h2 List of villages
 
 %ul#villages
   - Village.all.each do |village|
     %li
-      = village.name
+      = link_to village.name, village
       = link_to "Edit", edit_village_path(village)

@@ -1,4 +1,4 @@
-%h2= "Photo for #{@student.name}"
+%h1= "Photo for #{@student.name}"
 = link_to "Back to photos", student_photos_path(@student)
 
 %div.photo= image_tag(@photo.image.url)
