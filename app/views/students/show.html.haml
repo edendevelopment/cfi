@@ -24,18 +24,19 @@
 
   %p= link_to 'Edit', edit_student_path(@student)
 
-  %h2 Comments
+  #comments
+    %h2 Comments
 
-  - form_tag add_comment_student_path(@student.id) do
-    = text_area_tag :comment
-    = submit_tag 'Add comment'
+    - form_tag add_comment_student_path(@student.id) do
+      = text_area_tag :comment
+      = submit_tag 'Add comment'
 
-  %ul#comments
-    - @student.recent_comments.each do |comment|
-      %li
-        .comment_text= simple_format comment.comment
-        .info
-          by
-          = link_to comment.user.name
-          = distance_of_time_in_words_to_now(comment.created_at)
-          ago
+    %ul
+      - @student.recent_comments.each do |comment|
+        %li
+          .comment_text= simple_format comment.comment
+          .info
+            by
+            = link_to comment.user.name
+            = distance_of_time_in_words_to_now(comment.created_at)
+            ago
