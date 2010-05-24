@@ -2,38 +2,47 @@
   #student
     dl
       +clearfix
-      
+
     dt
       clear: left
       float: left
       width: 100px
       font-weight: bold
-      
-  
+
+
     dd.gender
       margin-bottom: 10px
-    
+
     .siblings
       margin-top: 10px
       p
         font-weight: bold
-    
+
       ul
         list-style: disc
+
+  #comments
+    li
+      padding: 10px
+      &:nth-child(odd)
+        background-color: #e7cddc
+
+      .info
+        font-size: 0.8em
 
 ul.students
   li
     +clearfix
     margin-bottom: 10px
-  
+
     .student
       .image
         float: left
         margin-right: 5px
-  
+
       .name a
         color: #333
-  
+
       .village
         color: #666
         font-size: 0.7em

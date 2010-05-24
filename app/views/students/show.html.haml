@@ -34,11 +34,11 @@
     = submit_tag 'Add comment'
 
   %ul#comments
-    - @student.comments.each do |comment|
+    - @student.recent_comments.each do |comment|
       %li
-        %p= comment.comment
-        %p
+        .comment_text= simple_format comment.comment
+        .info
           by
-          = link_to comment.user.email
+          = link_to comment.user.name
           = distance_of_time_in_words_to_now(comment.created_at)
           ago

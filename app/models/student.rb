@@ -14,4 +14,8 @@ class Student < ActiveRecord::Base
   def add_comment(comment_text, user)
     comments.create!(:comment => comment_text, :user => user)
   end
+
+  def recent_comments
+    comments.find(:all, :order => "created_at desc")
+  end
 end
