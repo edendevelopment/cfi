@@ -27,10 +27,18 @@
 
   %p= link_to 'Edit', edit_student_path(@student)
 
+  %h2 Comments
+
   - form_tag add_comment_student_path(@student.id) do
     = text_area_tag :comment
     = submit_tag 'Add comment'
 
   %ul#comments
     - @student.comments.each do |comment|
-      %li= comment.comment
+      %li
+        %p= comment.comment
+        %p
+          by
+          = link_to comment.user.email
+          = distance_of_time_in_words_to_now(comment.created_at)
+          ago
