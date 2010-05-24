@@ -8,18 +8,37 @@ describe StudentsController do
       Student.stub_find!(@student)
     end
 
-    def do_request
-      post :add_comment, :id => @student.id, :comment => "This is a comment about a student"
+    context "with a valid comment" do
+      def do_request
+        post :add_comment, :id => @student.id, :comment => "This is a comment about a student"
+      end
+
+      it "adds the comment to the student" do
+        @student.should_receive(:add_comment).with("This is a comment about a student", @current_user)
+        do_request
+      end
+
+      it "redirects to the student show page" do
+        do_request
+        response.should redirect_to(student_path(@student))
+      end
     end
 
-    it "adds the comment to the student" do
-      @student.should_receive(:add_comment).with("This is a comment about a student", @current_user)
-      do_request
+    context "with a blank comment" do
+      def do_request
+        post :add_comment, :id => @student.id, :comment => ""
+      end
+
+      it "doesn't add the comment to the student" do
+        @student.should_not_receive(:add_comment)
+        do_request
+      end
+
+      it "redirects to the student show page" do
+        do_request
+        response.should redirect_to(student_path(@student))
+      end
     end
 
-    it "redirects to the student show page" do
-      do_request
-      response.should redirect_to(student_path(@student))
-    end
   end
 end
