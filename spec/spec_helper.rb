@@ -64,4 +64,6 @@ require Rails.root.join('features', 'support', 'factories')
 
 def log_in
   controller.stub!(:authenticate_user!)
+  @current_user = mock_model(User)
+  controller.stub!(:current_user).and_return(@current_user)
 end

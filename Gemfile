@@ -17,6 +17,7 @@ gem 'devise'
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'jelly'
+gem 'acts_as_commentable'
 
 group :test do
   gem "rspec-rails"

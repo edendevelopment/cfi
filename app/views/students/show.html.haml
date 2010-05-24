@@ -1,28 +1,36 @@
 %h1.name= @student.name
 #student
-  - unless @student.image.nil?    
+  - unless @student.image.nil?
     %p= image_tag @student.image.url('200x200')
 
   %dl
     %dt DOB
     %dd.date-of-birth= @student.date_of_birth
-  
+
     %dt Village
     %dd.village= @student.village_name
-  
+
     %dt Gender
     %dd.gender= @student.gender
 
     %dt Notes
     %dd.notes= @student.notes
-  
+
   = link_to "View more photos", student_photos_path(@student)
-    
+
   - unless @student.siblings.blank?
     .siblings
       %p Siblings
       %ul
         - @student.siblings.split("\n").each do |sibling|
           %li.sibling= sibling
-  
+
   %p= link_to 'Edit', edit_student_path(@student)
+
+  - form_tag add_comment_student_path(@student.id) do
+    = text_area_tag :comment
+    = submit_tag 'Add comment'
+
+  %ul#comments
+    - @student.comments.each do |comment|
+      %li= comment.comment
