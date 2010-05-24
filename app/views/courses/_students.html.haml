@@ -1,5 +1,5 @@
 .student_management
-  %ul.students
+  %ul.people
     - course.students.each do |student|
       %li[student]
         = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
@@ -11,7 +11,7 @@
 
 :javascript
   $('document').ready(function() {
-    $('.students .button-to').ajaxDelete('.student_management');
+    $('.people .button-to').ajaxDelete('.student_management');
     $('.add_student').each(function(index, element) {
       element = $(element);
       var course_element = element.closest('.student_management');
