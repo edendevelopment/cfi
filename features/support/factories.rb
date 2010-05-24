@@ -1,8 +1,12 @@
 require 'factory_girl'
 
+Factory.define :person do |person|
+  person.sequence(:name) {|n| "Person #{n}"}
+  person.association :village
+end
+
 Factory.define :student do |student|
-  student.sequence(:name) {|n| "Student #{n}"}
-  student.association :village
+  student.association :person
 end
 
 Factory.define :course do |course|

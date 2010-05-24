@@ -14,14 +14,14 @@ module NavigationHelpers
       new_course_path
     when 'the course list page'
       courses_path
-    when 'the student list page'
-      students_path    
-    when 'the new student page'
-      new_student_path
-    when /the student page for "([^\"]+)"/
-      student_path(Student.find_by_name($1))
+    when 'the person list page'
+      people_path    
+    when 'the new person page'
+      new_person_path
+    when /the person page for "([^\"]+)"/
+      person_path(Person.find_by_name($1))
     when /the photos page for "([^\"]+)"/
-      student_photos_path(Student.find_by_name($1))
+      person_photos_path(Person.find_by_name($1))
     when /the page for course "([^\"]+)"/
       course_path(Course.find_by_name($1))
     when 'login'

@@ -1,0 +1,9 @@
+%h1 People
+%p
+  %a{:href => new_person_path} add person
+
+%h2 List of people
+
+%ul.people
+  - Person.all.each do |person|
+    %li= render :partial => "people/person", :locals => {:person => person}

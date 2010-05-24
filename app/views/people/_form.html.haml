@@ -41,8 +41,8 @@
   %br
   = form.file_field :image
   %br
-  - unless @student.image.nil?
-    = image_tag @student.image.url('200x200')
+  - unless @person.image.nil?
+    = image_tag @person.image.url('200x200')
 
 %p.field
   = form.label :siblings

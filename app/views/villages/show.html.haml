@@ -1,9 +1,9 @@
 %h1= @village.name
-%h2 Students living in this village
-%ul.students
-  - @village.students.each do |student|
+%h2 People living in this village
+%ul.people
+  - @village.people.each do |person|
     %li
-      = render :partial => "students/student", :locals => {:student => student}
+      = render :partial => "people/person", :locals => {:person => person}
     
 %h2 Actions
 = link_to "Edit", edit_village_path(@village)

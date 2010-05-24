@@ -8,21 +8,21 @@ Then /^I should see the student "([^\"]*)" with$/ do |name, table|
   page.should have_css(".name:contains('#{name}')")
   output = []
   table.raw.each do |key, value|
-    output << [key, find("#student .#{key.parameterize}").try(:text)]
+    output << [key, find("#person .#{key.parameterize}").try(:text)]
   end
   table.diff!(output)
 end
 
 Then /^I should see the following siblings$/ do |table|
   # table is a Cucumber::Ast::Table
-  page.has_css?('#student .siblings').should == true
-  within('#student .siblings .sibling') do
+  page.has_css?('#person .siblings').should == true
+  within('#person .siblings .sibling') do
     table.raw.each { |row| page.should have_content(row[0]) }
   end
 end
 
 Then /^I should see the student "([^\"]*)"$/ do |name|
-  within('.students .student') do
+  within('.people .person') do
     page.should have_content(name)
     page.should have_css('img')
   end
@@ -41,11 +41,13 @@ def find_student_details_in_student_list(keys)
 end
 
 Given /^a student called "([^\"]*)"$/ do |name|
-  Factory.create :student, :name => name
+  person = Factory.create :person, :name => name
+  person.make_student!
 end
 
 Given /^a student called "([^\"]*)" in (village "[^\"]*")$/ do |student_name, village|
-  Factory.create :student, :name => student_name, :village => village
+  person = Factory.create :person, :name => student_name, :village => village
+  person.make_student!
 end
 
 Transform /^village "([^\"]*)"$/ do |village_name|

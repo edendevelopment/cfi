@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100524205905) do
+ActiveRecord::Schema.define(:version => 20100524215825) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -39,15 +39,7 @@ ActiveRecord::Schema.define(:version => 20100524205905) do
     t.integer "student_id"
   end
 
-  create_table "photos", :force => true do |t|
-    t.integer  "student_id"
-    t.text     "comment"
-    t.string   "image_uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students", :force => true do |t|
+  create_table "people", :force => true do |t|
     t.string   "name"
     t.date     "date_of_birth"
     t.string   "gender"
@@ -59,6 +51,18 @@ ActiveRecord::Schema.define(:version => 20100524205905) do
     t.string   "house_number",  :default => ""
     t.string   "group_number",  :default => ""
     t.string   "religion",      :default => ""
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "person_id"
+    t.text     "comment"
+    t.string   "image_uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", :force => true do |t|
+    t.integer "person_id"
   end
 
   create_table "users", :force => true do |t|

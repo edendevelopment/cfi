@@ -6,10 +6,10 @@ Feature: Manage a student
     And a village called "Ta Mau Leu"
 
   Scenario: Add a new student
-    When I go to the student list page
-    And I follow "add student"
-    Then I should be on the new student page
-    And I should see "Add a new student"
+    When I go to the person list page
+    And I follow "add person"
+    Then I should be on the new person page
+    And I should see "Add a new person"
     And I fill in the following fields with
       | Field         | Type   | Value       |
       | Name          | Text   | Oum Bora    |
@@ -22,8 +22,8 @@ Feature: Manage a student
     And I add the following siblings
       | Oum Ary     |
       | Oum Phhoung |
-    And I press "add student"
-    Then I should be on the student page for "Oum Bora"
+    And I press "add person"
+    Then I should be on the person page for "Oum Bora"
     And I should see the student "Oum Bora" with
       | Date of birth | 1998-11-13  |
       | Village       | Ta Mau Leu  |
@@ -37,13 +37,13 @@ Feature: Manage a student
       | Oum Ary     |
       | Oum Phhoung |
 
-    When I go to the student list page
+    When I go to the person list page
     Then I should see the student "Oum Bora"
 
   Scenario: Change student details
     And a student called "Oum Bora"
-    When I go to the student page for "Oum Bora"
+    When I go to the person page for "Oum Bora"
     And I update the student with the following details
       | Field | Type | Value     |
       | Name  | Text | Oum Botam |
-    Then I should be on the student page for "Oum Botam"
+    Then I should be on the person page for "Oum Botam"

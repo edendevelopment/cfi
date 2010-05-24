@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Student do
+describe Person do
   describe "adding a comment" do
     it "adds the comment by the user" do
-      student = Factory.create :student
+      person = Factory.create :person
       user = Factory.create :user
-      student.add_comment("Foo", user)
-      comment = student.reload.comments.first
+      person.add_comment("Foo", user)
+      comment = person.reload.comments.first
       comment.comment.should == "Foo"
       comment.user.should == user
     end

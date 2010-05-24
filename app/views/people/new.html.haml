@@ -1,0 +1,4 @@
+%h1 Add a new person
+- form_for @person, :html => { :multipart => true } do |form|
+  = render 'form', :submit_text => 'add person', :form => form
+

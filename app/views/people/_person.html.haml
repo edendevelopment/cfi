@@ -1,0 +1,11 @@
+.person
+  .image
+    - if person.image
+      = image_tag person.image.url('40x40#')
+    - else
+      = image_tag "default-person-40.png"
+  .name
+    = link_to person.name, person
+  .village
+    Village: 
+    = link_to person.village_name, person.village

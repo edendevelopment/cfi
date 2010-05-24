@@ -48,7 +48,7 @@ Then /^"([^\"]*)" should not be taking the course "([^\"]*)"$/ do |student_name,
 end
 
 When /^I remove "([^\"]*)" from the course$/ do |student_name|
-  within("#student_#{Student.find_by_name(student_name).id}") do
+  within("#student_#{Student.find_by_person_id(Person.find_by_name(student_name).id).id}") do
     click_button "Remove"
   end
 end
