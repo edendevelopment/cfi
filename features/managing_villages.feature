@@ -16,11 +16,11 @@ Feature: Managing villages
     And I edit the village "Wivelsfield" to have name "Botley"
     Then I should see "Botley" in the list of villages
   
-  Scenario: User sees list of students in village
+  Scenario: User sees list of people in village
     Given I am a new, authenticated user
     And a village called "Wivelsfield"
-    And a student called "Oum Bora" in village "Wivelsfield"
-    And a student called "Student 2" in village "Wivelsfield"
+    And a person called "Oum Bora" in village "Wivelsfield"
+    And a person called "Student 2" in village "Wivelsfield"
     When I go to the page for village "Wivelsfield"
-    Then I should see the student "Oum Bora"
-    Then I should see the student "Student 2"
+    Then I should see the person "Oum Bora"
+    Then I should see the person "Student 2"

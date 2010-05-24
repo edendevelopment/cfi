@@ -5,7 +5,7 @@ Feature: Photo album
 
   Scenario: User uploads photo
     Given I am a new, authenticated user
-    And a student called "Oum Bora"
+    And a person called "Oum Bora"
     When I go to the photos page for "Oum Bora"
     And I add the photo "sample.jpg" with comment "This is a photo"
     Then I should see the photo "sample.jpg" with comment "This is a photo"

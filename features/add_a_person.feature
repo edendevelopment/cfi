@@ -1,4 +1,4 @@
-Feature: Manage a student
+Feature: Manage a person
   after assessing the child at a home visit, the social worker would enter the person(s) to be supported into the system and change their details
 
   Background:
@@ -24,7 +24,7 @@ Feature: Manage a student
       | Oum Phhoung |
     And I press "add person"
     Then I should be on the person page for "Oum Bora"
-    And I should see the student "Oum Bora" with
+    And I should see the person "Oum Bora" with
       | Date of birth | 1998-11-13  |
       | Village       | Ta Mau Leu  |
       | Gender        | Male        |
@@ -38,7 +38,7 @@ Feature: Manage a student
       | Oum Phhoung |
 
     When I go to the person list page
-    Then I should see the student "Oum Bora"
+    Then I should see the person "Oum Bora"
   
   Scenario: Make person a student
     Given a person called "Oum Bora"
@@ -47,9 +47,9 @@ Feature: Manage a student
     Then "Oum Bora" should be a student
     
   Scenario: Change person details
-    And a student called "Oum Bora"
+    And a person called "Oum Bora"
     When I go to the person page for "Oum Bora"
-    And I update the student with the following details
+    And I update the person with the following details
       | Field | Type | Value     |
       | Name  | Text | Oum Botam |
     Then I should be on the person page for "Oum Botam"
