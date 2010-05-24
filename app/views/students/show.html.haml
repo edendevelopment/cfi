@@ -13,9 +13,6 @@
     %dt Gender
     %dd.gender= @student.gender
 
-    %dt Notes
-    %dd.notes= @student.notes
-
   = link_to "View more photos", student_photos_path(@student)
 
   - unless @student.siblings.blank?
