@@ -11,10 +11,13 @@ Feature: Manage a student
     Then I should be on the new student page
     And I should see "Add a new student"
     And I fill in the following fields with
-      | Field         | Type   | Value                                                                      |
-      | Name          | Text   | Oum Bora                                                                   |
-      | Date of birth | Text   | 1998-11-13                                                                 |
-      | Village       | Select | Ta Mau Leu                                                                 |
+      | Field         | Type   | Value       |
+      | Name          | Text   | Oum Bora    |
+      | Date of birth | Text   | 1998-11-13  |
+      | House number  | Text   | 15          |
+      | Group number  | Text   | 8           |
+      | Village       | Select | Ta Mau Leu  |
+      | Religion      | Text   | Buddhist    |
     And I choose "Male"
     And I add the following siblings
       | Oum Ary     |
@@ -22,9 +25,13 @@ Feature: Manage a student
     And I press "add student"
     Then I should be on the student page for "Oum Bora"
     And I should see the student "Oum Bora" with
-      | Date of birth | 1998-11-13                                                                 |
-      | Village       | Ta Mau Leu                                                                 |
-      | Gender        | Male                                                                       |
+      | Date of birth | 1998-11-13  |
+      | Village       | Ta Mau Leu  |
+      | Gender        | Male        |
+      | House number  | 15          |
+      | Group number  | 8           |
+      | Village       | Ta Mau Leu  |
+      | Religion      | Buddhist    |
 
     And I should see the following siblings
       | Oum Ary     |

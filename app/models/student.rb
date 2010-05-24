@@ -5,7 +5,7 @@ class Student < ActiveRecord::Base
 
   image_accessor :image
 
-  delegate :name, :to => :village, :prefix => true
+  delegate :name, :to => :village, :prefix => true, :allow_nil => true
 
   def name_and_village
     "#{name} (Village: #{village_name})"

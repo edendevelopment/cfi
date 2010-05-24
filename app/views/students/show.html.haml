@@ -6,12 +6,21 @@
   %dl
     %dt DOB
     %dd.date-of-birth= @student.date_of_birth
+    
+    %dt House number
+    %dd.house-number= @student.house_number
+    
+    %dt Group number
+    %dd.group-number= @student.group_number
 
     %dt Village
     %dd.village= @student.village_name
 
     %dt Gender
     %dd.gender= @student.gender
+    
+    %dt Religion
+    %dd.religion= @student.religion
 
   = link_to "View more photos", student_photos_path(@student)
 
