@@ -1,4 +1,10 @@
 %h1.name= @person.name
+.student-status
+  - if @person.student
+    Student
+  - else
+    = button_to "Make #{@person.name} a student", make_student_person_path(@person)
+
 #person
   - unless @person.image.nil?
     %p= image_tag @person.image.url('200x200')

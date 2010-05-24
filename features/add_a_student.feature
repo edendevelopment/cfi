@@ -5,7 +5,7 @@ Feature: Manage a student
     Given I am a new, authenticated user
     And a village called "Ta Mau Leu"
 
-  Scenario: Add a new student
+  Scenario: Add a new person
     When I go to the person list page
     And I follow "add person"
     Then I should be on the new person page
@@ -39,8 +39,14 @@ Feature: Manage a student
 
     When I go to the person list page
     Then I should see the student "Oum Bora"
-
-  Scenario: Change student details
+  
+  Scenario: Make person a student
+    Given a person called "Oum Bora"
+    When I go to the person page for "Oum Bora"
+    And I make "Oum Bora" a student
+    Then "Oum Bora" should be a student
+    
+  Scenario: Change person details
     And a student called "Oum Bora"
     When I go to the person page for "Oum Bora"
     And I update the student with the following details

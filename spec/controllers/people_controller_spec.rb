@@ -41,4 +41,26 @@ describe PeopleController do
     end
 
   end
+  
+  describe "making person a student" do
+    before(:each) do
+      log_in
+      @person = mock_model(Person, :make_student! => true)
+      Person.stub_find!(@person)
+    end
+    
+    def do_request
+      post :make_student, :id => @person.id
+    end
+    
+    it "makes the person a student" do
+      @person.should_receive(:make_student!)
+      do_request
+    end
+    
+    it "redirects to the person page" do
+      do_request
+      response.should redirect_to(person_path(@person))
+    end
+  end
 end
