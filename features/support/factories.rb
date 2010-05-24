@@ -10,6 +10,7 @@ Factory.define :course do |course|
 end
 
 Factory.define :user do |user|
+  user.sequence(:name) { |n| "User #{n}" }
   user.sequence(:email) { |n| "user_#{n}@example.com" }
   user.password "password"
 end

@@ -1,8 +1,9 @@
 - semantic_form_for @user do |f|
   - f.inputs do
+    = f.input :name
     = f.input :email
     = f.input :password
     = f.input :password_confirmation
   = f.buttons
-  
+
 = link_to 'back', users_path

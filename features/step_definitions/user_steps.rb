@@ -3,7 +3,8 @@ Given 'I am not authenticated' do
 end
 
 Given /^I have one\s+user "([^\"]*)" with password "([^\"]*)"$/ do |email, password|
-  User.new(:email => email,
+  User.new(:name => email.split('@').first,
+           :email => email,
            :password => password,
            :password_confirmation => password).save!
 end
