@@ -1,12 +1,8 @@
-%h1 
-  Edit address for
-  = @person.name
-  
-- form_for @person, :html => { :multipart => true } do |form|
+- person_form_for("address") do |form|
   %p.field
-  = form.label :house_number
-  %br
-  = form.text_field :house_number
+    = form.label :house_number
+    %br
+    = form.text_field :house_number
   
   %p.field
     = form.label :group_number
@@ -17,5 +13,3 @@
     = form.label :village_id
     %br
     = form.select :village_id, Village.all.map { |village| [village.name, village.id] }
-  
-  = form.submit "Save"

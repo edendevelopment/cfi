@@ -1,11 +1,5 @@
-%h1 
-  Edit photo for
-  = @person.name
-  
-- form_for @person, :html => { :multipart => true } do |form|
+- person_form_for("photo") do |form|
   %p.field
     = form.label :image
     %br
     = form.file_field :image
-  
-  = form.submit "Save"

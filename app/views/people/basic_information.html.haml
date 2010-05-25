@@ -1,8 +1,4 @@
-%h1 
-  Edit basic information for
-  = @person.name
-  
-- form_for @person, :html => { :multipart => true } do |form|
+- person_form_for("basic information") do |form|
   %p.field
     = form.label :name
     %br
@@ -25,5 +21,3 @@
     = form.label :religion
     %br
     = form.text_field :religion
-
-  = form.submit "Save"

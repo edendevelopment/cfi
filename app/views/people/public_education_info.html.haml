@@ -1,8 +1,4 @@
-%h1 
-  Edit public education information for
-  = @person.name
-  
-- form_for @person, :html => { :multipart => true } do |form|
+- person_form_for("public education info") do |form|
   - form.fields_for :public_education_info do |fields|
     %p.field
       = fields.label :grade
@@ -33,5 +29,3 @@
       = fields.label :school_contact
       %br
       = fields.text_area :school_contact
-
-  = form.submit "Save"
