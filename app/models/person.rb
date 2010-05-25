@@ -9,6 +9,9 @@ class Person < ActiveRecord::Base
   has_one :public_education_info
   accepts_nested_attributes_for :public_education_info
   
+  has_one :obligations
+  accepts_nested_attributes_for :obligations
+  
   image_accessor :image
 
   delegate :name, :to => :village, :prefix => true, :allow_nil => true

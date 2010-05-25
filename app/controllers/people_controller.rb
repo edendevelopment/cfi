@@ -38,5 +38,10 @@ class PeopleController < ApplicationController
     @person = object
     @person.public_education_info ||= PublicEducationInfo.new
   end
+  
+  def obligations
+    @person = object
+    @person.obligations ||= Obligations.new
+  end
 end
 

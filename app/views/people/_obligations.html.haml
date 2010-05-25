@@ -1,0 +1,20 @@
+- obligations = @person.obligations
+%h2 Obligations
+- unless obligations.nil?
+  %p
+    %span.label Means to support family
+    %span.means-to-support-family= obligations.means_to_support_family
+    
+  %p
+    %span.label Support required
+    %span.support-required= obligations.support_required? ? "Yes" : "No"
+
+  %p
+    %span.label Work obligations
+    %span.work-obligations= obligations.work_obligations
+
+  %p
+    %span.label Domestic obligations
+    %span.domestic-obligations= obligations.domestic_obligations
+
+= link_to "Edit obligations", obligations_person_path(@person)

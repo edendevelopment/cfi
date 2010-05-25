@@ -1,0 +1,21 @@
+- person_form_for("obligations") do |form|
+  - form.fields_for :obligations do |fields|
+    %p.field
+      = fields.label :means_to_support_family
+      %br
+      = fields.text_area :means_to_support_family
+    
+    %p.field
+      = fields.label :support_required
+      %br
+      = fields.check_box :support_required
+    
+    %p.field
+      = fields.label :work_obligations
+      %br
+      = fields.text_area :work_obligations
+    
+    %p.field
+      = fields.label :domestic_obligations
+      %br
+      = fields.text_area :domestic_obligations

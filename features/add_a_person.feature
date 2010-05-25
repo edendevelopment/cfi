@@ -81,7 +81,25 @@ Feature: Manage a person
       | Past attendance     | Dropped out in 2007    |
       | Name of schools     | School1                |
       | School contact      | Mrs Jones 01234 456789 |
-    
+  
+  Scenario: Add obligations
+    Given a person called "Oum Bora"
+    When I go to the person page for "Oum Bora"
+    And I follow "Edit obligations"
+    And I fill in the following fields with
+      | Field                   | Type     | Value                         |
+      | Means to support family | Text     | Fishing                       |
+      | Support required        | Checkbox | True                          |
+      | Work obligations        | Text     | Fishing and rice picking      |
+      | Domestic obligations    | Text     | Looking after younger sibling |
+    And I press "Save"
+    Then I should be on the person page for "Oum Bora"
+    And I should see the person "Oum Bora" with
+      | Means to support family | Fishing                       |
+      | Support required        | Yes                           |
+      | Work obligations        | Fishing and rice picking      |
+      | Domestic obligations    | Looking after younger sibling |
+
   Scenario: Make person a student
     Given a person called "Oum Bora"
     When I go to the person page for "Oum Bora"

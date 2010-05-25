@@ -12,6 +12,12 @@ def fill_in_fields(table)
         fill_in label, :with => value
       when "Select"
         select value, :from => label
+      when "Checkbox"
+        if value == "True"
+          check label
+        else
+          uncheck label
+        end
       else
         raise "Invalid type: #{type}"
     end

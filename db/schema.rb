@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100525144938) do
+ActiveRecord::Schema.define(:version => 20100525184259) do
 
   create_table "addresses", :force => true do |t|
     t.integer "person_id"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20100525144938) do
   create_table "courses_students", :id => false, :force => true do |t|
     t.integer "course_id"
     t.integer "student_id"
+  end
+
+  create_table "obligations", :force => true do |t|
+    t.integer "person_id"
+    t.boolean "support_required",        :default => false
+    t.text    "means_to_support_family"
+    t.text    "work_obligations"
+    t.text    "domestic_obligations"
   end
 
   create_table "people", :force => true do |t|
