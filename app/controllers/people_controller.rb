@@ -11,5 +11,17 @@ class PeopleController < ApplicationController
     object.make_student!
     redirect_to person_path(object)
   end
+  
+  def basic_information
+    @person = object
+  end
+  
+  def address
+    @person = object
+  end
+  
+  def siblings
+    @person = object
+  end
 end
 

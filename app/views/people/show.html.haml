@@ -8,36 +8,45 @@
 #person
   - unless @person.image.nil?
     %p= image_tag @person.image.url('200x200')
+  %h2 Basic information
+  %p
+    %span.label DOB
+    %span.date-of-birth= @person.date_of_birth
+  
+  %p
+    %span.label Gender
+    %span.gender= @person.gender
 
-  %dl
-    %dt DOB
-    %dd.date-of-birth= @person.date_of_birth
-    
-    %dt House number
-    %dd.house-number= @person.house_number
-    
-    %dt Group number
-    %dd.group-number= @person.group_number
+  %p
+    %span.label Religion
+    %span.religion= @person.religion
+  
+  = link_to "Edit basic information", basic_information_person_path(@person)
+  
+  %h2 Address
+  %p  
+    %span.label House number
+    %span.house-number= @person.house_number
+  
+  %p
+    %span.label Group number
+    %span.group-number= @person.group_number
+  
+  %p
+    %span.label Village
+    %span.village= @person.village_name
+  
+  = link_to "Edit address", address_person_path(@person)
 
-    %dt Village
-    %dd.village= @person.village_name
-
-    %dt Gender
-    %dd.gender= @person.gender
-    
-    %dt Religion
-    %dd.religion= @person.religion
-
-  = link_to "View more photos", person_photos_path(@person)
-
+  %p= link_to "View more photos", person_photos_path(@person)
+  
+  %h2 Siblings
   - unless @person.siblings.blank?
     .siblings
-      %p Siblings
       %ul
         - @person.siblings.split("\n").each do |sibling|
           %li.sibling= sibling
-
-  %p= link_to 'Edit', edit_person_path(@person)
+  = link_to "Edit siblings", siblings_person_path(@person)
 
   #comments
     %h2 Comments

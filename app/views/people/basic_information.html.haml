@@ -1,0 +1,29 @@
+%h1 
+  Edit basic information for
+  = @person.name
+  
+- form_for @person, :html => { :multipart => true } do |form|
+  %p.field
+    = form.label :name
+    %br
+    = form.text_field :name
+
+  %p.field
+    = form.label :date_of_birth
+    %br
+    = form.text_field :date_of_birth
+
+  %p.field
+    %label
+      = form.radio_button :gender, 'Female'
+      Female
+    %label
+      = form.radio_button :gender, 'Male'
+      Male
+
+  %p.field
+    = form.label :religion
+    %br
+    = form.text_field :religion
+
+  = form.submit "Save"

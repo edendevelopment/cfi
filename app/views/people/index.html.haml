@@ -1,6 +1,8 @@
 %h1 People
-%p
-  %a{:href => new_person_path} add person
+
+- form_for Person.new do |f|
+  = f.text_field :name
+  = f.submit "Add person"
 
 %h2 List of people
 

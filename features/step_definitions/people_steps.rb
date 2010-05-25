@@ -2,6 +2,11 @@ Given /^a person called "([^\"]*)"$/ do |name|
   person = Factory.create :person, :name => name
 end
 
+When /^I add the person "([^\"]*)"$/ do |name|
+  fill_in "person_name", :with => name
+  click_button "Add person"
+end
+
 Then /^I add the following siblings$/ do |table|
   # table is a Cucumber::Ast::Table
   siblings = table.raw.flatten.join("\n")
