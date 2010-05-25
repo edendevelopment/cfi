@@ -1,14 +1,15 @@
 %h2 Address
-%p  
-  %span.label House number
-  %span.house-number= @person.house_number
+- if @person.address
+  %p  
+    %span.label House number
+    %span.house-number= @person.house_number
 
-%p
-  %span.label Group number
-  %span.group-number= @person.group_number
+  %p
+    %span.label Group number
+    %span.group-number= @person.group_number
 
-%p
-  %span.label Village
-  %span.village= @person.village_name
+  %p
+    %span.label Village
+    %span.village= @person.village_name
 
 = link_to "Edit address", address_person_path(@person)

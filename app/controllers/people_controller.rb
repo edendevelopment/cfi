@@ -18,6 +18,7 @@ class PeopleController < ApplicationController
   
   def address
     @person = object
+    @person.address ||= Address.new
   end
   
   def siblings

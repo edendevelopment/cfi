@@ -2,7 +2,7 @@ require 'factory_girl'
 
 Factory.define :person do |person|
   person.sequence(:name) {|n| "Person #{n}"}
-  person.association :village
+  person.association :address
 end
 
 Factory.define :student do |student|
@@ -21,4 +21,8 @@ end
 
 Factory.define :village do |village|
   village.sequence(:name) { |n| "Village #{n}" }
+end
+
+Factory.define :address do |address|
+  
 end

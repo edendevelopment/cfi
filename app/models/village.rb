@@ -4,5 +4,6 @@ class Village < ActiveRecord::Base
   
   default_scope :order => "name asc"
   
-  has_many :people
+  has_many :addresses
+  has_many :people, :through => :addresses
 end

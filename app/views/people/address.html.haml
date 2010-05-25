@@ -1,15 +1,16 @@
 - person_form_for("address") do |form|
-  %p.field
-    = form.label :house_number
-    %br
-    = form.text_field :house_number
+  - form.fields_for :address do |fields|
+    %p.field
+      = fields.label :house_number
+      %br
+      = fields.text_field :house_number
   
-  %p.field
-    = form.label :group_number
-    %br
-    = form.text_field :group_number
+    %p.field
+      = fields.label :group_number
+      %br
+      = fields.text_field :group_number
 
-  %p.field
-    = form.label :village_id
-    %br
-    = form.select :village_id, Village.all.map { |village| [village.name, village.id] }
+    %p.field
+      = fields.label :village_id
+      %br
+      = fields.select :village_id, Village.all.map { |village| [village.name, village.id] }

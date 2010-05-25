@@ -1,15 +1,19 @@
 class Person < ActiveRecord::Base
   acts_as_commentable
   has_many :photos
-  belongs_to :village
   has_one :student
-  has_one :public_education_info
   
+  has_one :address
+  accepts_nested_attributes_for :address
+  
+  has_one :public_education_info
   accepts_nested_attributes_for :public_education_info
-
+  
   image_accessor :image
 
   delegate :name, :to => :village, :prefix => true, :allow_nil => true
+  
+  delegate :house_number, :group_number, :village, :to => :address, :allow_nil => true
 
   def name_and_village
     "#{name} (Village: #{village_name})"

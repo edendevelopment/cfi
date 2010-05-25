@@ -44,5 +44,5 @@ When /^I update the person with the following details$/ do |table|
 end
 
 Given /^a person called "([^\"]*)" in (village "[^\"]*")$/ do |student_name, village|
-  person = Factory.create :person, :name => student_name, :village => village
+  person = Factory.create :person, :name => student_name, :address => Factory.build(:address, :village => village)
 end
