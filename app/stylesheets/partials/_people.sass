@@ -1,36 +1,82 @@
 .people-section
-  .student-status
-    margin-bottom: 5px
-
-  #person
-    p
-      +clearfix
+  &.show-page
+    #person
+      .box
+        padding: 10px
+        
+      .section
+        +clearfix
+        margin-bottom: 10px
       
-    .label
-      font-weight: bold
-      float: left
-      width: 150px
-
-    .siblings
-      margin-top: 10px
-      p
-        font-weight: bold
-
-      ul
-        list-style: disc
-
-  #comments
-    textarea
-      width: 500px
-      height: 150px
-    li
-      padding: 10px
-      &:nth-child(odd)
-        background-color: #e7cddc
-
-      .info
+      .top-section
+        border: 1px solid #ddd
+        
+      .photo-block
+        +column(6)
         font-size: 0.8em
+        
+        .photo
+          border: 1px solid #ddd
+      
+      .basic-information
+        +column(9)
+        .label
+          width: 100px
+      
+      .address
+        +column(9, true)
+        width: 340px
+      
+      .student-status
+        margin-bottom: 5px
+    
+      .siblings
+        +column(12, last)
+        
+        .box
+          border: 1px solid #ddd
+      
+        ul
+          list-style-type: none
+      
+      #comments
+        +column(12)
+        textarea
+          width: 100%
+          height: 150px
+          margin-bottom: 10px
+      
+        ul
+          margin-top: 10px
+          list-style-type: none
+          
+        li
+          padding: 10px
+          &:nth-child(odd)
+            background-color: #e7cddc
 
+          .info
+            font-size: 0.8em
+        
+        .box
+          border: 1px solid #ddd
+  
+      h1
+        color: black
+        
+      p
+        +clearfix
+    
+      .label
+        font-weight: bold
+        float: left
+        width: 150px
+
+      .siblings
+        p
+          font-weight: bold
+
+  
 ul.people
   li
     +clearfix
