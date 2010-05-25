@@ -1,6 +1,10 @@
 - person_form_for("public education info") do |form|
   - form.fields_for :public_education_info do |fields|
     %p.field
+      = fields.label :attending
+      %br
+      = fields.check_box :attending
+    %p.field
       = fields.label :grade
       %br
       = fields.text_field :grade

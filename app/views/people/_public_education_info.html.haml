@@ -2,6 +2,10 @@
 %h2 Public education info
 - unless education_info.nil?
   %p
+    %span.label Attending
+    %span.attending= education_info.attending? ? "Yes" : "No"
+
+  %p
     %span.label Grade
     %span.grade= education_info.grade
 

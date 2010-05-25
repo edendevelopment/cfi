@@ -70,9 +70,11 @@ Feature: Manage a person
       | Past attendance     | Text | Dropped out in 2007    |
       | Name of schools     | Text | School1                |
       | School contact      | Text | Mrs Jones 01234 456789 |
+    And I check "Attending"
     And I press "Save"
     Then I should be on the person page for "Oum Bora"
     And I should see the person "Oum Bora" with
+      | Attending           | Yes                    |
       | Grade               | 3                      |
       | Performance         | Doing quite well       |
       | Attendance patterns | Regular attendance     |
