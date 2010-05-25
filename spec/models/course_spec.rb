@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe Course do
+  describe "validations" do
+    it "requires a name" do
+      course = Course.new
+      course.valid?
+      course.errors.on(:name).should_not be_nil
+    end
+  end
+  
   describe "adding a student" do
     before(:each) do
       @course = Factory.create :course

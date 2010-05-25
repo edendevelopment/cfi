@@ -10,7 +10,7 @@ Factory.define :student do |student|
 end
 
 Factory.define :course do |course|
-
+  course.sequence(:name) {|n| "Course #{n}"}
 end
 
 Factory.define :user do |user|
