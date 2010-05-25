@@ -53,11 +53,7 @@
   #comments
     .box
       %h2 Comments
-
-      - form_tag add_comment_person_path(@person.id) do
-        = text_area_tag :comment
-        = submit_tag 'Add comment'
-
+      %p= link_to "Add a comment", "#add_comment"
       %ul
         - @person.recent_comments.each do |comment|
           %li
@@ -67,6 +63,9 @@
               = link_to comment.user.name
               = distance_of_time_in_words_to_now(comment.created_at)
               ago
+      - form_tag add_comment_person_path(@person.id), :id => "add_comment" do
+        = text_area_tag :comment
+        = submit_tag 'Add comment'
             
   .siblings
     .box
