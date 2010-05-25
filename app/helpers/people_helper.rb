@@ -4,6 +4,8 @@ module PeopleHelper
     form_for @person, :html => { :multipart => true } do |form|
       yield form
       concat form.submit("Save")
+      concat " or "
+      concat link_to("cancel", person_path(@person))
     end
   end
 end
