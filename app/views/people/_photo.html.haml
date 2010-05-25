@@ -1,0 +1,7 @@
+- if @person.image.nil?
+  = image_tag "missing_account_icon.png", :alt => @person.name, :class => "photo"
+- else
+  = image_tag @person.image.url('200x200#'), :alt => @person.name, :class => "photo"
+
+%p= link_to "Change image", photo_person_path(@person)
+%p= link_to "View or add more photos", person_photos_path(@person)

@@ -2,76 +2,20 @@
   .section.top-section
     .photo-block
       .box
-        - if @person.image.nil?
-          = image_tag "missing_account_icon.png", :alt => @person.name, :class => "photo"
-        - else
-          = image_tag @person.image.url('200x200#'), :alt => @person.name, :class => "photo"
-  
-        %p= link_to "Change image", photo_person_path(@person)
-        %p= link_to "View or add more photos", person_photos_path(@person)
+        = render :partial => 'photo'
 
     .basic-information
       .box
-        %h1.name= @person.name
-        .student-status
-          - if @person.student
-            Student
-          - else
-            = button_to "Make #{@person.name} a student", make_student_person_path(@person)
-
-        %p
-          %span.label DOB
-          %span.date-of-birth= @person.date_of_birth
-  
-        %p
-          %span.label Gender
-          %span.gender= @person.gender
-
-        %p
-          %span.label Religion
-          %span.religion= @person.religion
-  
-        = link_to "Edit basic information", basic_information_person_path(@person)
+        = render :partial => 'basic_information'
   
     .address
       .box
-        %h2 Address
-        %p  
-          %span.label House number
-          %span.house-number= @person.house_number
-  
-        %p
-          %span.label Group number
-          %span.group-number= @person.group_number
-  
-        %p
-          %span.label Village
-          %span.village= @person.village_name
-  
-        = link_to "Edit address", address_person_path(@person)
+        = render :partial => 'address'
   
   #comments
     .box
-      %h2 Comments
-      %p= link_to "Add a comment", "#add_comment"
-      %ul
-        - @person.recent_comments.each do |comment|
-          %li
-            .comment_text= simple_format comment.comment
-            .info
-              by
-              = link_to comment.user.name
-              = distance_of_time_in_words_to_now(comment.created_at)
-              ago
-      - form_tag add_comment_person_path(@person.id), :id => "add_comment" do
-        = text_area_tag :comment
-        = submit_tag 'Add comment'
+      = render :partial => 'comments'
             
   .siblings
     .box
-      %h2 Siblings
-      - unless @person.siblings.blank?
-        %ul
-          - @person.siblings.split("\n").each do |sibling|
-            %li.sibling= sibling
-      = link_to "Edit siblings", siblings_person_path(@person)
+      = render :partial => 'siblings'

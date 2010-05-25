@@ -1,0 +1,20 @@
+%h1.name= @person.name
+.student-status
+  - if @person.student
+    Student
+  - else
+    = button_to "Make #{@person.name} a student", make_student_person_path(@person)
+
+%p
+  %span.label DOB
+  %span.date-of-birth= @person.date_of_birth
+
+%p
+  %span.label Gender
+  %span.gender= @person.gender
+
+%p
+  %span.label Religion
+  %span.religion= @person.religion
+
+= link_to "Edit basic information", basic_information_person_path(@person)
