@@ -12,7 +12,8 @@
     - else
       = image_tag @person.image.url('200x200#'), :alt => @person.name
   
-  = link_to "Change image", photo_person_path(@person)
+  %p= link_to "Change image", photo_person_path(@person)
+  %p= link_to "View or add more photos", person_photos_path(@person)
   
   %h2 Basic information
   %p
@@ -43,8 +44,6 @@
     %span.village= @person.village_name
   
   = link_to "Edit address", address_person_path(@person)
-
-  %p= link_to "View more photos", person_photos_path(@person)
   
   %h2 Siblings
   - unless @person.siblings.blank?
