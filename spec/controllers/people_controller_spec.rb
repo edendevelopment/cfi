@@ -1,6 +1,35 @@
 require 'spec_helper'
 
 describe PeopleController do
+  before(:each) do
+    @person = mock_model(Person)
+    Person.stub_find!(@person)
+  end
+
+  describe "creating new person" do
+    before(:each) do
+      log_in
+      Person.stub!(:new).and_return(@person)
+      @person.stub!(:save).and_return(false)
+    end
+    
+    def do_request
+      post :create, :person => {}
+    end
+    
+    context "on failure" do
+      it "redirects to the people index page" do
+        do_request
+        response.should redirect_to(people_path)
+      end
+      
+      it "displays a flash error" do
+        do_request
+        flash[:error].should_not be_nil
+      end
+    end
+  end
+  
   describe "#add_comment" do
     before(:each) do
       log_in

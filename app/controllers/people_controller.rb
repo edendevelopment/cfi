@@ -1,5 +1,10 @@
 class PeopleController < ApplicationController
   resource_controller
+  
+  create.failure.wants.html do
+    redirect_to people_path
+    flash[:error] = "Couldn't add person"
+  end
 
   def add_comment
     person = Person.find(params[:id])

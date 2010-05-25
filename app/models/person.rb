@@ -14,6 +14,8 @@ class Person < ActiveRecord::Base
   delegate :name, :to => :village, :prefix => true, :allow_nil => true
   
   delegate :house_number, :group_number, :village, :to => :address, :allow_nil => true
+  
+  validates_presence_of :name
 
   def name_and_village
     "#{name} (Village: #{village_name})"
