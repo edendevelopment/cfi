@@ -57,7 +57,29 @@ Feature: Manage a person
     And I should see the following siblings
       | Oum Ary     |
       | Oum Phhoung |
-
+    
+  Scenario: Add public education info
+    Given a person called "Oum Bora"
+    When I go to the person page for "Oum Bora"
+    And I follow "Edit public education info"
+    And I fill in the following fields with
+      | Field               | Type | Value                  |
+      | Grade               | Text | 3                      |
+      | Performance         | Text | Doing quite well       |
+      | Attendance patterns | Text | Regular attendance     |
+      | Past attendance     | Text | Dropped out in 2007    |
+      | Name of schools     | Text | School1                |
+      | School contact      | Text | Mrs Jones 01234 456789 |
+    And I press "Save"
+    Then I should be on the person page for "Oum Bora"
+    And I should see the person "Oum Bora" with
+      | Grade               | 3                      |
+      | Performance         | Doing quite well       |
+      | Attendance patterns | Regular attendance     |
+      | Past attendance     | Dropped out in 2007    |
+      | Name of schools     | School1                |
+      | School contact      | Mrs Jones 01234 456789 |
+    
   Scenario: Make person a student
     Given a person called "Oum Bora"
     When I go to the person page for "Oum Bora"

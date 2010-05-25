@@ -12,10 +12,15 @@
       .box
         = render :partial => 'address'
   
-  #comments
-    .box
-      = render :partial => 'comments'
-            
-  .siblings
-    .box
-      = render :partial => 'siblings'
+  .section
+    .public-education-info
+      .box
+        = render :partial => 'public_education_info'
+    .siblings
+      .box
+        = render :partial => 'siblings'
+
+  .section
+    #comments
+      .box
+        = render :partial => 'comments'

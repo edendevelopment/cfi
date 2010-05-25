@@ -1,0 +1,37 @@
+%h1 
+  Edit public education information for
+  = @person.name
+  
+- form_for @person, :html => { :multipart => true } do |form|
+  - form.fields_for :public_education_info do |fields|
+    %p.field
+      = fields.label :grade
+      %br
+      = fields.text_field :grade
+    
+    %p.field
+      = fields.label :performance
+      %br
+      = fields.text_area :performance
+    
+    %p.field
+      = fields.label :attendance_patterns
+      %br
+      = fields.text_area :attendance_patterns
+    
+    %p.field
+      = fields.label :past_attendance
+      %br
+      = fields.text_area :past_attendance
+    
+    %p.field
+      = fields.label :name_of_schools
+      %br
+      = fields.text_area :name_of_schools
+    
+    %p.field
+      = fields.label :school_contact
+      %br
+      = fields.text_area :school_contact
+
+  = form.submit "Save"

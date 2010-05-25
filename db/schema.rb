@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100524215825) do
+ActiveRecord::Schema.define(:version => 20100525132107) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(:version => 20100524215825) do
     t.string   "image_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "public_education_infos", :force => true do |t|
+    t.integer "person_id"
+    t.boolean "attending",           :default => false
+    t.string  "grade",               :default => ""
+    t.text    "performance"
+    t.text    "attendance_patterns"
+    t.text    "past_attendance"
+    t.text    "name_of_schools"
+    t.text    "school_contact"
   end
 
   create_table "students", :force => true do |t|

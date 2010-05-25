@@ -1,3 +1,6 @@
+=box_border
+  border: 1px solid #ddd
+
 .people-section
   &.show-page
     #person
@@ -9,14 +12,14 @@
         margin-bottom: 10px
       
       .top-section
-        border: 1px solid #ddd
+        +box_border
         
       .photo-block
         +column(6)
         font-size: 0.8em
         
         .photo
-          border: 1px solid #ddd
+          +box_border
       
       .basic-information
         +column(9)
@@ -32,15 +35,20 @@
     
       .siblings
         +column(12, last)
-        
         .box
-          border: 1px solid #ddd
-      
+          +box_border
         ul
           list-style-type: none
+        
+      .public-education-info
+        +column(12)
+        .box
+          +box_border
+        .label
+          width: 165px
       
       #comments
-        +column(12)
+        +column(24)
         textarea
           width: 100%
           height: 150px
@@ -61,7 +69,7 @@
             font-size: 0.8em
         
         .box
-          border: 1px solid #ddd
+          +box_border
   
       h1
         color: black
@@ -98,3 +106,8 @@ ul.people
         line-height: 1em
         a
           color: #666
+
+.edit_person
+  textarea
+    width: 500px
+    height: 150px

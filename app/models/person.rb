@@ -3,6 +3,9 @@ class Person < ActiveRecord::Base
   has_many :photos
   belongs_to :village
   has_one :student
+  has_one :public_education_info
+  
+  accepts_nested_attributes_for :public_education_info
 
   image_accessor :image
 

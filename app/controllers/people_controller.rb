@@ -27,5 +27,10 @@ class PeopleController < ApplicationController
   def photo
     @person = object
   end
+  
+  def public_education_info
+    @person = object
+    @person.public_education_info ||= PublicEducationInfo.new
+  end
 end
 
