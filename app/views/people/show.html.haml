@@ -6,8 +6,14 @@
     = button_to "Make #{@person.name} a student", make_student_person_path(@person)
 
 #person
-  - unless @person.image.nil?
-    %p= image_tag @person.image.url('200x200')
+  %p
+    - if @person.image.nil?
+      = image_tag "missing_account_icon.png", :alt => @person.name
+    - else
+      = image_tag @person.image.url('200x200#'), :alt => @person.name
+  
+  = link_to "Change image", photo_person_path(@person)
+  
   %h2 Basic information
   %p
     %span.label DOB

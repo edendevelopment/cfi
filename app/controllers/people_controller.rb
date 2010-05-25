@@ -23,5 +23,9 @@ class PeopleController < ApplicationController
   def siblings
     @person = object
   end
+  
+  def photo
+    @person = object
+  end
 end
 
