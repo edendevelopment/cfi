@@ -37,4 +37,55 @@ describe Relationship do
       end
     end
   end
+  
+  describe "validating a relationship between person1 and person2" do
+    before(:each) do
+      @person1 = Factory.create :person
+      @person2 = Factory.create :person
+    end
+    
+    it "requires a 'from' person" do
+      relationship = Relationship.new
+      relationship.should_not be_valid
+      relationship.errors.on(:from).should_not be_nil
+    end
+    
+    it "requires a 'to' person" do
+      relationship = Relationship.new
+      relationship.should_not be_valid
+      relationship.errors.on(:to).should_not be_nil
+    end
+    
+    it "requires a relationship_type" do
+      relationship = Relationship.new
+      relationship.should_not be_valid
+      relationship.errors.on(:relationship_type).should_not be_nil
+    end
+    
+    it "doesn't allow adding a relationship from person 1 to person1" do
+      relationship = Relationship.new(:from => @person1, :to => @person1, :relationship_type => "sibling")
+      relationship.should_not be_valid
+      relationship.errors.full_messages.join("\n").should include("You can't join a person to themselves")
+    end
+    
+    it "doesn't allow a user to be related to the same user twice with the same type" do
+      Relationship.create!(:from => @person1, :to => @person2, :relationship_type => "parent")
+      
+      relationship = Relationship.new(:from => @person1, :to => @person2, :relationship_type => "parent")
+      relationship.should_not be_valid
+      relationship.errors.full_messages.join("\n").should include("These two people already have that relationship")
+      
+      
+      relationship = Relationship.new(:from => @person2, :to => @person1, :relationship_type => "parent")
+      relationship.should_not be_valid
+      relationship.errors.full_messages.join("\n").should include("These two people already have that relationship")
+    end
+    
+    it "allows a user to be related to the same user with different relationship_types" do
+      Relationship.create!(:from => @person1, :to => @person2, :relationship_type => "parent")
+      
+      relationship = Relationship.new(:from => @person1, :to => @person2, :relationship_type => "caretaker")
+      relationship.should be_valid
+    end
+  end
 end

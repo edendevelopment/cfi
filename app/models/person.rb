@@ -40,7 +40,7 @@ class Person < ActiveRecord::Base
   end
   
   def add_sibling(sibling)
-    Relationship.create! :from => self, :to => sibling, :relationship_type => "sibling"
+    Relationship.create :from => self, :to => sibling, :relationship_type => "sibling"
   end
   
   def siblings
