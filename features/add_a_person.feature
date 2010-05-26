@@ -43,7 +43,7 @@ Feature: Manage a person
     And I should see the person "Oum Bora" with
       | House number  | 15          |
       | Group number  | 8           |
-      | Village       | Ta Mau Leu  |
+      | Village name  | Ta Mau Leu  |
     
   Scenario: Add siblings
     Given a person called "Oum Bora"

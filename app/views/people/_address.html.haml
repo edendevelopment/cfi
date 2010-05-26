@@ -1,15 +1,8 @@
 %h2 Address
-- if @person.address
-  %p  
-    %span.label House number
-    %span.house-number= @person.house_number
 
-  %p
-    %span.label Group number
-    %span.group-number= @person.group_number
-
-  %p
-    %span.label Village
-    %span.village= @person.village_name
+- output_fields_for(@person) do |output|
+  = output.text "house_number"
+  = output.text 'group_number'
+  = output.text "village_name", :label => "Village"
 
 = link_to "Edit address", address_person_path(@person)

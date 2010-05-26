@@ -1,32 +1,12 @@
-- education_info = @person.public_education_info
 %h2 Public education info
-- unless education_info.nil?
-  %p
-    %span.label Attending
-    %span.attending= education_info.attending? ? "Yes" : "No"
 
-  %p
-    %span.label Grade
-    %span.grade= education_info.grade
-
-  %p
-    %span.label Performance
-    %span.performance= education_info.performance
-
-  %p
-    %span.label Attendance patterns
-    %span.attendance-patterns= education_info.attendance_patterns
-
-  %p
-    %span.label Past attendance
-    %span.past-attendance= education_info.past_attendance
-
-  %p
-    %span.label Name of schools
-    %span.name-of-schools= education_info.name_of_schools
-
-  %p
-    %span.label School contact
-    %span.school-contact= education_info.school_contact
+- output_fields_for(@person.public_education_info) do |output|
+  = output.boolean "attending"
+  = output.text 'grade'
+  = output.text "performance"
+  = output.text "attendance_patterns"
+  = output.text "past_attendance"
+  = output.text "name_of_schools"
+  = output.text "school_contact"
 
 = link_to "Edit public education info", public_education_info_person_path(@person)
