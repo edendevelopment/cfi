@@ -44,20 +44,7 @@ Feature: Manage a person
       | House number  | 15          |
       | Group number  | 8           |
       | Village name  | Ta Mau Leu  |
-    
-  Scenario: Add siblings
-    Given a person called "Oum Bora"
-    When I go to the person page for "Oum Bora"
-    And I follow "Edit siblings"
-    And I add the following siblings
-      | Oum Ary     |
-      | Oum Phhoung |
-    And I press "Save"
-    Then I should be on the person page for "Oum Bora"
-    And I should see the following siblings
-      | Oum Ary     |
-      | Oum Phhoung |
-    
+  
   Scenario: Add public education info
     Given a person called "Oum Bora"
     When I go to the person page for "Oum Bora"

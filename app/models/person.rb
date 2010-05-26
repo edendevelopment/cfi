@@ -38,4 +38,14 @@ class Person < ActiveRecord::Base
   def make_student!
     Student.create!(:person_id => self.id) unless student
   end
+  
+  def add_sibling(sibling)
+    Relationship.create! :from => self, :to => sibling, :type => "sibling"
+  end
+  
+  def siblings
+    Relationship.find(:all, ["(from_id = :id OR to_id = :id) AND type = 'sibling'", {:id => self.id}]).map do |relationship|
+      relationship.from == self ? relationship.to : relationship.from
+    end
+  end
 end

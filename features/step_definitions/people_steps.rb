@@ -7,10 +7,9 @@ When /^I add the person "([^\"]*)"$/ do |name|
   click_button "Add person"
 end
 
-Then /^I add the following siblings$/ do |table|
-  # table is a Cucumber::Ast::Table
-  siblings = table.raw.flatten.join("\n")
-  And %Q{I fill in "Siblings" with "#{siblings}"}
+When /^I add the siblings "([^\"]*)"$/ do |name|
+  select name, :from => "person_id"
+  click_button "Add sibling"
 end
 
 Then /^I should see the person "([^\"]*)" with$/ do |name, table|

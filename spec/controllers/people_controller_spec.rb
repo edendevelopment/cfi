@@ -92,4 +92,29 @@ describe PeopleController do
       response.should redirect_to(person_path(@person))
     end
   end
+  
+  describe "adding a sibling" do
+    before(:each) do
+      log_in
+      @person = mock_model(Person)
+      @person.stub!(:add_sibling)
+      @sibling = mock_model(Person)
+      Person.stub_find!(@person)
+      Person.stub_find!(@sibling)
+    end
+    
+    def do_post
+      post :add_sibling, :id => @person.id,  :person_id => @sibling.id
+    end
+    
+    it "adds the sibling" do
+      @person.should_receive(:add_sibling).with(@sibling)
+      do_post
+    end
+    
+    it "redirects to the person page" do
+      do_post
+      response.should redirect_to(person_path(@person))
+    end
+  end
 end

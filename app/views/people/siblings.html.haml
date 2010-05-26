@@ -1,5 +1,3 @@
-- person_form_for("siblings") do |form|
-  %p.field
-    = form.label :siblings
-    %br
-    = form.text_area :siblings
+- form_tag add_sibling_person_path(@person), :method => :post do
+  = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
+  = submit_tag "Add sibling"

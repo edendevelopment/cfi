@@ -1,6 +1,6 @@
 %h2 Siblings
 - unless @person.siblings.blank?
   %ul
-    - @person.siblings.split("\n").each do |sibling|
-      %li.sibling= sibling
+    - @person.siblings.each do |sibling|
+      %li.sibling= sibling.name
 = link_to "Edit siblings", siblings_person_path(@person)

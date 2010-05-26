@@ -48,5 +48,11 @@ class PeopleController < ApplicationController
     @person = object
     @person.social_development_info ||= SocialDevelopmentInfo.new
   end
+  
+  def add_sibling
+    @person = object
+    @person.add_sibling(Person.find(params[:person_id]))
+    redirect_to person_path(object)
+  end
 end
 
