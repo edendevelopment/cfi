@@ -6,6 +6,7 @@
       = image_tag "default-person-40.png"
   .name
     = link_to person.name, person
-  .village
-    Village: 
-    = link_to person.village_name, person.village
+  - if person.village
+    .village
+      Village: 
+      = link_to person.village_name, person.village
