@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100525184259) do
+ActiveRecord::Schema.define(:version => 20100526104357) do
 
   create_table "addresses", :force => true do |t|
     t.integer "person_id"
@@ -82,6 +82,20 @@ ActiveRecord::Schema.define(:version => 20100525184259) do
     t.text    "past_attendance"
     t.text    "name_of_schools"
     t.text    "school_contact"
+  end
+
+  create_table "social_development_infos", :force => true do |t|
+    t.integer "person_id"
+    t.text    "type_of_housing"
+    t.text    "permanence_of_housing"
+    t.text    "access_to_cfi_school"
+    t.text    "seasonal_factors"
+    t.text    "support_from_other_organisations"
+    t.text    "barriers_to_attending_public_school"
+    t.text    "ideas_of_carers_about_education"
+    t.text    "other_social_issues_or_dangers"
+    t.text    "history_of_abuse"
+    t.text    "observations_from_visits"
   end
 
   create_table "students", :force => true do |t|

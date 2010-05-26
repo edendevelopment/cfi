@@ -1,0 +1,16 @@
+%h2 Social Development Info
+
+- output_fields_for(@person.social_development_info) do |output|
+  = output.text "type_of_housing"
+  = output.text "permanence_of_housing"
+  = output.text "access_to_cfi_school"
+  = output.text "seasonal_factors"
+  = output.text "support_from_other_organisations"
+  = output.text "barriers_to_attending_public_school"
+  = output.text "ideas_of_carers_about_education"
+  = output.text "other_social_issues_or_dangers"
+  = output.text "history_of_abuse"
+  = output.text "observations_from_visits"
+
+
+= link_to "Edit social development info", social_development_info_person_path(@person)

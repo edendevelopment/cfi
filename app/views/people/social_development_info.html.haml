@@ -1,0 +1,51 @@
+- person_form_for("social development inf") do |form|
+  - form.fields_for :social_development_info do |fields|
+    %p.field
+      = fields.label :type_of_housing
+      %br
+      = fields.text_field :type_of_housing
+    
+    %p.field
+      = fields.label :permanence_of_housing
+      %br
+      = fields.text_area :permanence_of_housing
+    
+    %p.field
+      = fields.label :access_to_cfi_school, "Access to CFI school"
+      %br
+      = fields.text_area :access_to_cfi_school
+    
+    %p.field
+      = fields.label :seasonal_factors
+      %br
+      = fields.text_area :seasonal_factors
+    
+    %p.field
+      = fields.label :support_from_other_organisations
+      %br
+      = fields.text_area :support_from_other_organisations
+    
+    %p.field
+      = fields.label :barriers_to_attending_public_school
+      %br
+      = fields.text_area :barriers_to_attending_public_school
+    
+    %p.field
+      = fields.label :ideas_of_carers_about_education
+      %br
+      = fields.text_area :ideas_of_carers_about_education
+    
+    %p.field
+      = fields.label :other_social_issues_or_dangers
+      %br
+      = fields.text_area :other_social_issues_or_dangers
+
+    %p.field
+      = fields.label :history_of_abuse
+      %br
+      = fields.text_area :history_of_abuse
+
+    %p.field
+      = fields.label :observations_from_visits
+      %br
+      = fields.text_area :observations_from_visits

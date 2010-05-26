@@ -99,6 +99,36 @@ Feature: Manage a person
       | Support required        | Yes                           |
       | Work obligations        | Fishing and rice picking      |
       | Domestic obligations    | Looking after younger sibling |
+  
+  Scenario: Add social development info
+    Given a person called "Oum Bora"
+    When I go to the person page for "Oum Bora"
+    And I follow "Edit social development info"
+    And I fill in the following fields with
+      | Field                               | Type | Value                           |
+      | Type of housing                     | Text | Small, old                      |
+      | Permanence of housing               | Text | Not known                       |
+      | Access to CFI school                | Text | 30 mins by bicycle              |
+      | Seasonal factors                    | Text | No extra difficulty             |
+      | Support from other organisations    | Text | House built by ACME Corp        |
+      | Barriers to attending public school | Text | No motivation                   |
+      | Ideas of carers about education     | Text | Wants education                 |
+      | Other social issues or dangers      | Text | Danger of been sent to Thailand |
+      | History of abuse                    | Text | None                            |
+      | Observations from visits            | Text | Poverty                         |
+    And I press "Save"
+    Then I should be on the person page for "Oum Bora"
+    And I should see the person "Oum Bora" with
+      | Type of housing                     | Small, old                      |
+      | Permanence of housing               | Not known                       |
+      | Access to CFI school                | 30 mins by bicycle              |
+      | Seasonal factors                    | No extra difficulty             |
+      | Support from other organisations    | House built by ACME Corp        |
+      | Barriers to attending public school | No motivation                   |
+      | Ideas of carers about education     | Wants education                 |
+      | Other social issues or dangers      | Danger of been sent to Thailand |
+      | History of abuse                    | None                            |
+      | Observations from visits            | Poverty                         |
 
   Scenario: Make person a student
     Given a person called "Oum Bora"

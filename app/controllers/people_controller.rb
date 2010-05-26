@@ -43,5 +43,10 @@ class PeopleController < ApplicationController
     @person = object
     @person.obligations ||= Obligations.new
   end
+  
+  def social_development_info
+    @person = object
+    @person.social_development_info ||= SocialDevelopmentInfo.new
+  end
 end
 

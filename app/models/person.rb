@@ -12,6 +12,9 @@ class Person < ActiveRecord::Base
   has_one :obligations
   accepts_nested_attributes_for :obligations
   
+  has_one :social_development_info
+  accepts_nested_attributes_for :social_development_info
+
   image_accessor :image
 
   delegate :name, :to => :village, :prefix => true, :allow_nil => true
