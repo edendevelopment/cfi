@@ -114,7 +114,31 @@ describe PeopleController do
     
     it "redirects to the person page" do
       do_post
-      response.should redirect_to(person_path(@person))
+      response.should redirect_to(siblings_person_path(@person))
+    end
+  end
+  
+  describe "adding a sibling" do
+    before(:each) do
+      log_in
+      @person = mock_model(Person, :remove_sibling => true)
+      @sibling = mock_model(Person)
+      Person.stub_find!(@person)
+      Person.stub_find!(@sibling)
+    end
+    
+    def do_delete
+      delete :remove_sibling, :id => @person.id,  :sibling_id => @sibling.id
+    end
+    
+    it "adds the sibling" do
+      @person.should_receive(:remove_sibling).with(@sibling)
+      do_delete
+    end
+    
+    it "redirects to the person page" do
+      do_delete
+      response.should redirect_to(siblings_person_path(@person))
     end
   end
 end

@@ -3,7 +3,7 @@ class CreateRelationships < ActiveRecord::Migration
     create_table :relationships do |t|
       t.integer :from_id
       t.integer :to_id
-      t.string :type
+      t.string :relationship_type
       t.timestamps
     end
   end

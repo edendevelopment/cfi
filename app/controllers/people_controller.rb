@@ -52,7 +52,13 @@ class PeopleController < ApplicationController
   def add_sibling
     @person = object
     @person.add_sibling(Person.find(params[:person_id]))
-    redirect_to person_path(object)
+    redirect_to siblings_person_path(object)
+  end
+  
+  def remove_sibling
+    @person = object
+    @person.remove_sibling(Person.find(params[:sibling_id]))
+    redirect_to siblings_person_path(@person)
   end
 end
 

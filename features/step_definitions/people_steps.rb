@@ -7,7 +7,7 @@ When /^I add the person "([^\"]*)"$/ do |name|
   click_button "Add person"
 end
 
-When /^I add the siblings "([^\"]*)"$/ do |name|
+When /^I add the sibling "([^\"]*)"$/ do |name|
   select name, :from => "person_id"
   click_button "Add sibling"
 end
@@ -21,12 +21,14 @@ Then /^I should see the person "([^\"]*)" with$/ do |name, table|
   table.diff!(output)
 end
 
-Then /^I should see the following siblings$/ do |table|
-  # table is a Cucumber::Ast::Table
-  page.has_css?('#person .siblings').should == true
-  within('#person .siblings .sibling') do
-    table.raw.each { |row| page.should have_content(row[0]) }
-  end
+Then /^I should see the sibling "([^\"]*)"$/ do |name|
+  person = Person.find_by_name(name)
+  page.should have_css("#person_#{person.id}")
+end
+
+Then /^I should not see the sibling "([^\"]*)"$/ do |name|
+  person = Person.find_by_name(name)
+  page.should have_no_css("#person_#{person.id}")
 end
 
 Then /^I should see the person "([^\"]*)"$/ do |name|
@@ -45,3 +47,15 @@ end
 Given /^a person called "([^\"]*)" in (village "[^\"]*")$/ do |student_name, village|
   person = Factory.create :person, :name => student_name, :address => Factory.build(:address, :village => village)
 end
+
+Given /^"([^\"]*)" is a sibling of "([^\"]*)"$/ do |p1, p2|
+  Person.find_by_name(p1).add_sibling(Person.find_by_name(p2))
+end
+
+When /^I remove the sibling "([^\"]*)"$/ do |name|
+  person = Person.find_by_name(name)
+  within("#person_#{person.id}") do
+    click_button "Remove"
+  end
+end
+

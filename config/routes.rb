@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :courses do |course|
     course.resources :students, :controller => 'courses/students'
   end
-  map.resources :people, :member => {:add_comment => :post, :make_student => :post, :basic_information => :get, :address => :get, :siblings => :get, :photo => :get, :public_education_info => :get, :obligations => :get, :social_development_info => :get, :add_sibling => :post} do |person|
+  map.resources :people, :member => {:add_comment => :post, :make_student => :post, :basic_information => :get, :address => :get, :siblings => :get, :photo => :get, :public_education_info => :get, :obligations => :get, :social_development_info => :get, :add_sibling => :post, :remove_sibling => :delete} do |person|
     person.resources :photos
   end
   map.resources :villages

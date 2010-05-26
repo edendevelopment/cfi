@@ -40,12 +40,16 @@ class Person < ActiveRecord::Base
   end
   
   def add_sibling(sibling)
-    Relationship.create! :from => self, :to => sibling, :type => "sibling"
+    Relationship.create! :from => self, :to => sibling, :relationship_type => "sibling"
   end
   
   def siblings
-    Relationship.find(:all, ["(from_id = :id OR to_id = :id) AND type = 'sibling'", {:id => self.id}]).map do |relationship|
-      relationship.from == self ? relationship.to : relationship.from
+    Relationship.find(:all, :conditions => ["(from_id = :id OR to_id = :id) AND relationship_type = 'sibling'", {:id => self.id}]).map do |relationship|
+      relationship.other_half(self)
     end
+  end
+  
+  def remove_sibling(sibling)
+    Relationship.including_people(self, sibling, 'sibling').destroy
   end
 end

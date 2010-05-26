@@ -20,6 +20,8 @@ module NavigationHelpers
       new_person_path
     when /the person page for "([^\"]+)"/
       person_path(Person.find_by_name($1))
+    when /the sibling page for "([^\"]+)"/
+      siblings_person_path(Person.find_by_name($1))
     when /the photos page for "([^\"]+)"/
       person_photos_path(Person.find_by_name($1))
     when /the page for course "([^\"]+)"/

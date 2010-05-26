@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(:version => 20100526135538) do
   create_table "relationships", :force => true do |t|
     t.integer  "from_id"
     t.integer  "to_id"
-    t.string   "type"
+    t.string   "relationship_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
