@@ -1,6 +1,10 @@
 module PeopleHelper
+  def person_section_header(type_name)
+    content_tag(:h1, "Edit #{type_name} for #{@person.name}")
+  end
+  
   def person_form_for(type_name)
-    concat content_tag(:h1, "Edit #{type_name} for #{@person.name}")
+    concat person_section_header(type_name)
     form_for @person, :html => { :multipart => true } do |form|
       yield form
       concat form.submit("Save")
