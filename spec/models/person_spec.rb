@@ -1,14 +1,29 @@
 require 'spec_helper'
 
 describe Person do
-  describe "adding a comment" do
-    it "adds the comment by the user" do
-      person = Factory.create :person
-      user = Factory.create :user
-      person.add_comment("Foo", user)
-      comment = person.reload.comments.first
-      comment.comment.should == "Foo"
-      comment.user.should == user
+  
+  describe "comments" do
+    before do
+      @person = Factory.create :person
+      @user = Factory.create :user
+    end
+    
+    context "adding a comment" do
+      it "adds the comment by the user" do
+        @person.add_comment("Foo", @user)
+        comment = @person.reload.comments.first
+        comment.comment.should == "Foo"
+        comment.user.should == @user
+      end
+    end
+    
+    context "modifying a comment" do
+      it "updates the comment" do
+        @person.add_comment("Foo Bar", @user)
+        comment = @person.reload.comments.first
+        @person.update_comment(comment, "raB ooF", @user)
+        @person.reload.comments.first.comment.should == "raB ooF"
+      end
     end
   end
   

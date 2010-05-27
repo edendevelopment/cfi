@@ -35,6 +35,14 @@ class Person < ActiveRecord::Base
     comments.find(:all, :order => "created_at desc")
   end
   
+  def update_comment(comment, new_comment_text, user)
+    comment = comments.find(comment.id)
+    comment.comment = new_comment_text
+    comment.user_id = user.id
+    comment.updated_at = DateTime.now
+    comment.save
+  end
+  
   def make_student!
     Student.create!(:person_id => self.id) unless student
   end
