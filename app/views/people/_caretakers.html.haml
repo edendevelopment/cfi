@@ -1,2 +1,6 @@
 %h2 Caretakers
+.people
+  %ul
+    - @person.caretakers.each do |caretaker|
+      %li= render :partial => "people/person", :locals => {:person => caretaker, :caretaker => true}
 = link_to 'Edit caretakers', caretakers_person_path(@person)

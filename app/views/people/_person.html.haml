@@ -1,3 +1,6 @@
+- village ||= false
+- relationship ||= false
+
 .person
   .image
     - if person.image
@@ -6,7 +9,13 @@
       = image_tag "default-person-40.png"
   .name
     = link_to person.name, person
-  - if person.village
+  - if village == true && person.village
     .village
       Village: 
       = link_to person.village_name, person.village
+  - if relationship
+    .relationship-type
+      Relationship:
+      %span.relationship-type-name
+      = relationship
+      

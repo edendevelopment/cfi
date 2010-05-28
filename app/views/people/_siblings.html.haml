@@ -1,6 +1,7 @@
 %h2 Siblings
-%ul.people
-  - @person.siblings.each do |sibling|
-    %li= render :partial => "people/person", :locals => {:person => sibling}
+.people
+  %ul
+    - @person.siblings.each do |sibling|
+      %li= render :partial => "people/person", :locals => {:person => sibling, :village => true}
       
 = link_to "Edit siblings", siblings_person_path(@person)

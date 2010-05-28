@@ -3,7 +3,7 @@ Then /^"([^\"]*)" should have (\d+) caretakers$/ do |person_name, num_of_caretak
 end
 
 Then /^I should see caretaker "([^\"]*)"$/ do |caretaker_name|
-  within('ul.people') do
+  within('ul') do
     page.should have_css('li', caretaker_name)
   end
 end
@@ -22,7 +22,7 @@ When /^I remove the caretaker "([^\"]*)"$/ do |name|
 end
 
 Then /^I should not see caretaker "([^\"]*)"$/ do |caretaker_name|
-   within('ul.people') do
+   within('.people ul') do
     page.should_not have_css('li', caretaker_name)
   end
 end
