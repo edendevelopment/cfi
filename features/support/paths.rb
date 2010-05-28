@@ -32,6 +32,8 @@ module NavigationHelpers
       villages_path
     when /the page for village "([^\"]+)"/
       village_path(Village.find_by_name($1))
+    when /the caretaker page for "([^\"]+)"/
+      caretakers_person_path(Person.find_by_name($1))
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

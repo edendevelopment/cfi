@@ -71,4 +71,10 @@ class Person < ActiveRecord::Base
       relationship.to
     end
   end
+  
+  def caretaker_relationship(person)
+    relationship = Relationship.find(:first, :conditions => {:from_id => self.id, :to_id => person.id, :caretaker => true})
+    return '' if relationship.nil?
+    relationship.relationship_type
+  end
 end

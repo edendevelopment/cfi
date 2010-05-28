@@ -1,6 +1,13 @@
 =box_border
   border: 1px solid #ddd
 
+=listed-information
+  +column(12, last)
+  .box
+    +box_border
+  ul
+    list-style-type: none
+    
 .people-section
   &.show-page
     #person
@@ -34,12 +41,15 @@
         margin-bottom: 5px
     
       .siblings
-        +column(12, last)
+        +listed-information
+      
+      .caretakers
+        +listed-information
+      
+      .social-development-info
         .box
           +box_border
-        ul
-          list-style-type: none
-        
+          
       .public-education-info
         +column(12)
         .box
@@ -122,8 +132,15 @@ ul.people
         line-height: 1em
         a
           color: #666
-
+  .relationship_type
+    font-size: 0.9em
 .edit_person
   textarea
     width: 500px
     height: 150px
+
+#add_caretaker
+  label
+    display: inline-block
+    font-size: 1.0em
+    width: 100px

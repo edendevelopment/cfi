@@ -1,4 +1,12 @@
-- form_tag add_caretaker_person_path(@person), :method => :post, :id => "add-caretaker" do
+= person_section_header("caretakers")
+%ul.people
+  - @person.caretakers.each do |caretaker|
+    %li[caretaker]
+      = render :partial => "people/person", :locals => {:person => caretaker}
+      .relationship_type= @person.caretaker_relationship(caretaker)
+
+- form_tag add_caretaker_person_path(@person), :method => :post, :id => "add_caretaker" do
+  = label_tag 'Caretaker'
   = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
   %br
   = label_tag 'Relationship'

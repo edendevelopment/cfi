@@ -87,4 +87,22 @@ describe Person do
       end
     end
   end
+  
+  describe "#relationship" do
+    before(:each) do
+      @person = Factory.create :person
+      @caretaker = Factory.create :person
+    end
+    
+    it "returns the relationship" do
+      relationship = mock_model(Relationship, :from => @person, :to => @caretaker, :caretaker => true, :relationship_type => 'aunty')
+      Relationship.stub!(:find => relationship)
+      @person.caretaker_relationship(@caretaker).should == 'aunty'
+    end
+    
+    it "returns a blank string if no relationship type" do
+      Relationship.stub!(:find => nil)
+      @person.caretaker_relationship(@caretaker).should == ''
+    end
+  end
 end
