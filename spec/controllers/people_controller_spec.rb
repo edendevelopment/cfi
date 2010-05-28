@@ -134,5 +134,28 @@ describe PeopleController do
         response.should redirect_to(caretakers_person_path(@person))
       end
     end
+    
+    context "remove a caretaker" do
+      before(:each) do
+        log_in
+        @person.stub!(:remove_caretaker)
+        @caretaker = mock_model(Person)
+        Person.stub_find!(@caretaker)
+      end
+      
+      def do_delete
+        delete :remove_caretaker, :id => @person.id, :caretaker_id => @caretaker.id
+      end
+      
+      it 'removes the caretaker' do
+        @person.should_receive(:remove_caretaker).with(@caretaker)
+        do_delete
+      end
+      
+      it "redirects to the persons caretaker page" do
+        do_delete
+        response.should redirect_to(caretakers_person_path(@person))
+      end
+    end
   end
 end

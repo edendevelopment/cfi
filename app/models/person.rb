@@ -77,4 +77,10 @@ class Person < ActiveRecord::Base
     return '' if relationship.nil?
     relationship.relationship_type
   end
+  
+  def remove_caretaker(caretaker)
+    Relationship.find(:all, :conditions => {:from_id => self.id, :to_id => caretaker.id, :caretaker => true}).each do |person|
+      person.destroy
+    end
+  end
 end

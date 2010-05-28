@@ -105,4 +105,24 @@ describe Person do
       @person.caretaker_relationship(@caretaker).should == ''
     end
   end
+  
+  describe "#remove_caretaker" do
+    before(:each) do
+      @person = Factory.create :person
+      @caretaker = Factory.create :person
+    end
+    
+    it "removes the caretaker from the person" do
+      @person.add_caretaker(@caretaker, 'aunty')
+      @person.remove_caretaker(@caretaker)
+      @person.reload.caretakers.should == []
+    end
+    
+    it "removes all instance of the caretaker from the person" do
+      @person.add_caretaker(@caretaker, 'aunty')
+      @person.add_caretaker(@caretaker, 'sister')
+      @person.remove_caretaker(@caretaker)
+      @person.reload.caretakers.should == []
+    end
+  end
 end

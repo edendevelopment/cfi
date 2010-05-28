@@ -20,3 +20,15 @@ Feature: Add caretaker information for children
     And I press "Add caretaker"
     And I should see caretaker "Grandma Bora"
     Then "Oum Bora" should have 2 caretakers
+
+  Scenario: Remove a caretaker
+    Given I am a new, authenticated user
+    And a person called "Oum Bora"
+    And a person called "Aunty Bora"
+    And "Oum Bora" has the caretaker "Aunty Bora" with a relationship "aunty" 
+    When I go to the person page for "Oum Bora"
+    And follow "Edit caretakers"
+    And I remove the caretaker "Aunty Bora"
+    Then I should be on the caretaker page for "Oum Bora"
+    And I should not see caretaker "Aunty Bora"
+    
