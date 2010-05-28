@@ -9,7 +9,7 @@
         = link_to comment.user.name
         = distance_of_time_in_words_to_now(comment.updated_at)
         ago
-      = link_to 'Edit', edit_person_comment_path(@person.id, comment.id)
+      .edit-comment= link_to 'Edit', edit_person_comment_path(@person.id, comment.id)
 - form_tag person_comments_path(@person.id), :id => "add_comment" do
   = text_area_tag :comment
   = submit_tag 'Add comment'

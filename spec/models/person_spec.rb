@@ -67,4 +67,24 @@ describe Person do
       end
     end
   end
+  
+  describe "adding a caretaker" do
+    before(:each) do
+      @person = Factory.create :person
+      @caretaker = Factory.create :person
+    end
+    
+    it "adds the caretaker to the person" do
+      @person.add_caretaker(@caretaker, 'aunty')
+      @person.reload.caretakers.should == [@caretaker]
+    end
+    
+    context "caretakers" do
+      it "returning a list of the persons caretakers" do
+        relationship = mock_model(Relationship, :from_id => @person.id, :to => @caretaker, :relationship_type => 'aunty', :caretaker => true)
+        Relationship.should_receive(:find).with(:all, hash_including({:conditions => {:from_id => @person.id, :caretaker => true}})).and_return([relationship])
+        @person.caretakers.should == [@caretaker]
+      end
+    end
+  end
 end

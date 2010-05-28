@@ -100,4 +100,39 @@ describe PeopleController do
       response.should redirect_to(siblings_person_path(@person))
     end
   end
+  
+  describe "caretakers" do
+    before(:each) do
+      log_in
+      @person = mock_model(Person)
+      Person.stub_find!(@person)
+    end
+    
+    it "should find the person" do
+      get :caretakers, :id => @person.id
+      assigns[:person].should == @person
+    end
+    
+    context "adding a caretaker" do
+      before(:each) do
+        @person.stub!(:add_caretaker)
+        @caretaker = mock_model(Person)
+        Person.stub_find!(@caretaker)
+      end
+      
+      def do_request
+        post :add_caretaker, :id => @person.id, :person_id => @caretaker.id, :relationship_type => 'aunty'
+      end
+      
+      it "adds the caretaker to the person" do
+        @person.should_receive(:add_caretaker).with(@caretaker, 'aunty')
+        do_request
+      end
+      
+      it "redirects back to the person page" do
+        do_request
+        response.should redirect_to(caretakers_person_path(@person))
+      end
+    end
+  end
 end

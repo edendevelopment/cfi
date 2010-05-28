@@ -54,5 +54,17 @@ class PeopleController < ApplicationController
     @person.remove_sibling(Person.find(params[:sibling_id]))
     redirect_to siblings_person_path(@person)
   end
+  
+  def caretakers
+    @person = object
+  end
+  
+  def add_caretaker
+    @person = object
+    caretaker = Person.find(params[:person_id])
+    
+    @person.add_caretaker(caretaker, params[:relationship_type])
+    redirect_to(caretakers_person_path(@person))
+  end
 end
 
