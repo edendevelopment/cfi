@@ -26,6 +26,10 @@ class Person < ActiveRecord::Base
   def name_and_village
     "#{name} (Village: #{village_name})"
   end
+  
+  def date_of_birth_with_confirmation
+    "#{date_of_birth} (#{ date_of_birth_confirmed  ? 'Confirmed' : 'Unconfirmed' })"
+  end
 
   def add_comment(comment_text, user)
     comments.create!(:comment => comment_text, :user => user)

@@ -17,17 +17,18 @@ Feature: Manage a person
     When I go to the person page for "Oum Bora"
     And I follow "Edit basic information"
     And I fill in the following fields with
-      | Field         | Type   | Value       |
-      | Name          | Text   | Oum Bora 2  |
-      | Date of birth | Text   | 1998-11-13  |
-      | Religion      | Text   | Buddhist    |
+      | Field                   | Type     | Value      |
+      | Name                    | Text     | Oum Bora 2 |
+      | Date of birth           | Text     | 1998-11-13 |
+      | Date of birth confirmed | Checkbox | True       |
+      | Religion                | Text     | Buddhist   |
     And I choose "Male"
     And I press "Save"
     Then I should be on the person page for "Oum Bora 2"
     And I should see the person "Oum Bora 2" with
-      | Date of birth | 1998-11-13  |
-      | Gender        | Male        |
-      | Religion      | Buddhist    |
+      | Date of birth | 1998-11-13 (Confirmed) |
+      | Gender        | Male                   |
+      | Religion      | Buddhist               |
     
   Scenario: Add address
     Given a person called "Oum Bora"

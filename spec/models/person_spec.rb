@@ -125,4 +125,29 @@ describe Person do
       @person.reload.caretakers.should == []
     end
   end
+  
+  describe "date_of_birth_with_confirmation" do
+    before(:each) do
+      @person = Factory.build :person, :date_of_birth => Date.parse("1999-11-23")
+    end
+    
+    context "confirmed" do
+      before(:each) do
+        @person.date_of_birth_confirmed = true
+      end
+      it "returns the confirmed date of birth " do
+        @person.date_of_birth_with_confirmation.should == "1999-11-23 (Confirmed)"
+      end
+    end
+    
+    context "unconfirmed" do
+      before(:each) do
+        @person.date_of_birth_confirmed = false
+      end
+      it "returns the confirmed date of birth " do
+        @person.date_of_birth_with_confirmation.should == "1999-11-23 (Unconfirmed)"
+      end
+    end
+    
+  end
 end
