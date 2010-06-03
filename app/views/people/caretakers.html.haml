@@ -10,7 +10,4 @@
     = label_tag 'Caretaker'
     = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
     %br
-    = label_tag 'Relationship'
-    = text_field_tag :relationship_type
-    %br
     = submit_tag "Add caretaker"

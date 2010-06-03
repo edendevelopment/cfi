@@ -11,12 +11,10 @@ Feature: Add caretaker information for children
     When I go to the person page for "Oum Bora"
     And follow "Edit caretakers"
     And I select "Aunty Bora" from "person_id"
-    And I fill in "relationship_type" with "aunty"
     And I press "Add caretaker"
     Then I should be on the caretaker page for "Oum Bora"
     And I should see caretaker "Aunty Bora"
     And I select "Grandma Bora" from "person_id"
-    And I fill in "relationship_type" with "grandma"
     And I press "Add caretaker"
     And I should see caretaker "Grandma Bora"
     Then "Oum Bora" should have 2 caretakers
