@@ -52,7 +52,7 @@ class Person < ActiveRecord::Base
   end
   
   def add_sibling(sibling)
-    Relationship.create :from => self, :to => sibling, :relationship_type => Relationship::SIBLING
+    add_relationship(sibling, Relationship::SIBLING)
   end
   
   def siblings
@@ -66,18 +66,25 @@ class Person < ActiveRecord::Base
   end
   
   def add_caretaker(caretaker)
-    Relationship.create(:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER)
+    add_relationship(caretaker, Relationship::CARETAKER)
   end
   
   def caretakers
     Relationship.find(:all, :conditions => {:to_id => self.id, :relationship_type => Relationship::CARETAKER}).map(&:from)
   end
   
-  def relationship_with(person)
-    Relationship.find(:all, :conditions => {:from_id => self.id, :to_id => person.id}).map(&:relationship_type).join(", ")
-  end
-  
   def remove_caretaker(caretaker)
     Relationship.find(:all, :conditions => {:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER}).each(&:destroy)
+  end
+  
+  def relationship_with(person)
+    Relationship.find(:all, :conditions => ["(from_id = :id OR to_id = :id)", {:id => self.id}]).map do |relationship|
+      relationship.relationship_to(self)
+    end.join(", ")
+  end
+  
+  private
+  def add_relationship(person, relationship_type)
+    Relationship.create(:from_id => person.id, :to_id => self.id, :relationship_type => relationship_type)
   end
 end

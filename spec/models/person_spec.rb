@@ -96,8 +96,8 @@ describe Person do
     
     context "with more than one relationship" do
       it "returns a comma-separated list of relationships" do
-        relationship1 = mock_model(Relationship, :relationship_type => Relationship::CARETAKER)
-        relationship2 = mock_model(Relationship, :relationship_type => "aunt")
+        relationship1 = mock_model(Relationship, :relationship_to => Relationship::CARETAKER)
+        relationship2 = mock_model(Relationship, :relationship_to => "aunt")
         Relationship.stub!(:find => [relationship1, relationship2])
         @person.relationship_with(@caretaker).should == "#{Relationship::CARETAKER}, aunt"
       end
@@ -105,7 +105,7 @@ describe Person do
     
     context "with one relationship" do
       it "returns the relationship" do
-        relationship1 = mock_model(Relationship, :relationship_type => Relationship::CARETAKER)
+        relationship1 = mock_model(Relationship, :relationship_to => Relationship::CARETAKER)
         Relationship.stub!(:find => [relationship1])
         @person.relationship_with(@caretaker).should == "#{Relationship::CARETAKER}"
       end

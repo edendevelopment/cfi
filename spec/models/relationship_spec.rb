@@ -88,4 +88,54 @@ describe Relationship do
       relationship.should be_valid
     end
   end
+  
+  describe "relationship_with(person)" do
+    before(:each) do
+      @from = Person.new 
+      @to = Person.new 
+      @relationship = Relationship.new :from => @from, :to => @to
+    end
+    
+    context "for parent-child relationship" do
+      before(:each) do
+        @relationship.relationship_type = Relationship::PARENT
+      end
+      
+      it "returns child for the from person" do
+        @relationship.relationship_to(@from).should == Relationship::CHILD
+      end
+      
+      it "returns child for the to person" do
+        @relationship.relationship_to(@to).should == Relationship::PARENT
+      end
+    end
+    
+    context "for sibling relationship" do
+      before(:each) do
+        @relationship.relationship_type = Relationship::SIBLING
+      end
+      
+      it "returns child for the from person" do
+        @relationship.relationship_to(@from).should == Relationship::SIBLING
+      end
+      
+      it "returns child for the to person" do
+        @relationship.relationship_to(@to).should == Relationship::SIBLING
+      end
+    end
+    
+    context "for the caretaker-dependent relationship" do
+      before(:each) do
+        @relationship.relationship_type = Relationship::CARETAKER
+      end
+      
+      it "returns child for the from person" do
+        @relationship.relationship_to(@from).should == Relationship::DEPENDENT
+      end
+      
+      it "returns child for the to person" do
+        @relationship.relationship_to(@to).should == Relationship::CARETAKER
+      end
+    end
+  end
 end

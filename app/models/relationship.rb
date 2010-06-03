@@ -12,6 +12,14 @@ class Relationship < ActiveRecord::Base
   PARENT = 'parent'
   SIBLING = 'sibling'
   CARETAKER = 'caretaker'
+  DEPENDENT = 'dependent'
+  CHILD = 'child'
+  
+  RELATIONSHIP_LINKS = {
+    PARENT => CHILD,
+    SIBLING => SIBLING,
+    CARETAKER => DEPENDENT
+  }
   
   def other_half(person)
     from == person ? to : from
@@ -20,6 +28,14 @@ class Relationship < ActiveRecord::Base
   def self.including_people(person1, person2, type)
     return nil if person1.nil? || person2.nil?
     find(:first, :conditions => ["((from_id = :person1_id AND to_id = :person2_id) OR (from_id = :person2_id AND to_id = :person1_id)) AND relationship_type = :type", {:person1_id => person1.id, :person2_id => person2.id, :type => type}])
+  end
+  
+  def relationship_to(person)
+    if person == to
+      relationship_type
+    else
+      RELATIONSHIP_LINKS[relationship_type]
+    end
   end
   
   private
