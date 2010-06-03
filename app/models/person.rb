@@ -22,6 +22,7 @@ class Person < ActiveRecord::Base
   delegate :house_number, :group_number, :village, :to => :address, :allow_nil => true
   
   validates_presence_of :name
+  validates_presence_of :gender
 
   def name_and_village
     "#{name} (Village: #{village_name})"
@@ -56,13 +57,13 @@ class Person < ActiveRecord::Base
   end
   
   def siblings
-    Relationship.find(:all, :conditions => ["(from_id = :id OR to_id = :id) AND relationship_type = :type", {:id => self.id, :type => Relationship::SIBLING}]).map do |relationship|
+    Relationship.including_people([self], Relationship::SIBLING).map do |relationship|
       relationship.other_half(self)
     end
   end
   
   def remove_sibling(sibling)
-    Relationship.including_people(self, sibling, Relationship::SIBLING).destroy
+    Relationship.including_people([self, sibling], Relationship::SIBLING).map(&:destroy)
   end
   
   def add_caretaker(caretaker)
@@ -78,7 +79,7 @@ class Person < ActiveRecord::Base
   end
   
   def relationship_with(person)
-    Relationship.find(:all, :conditions => ["(from_id = :id OR to_id = :id)", {:id => self.id}]).map do |relationship|
+    Relationship.including_people([self]).map do |relationship|
       relationship.relationship_to(self)
     end.join(", ")
   end

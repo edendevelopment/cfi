@@ -1,6 +1,7 @@
 require 'factory_girl'
 
 Factory.define :person do |person|
+  person.gender "Male"
   person.sequence(:name) {|n| "Person #{n}"}
   person.association :address
 end

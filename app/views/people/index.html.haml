@@ -1,7 +1,19 @@
 %h1 People
 
+%h2 Add new person
 - form_for Person.new do |f|
-  = f.text_field :name
+  %p.field
+    = f.label :name
+    = f.text_field :name
+    
+  %p.field
+    %label
+      = f.radio_button :gender, 'Female', :checked => true
+      Female
+    %label
+      = f.radio_button :gender, 'Male'
+      Male
+
   = f.submit "Add person"
 
 %h2 List of people

@@ -20,20 +20,34 @@ describe Relationship do
     
     context "with the right people and type" do
       it "returns the relationship" do
-        Relationship.including_people(@from, @to, "sibling").should == @relationship
-        Relationship.including_people(@to, @from, "sibling").should == @relationship
+        Relationship.including_people([@from, @to], "sibling").should == [@relationship]
+        Relationship.including_people([@to, @from], "sibling").should == [@relationship]
+      end
+    end
+    
+    context "with one person" do
+      it "returns the relationship" do
+        Relationship.including_people([@from], "sibling").should == [@relationship]
+        Relationship.including_people([@to], "sibling").should == [@relationship]
+        Relationship.including_people([@from]).should == [@relationship]
+      end
+    end
+    
+    context "with no type" do
+      it "returns the relationship" do
+        Relationship.including_people([@from, @to]).should == [@relationship]
       end
     end
     
     context "with the wrong type" do
       it "returns nil" do
-        Relationship.including_people(@from, @to, "parent").should be_nil
+        Relationship.including_people([@from, @to], "parent").should == []
       end
     end
     
     context "with the wrong person" do
       it "returns nil" do
-        Relationship.including_people(@from, Factory.create(:person), "sibling").should be_nil
+        Relationship.including_people([@from, Factory.create(:person)], "sibling").should == []
       end
     end
   end
@@ -90,51 +104,52 @@ describe Relationship do
   end
   
   describe "relationship_with(person)" do
-    before(:each) do
-      @from = Person.new 
-      @to = Person.new 
-      @relationship = Relationship.new :from => @from, :to => @to
-    end
-    
     context "for parent-child relationship" do
       before(:each) do
+        @parent = Person.new 
+        @child = Person.new 
+        @relationship = Relationship.new :from => @parent, :to => @child
         @relationship.relationship_type = Relationship::PARENT
       end
       
-      it "returns child for the from person" do
-        @relationship.relationship_to(@from).should == Relationship::CHILD
+      context "for a male parent" do
+        before(:each) do
+          @parent.gender = "Male"
+        end
+        
+        it "returns father" do
+          @relationship.relationship_to(@child).should == "father"
+        end
       end
       
-      it "returns child for the to person" do
-        @relationship.relationship_to(@to).should == Relationship::PARENT
-      end
-    end
-    
-    context "for sibling relationship" do
-      before(:each) do
-        @relationship.relationship_type = Relationship::SIBLING
-      end
-      
-      it "returns child for the from person" do
-        @relationship.relationship_to(@from).should == Relationship::SIBLING
+      context "for a female parent" do
+        before(:each) do
+          @parent.gender = "Female"
+        end
+        
+        it "returns mother" do
+          @relationship.relationship_to(@child).should == "mother"
+        end
       end
       
-      it "returns child for the to person" do
-        @relationship.relationship_to(@to).should == Relationship::SIBLING
-      end
-    end
-    
-    context "for the caretaker-dependent relationship" do
-      before(:each) do
-        @relationship.relationship_type = Relationship::CARETAKER
-      end
-      
-      it "returns child for the from person" do
-        @relationship.relationship_to(@from).should == Relationship::DEPENDENT
+      context "for a male child" do
+        before(:each) do
+          @child.gender = "Male"
+        end
+        
+        it "returns son" do
+          @relationship.relationship_to(@parent).should == "son"
+        end
       end
       
-      it "returns child for the to person" do
-        @relationship.relationship_to(@to).should == Relationship::CARETAKER
+      context "for a female child" do
+        before(:each) do
+          @child.gender = "Female"
+        end
+        
+        it "returns daughter" do
+          @relationship.relationship_to(@parent).should == "daughter"
+        end
       end
     end
   end

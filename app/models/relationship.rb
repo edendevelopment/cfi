@@ -16,25 +16,44 @@ class Relationship < ActiveRecord::Base
   CHILD = 'child'
   
   RELATIONSHIP_LINKS = {
-    PARENT => CHILD,
-    SIBLING => SIBLING,
-    CARETAKER => DEPENDENT
+    PARENT => { :from => { :male => "father", :female => "mother" },
+                :to => { :male => "son", :female => "daughter" }
+              },
+    SIBLING => { :from => { :male => "brother", :female => "sister" },
+                 :to => { :male => "brother", :female => "sister" }
+               },
+    CARETAKER => { :from => { :male => "caretaker", :female => "caretaker" }, 
+                   :to => { :male => "dependent", :female => "dependent" }
+                 }
   }
   
   def other_half(person)
     from == person ? to : from
   end
   
-  def self.including_people(person1, person2, type)
-    return nil if person1.nil? || person2.nil?
-    find(:first, :conditions => ["((from_id = :person1_id AND to_id = :person2_id) OR (from_id = :person2_id AND to_id = :person1_id)) AND relationship_type = :type", {:person1_id => person1.id, :person2_id => person2.id, :type => type}])
+  def self.including_people(people, type = nil)
+    people = people.compact
+    return [] if people.empty?
+    conditions = []
+    substitions = []
+    people.each do |person|
+      conditions << "(from_id = ? OR to_id = ?)"
+      substitions += [person.id, person.id]
+    end
+    unless type.nil?
+      conditions << "relationship_type = ?"
+      substitions << type
+    end
+    
+    find(:all, :conditions => [conditions.join(" AND ")] + substitions)
   end
   
   def relationship_to(person)
+    gender = other_half(person).gender.downcase.to_sym
     if person == to
-      relationship_type
+      RELATIONSHIP_LINKS[relationship_type][:from][gender]
     else
-      RELATIONSHIP_LINKS[relationship_type]
+      RELATIONSHIP_LINKS[relationship_type][:to][gender]
     end
   end
   
@@ -44,6 +63,6 @@ class Relationship < ActiveRecord::Base
   end
   
   def ensure_unique_relationship
-    errors.add_to_base "These two people already have that relationship" if Relationship.including_people(from, to, relationship_type)
+    errors.add_to_base "These two people already have that relationship" unless Relationship.including_people([from, to], relationship_type).empty?
   end
 end
