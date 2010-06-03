@@ -65,26 +65,19 @@ class Person < ActiveRecord::Base
     Relationship.including_people(self, sibling, 'sibling').destroy
   end
   
-  
-  def add_caretaker(caretaker, relationship_type)
-    Relationship.create(:from_id => self.id, :to_id => caretaker.id, :caretaker => true, :relationship_type => relationship_type)
+  def add_caretaker(caretaker)
+    Relationship.create(:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER)
   end
   
   def caretakers
-    Relationship.find(:all, :conditions => {:from_id => self.id, :caretaker => true}).map do |relationship| 
-      relationship.to
-    end
+    Relationship.find(:all, :conditions => {:to_id => self.id, :relationship_type => Relationship::CARETAKER}).map(&:from)
   end
   
-  def caretaker_relationship(person)
-    relationship = Relationship.find(:first, :conditions => {:from_id => self.id, :to_id => person.id, :caretaker => true})
-    return '' if relationship.nil?
-    relationship.relationship_type
+  def relationship_with(person)
+    Relationship.find(:all, :conditions => {:from_id => self.id, :to_id => person.id}).map(&:relationship_type).join(", ")
   end
   
   def remove_caretaker(caretaker)
-    Relationship.find(:all, :conditions => {:from_id => self.id, :to_id => caretaker.id, :caretaker => true}).each do |person|
-      person.destroy
-    end
+    Relationship.find(:all, :conditions => {:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER}).each(&:destroy)
   end
 end

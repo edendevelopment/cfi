@@ -25,7 +25,7 @@ Feature: Add caretaker information for children
     Given I am a new, authenticated user
     And a person called "Oum Bora"
     And a person called "Aunty Bora"
-    And "Oum Bora" has the caretaker "Aunty Bora" with a relationship "aunty" 
+    And "Oum Bora" has the caretaker "Aunty Bora"
     When I go to the person page for "Oum Bora"
     And follow "Edit caretakers"
     And I remove the caretaker "Aunty Bora"

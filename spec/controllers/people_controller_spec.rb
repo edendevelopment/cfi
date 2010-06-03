@@ -121,11 +121,11 @@ describe PeopleController do
       end
       
       def do_request
-        post :add_caretaker, :id => @person.id, :person_id => @caretaker.id, :relationship_type => 'aunty'
+        post :add_caretaker, :id => @person.id, :person_id => @caretaker.id
       end
       
       it "adds the caretaker to the person" do
-        @person.should_receive(:add_caretaker).with(@caretaker, 'aunty')
+        @person.should_receive(:add_caretaker).with(@caretaker)
         do_request
       end
       

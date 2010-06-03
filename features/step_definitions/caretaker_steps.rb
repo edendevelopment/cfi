@@ -8,10 +8,8 @@ Then /^I should see caretaker "([^\"]*)"$/ do |caretaker_name|
   end
 end
 
-Given /^"([^\"]*)" has the caretaker "([^\"]*)" with a relationship "([^\"]*)"$/ do |person_name, caretaker_name, relationship_type|
-  person = Person.find_by_name(person_name)
-  caretaker = Person.find_by_name(caretaker_name)
-  Relationship.create(:from_id => person.id, :to_id => caretaker.id, :relationship_type => 'aunty', :caretaker => true)
+Given /^"([^\"]*)" has the caretaker "([^\"]*)"$/ do |person_name, caretaker_name|
+  Person.find_by_name(person_name).add_caretaker(Person.find_by_name(caretaker_name))
 end
 
 When /^I remove the caretaker "([^\"]*)"$/ do |name|

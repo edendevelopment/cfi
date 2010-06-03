@@ -75,34 +75,47 @@ describe Person do
     end
     
     it "adds the caretaker to the person" do
-      @person.add_caretaker(@caretaker, 'aunty')
+      @person.add_caretaker(@caretaker)
       @person.reload.caretakers.should == [@caretaker]
     end
     
     context "caretakers" do
       it "returning a list of the persons caretakers" do
-        relationship = mock_model(Relationship, :from_id => @person.id, :to => @caretaker, :relationship_type => 'aunty', :caretaker => true)
-        Relationship.should_receive(:find).with(:all, hash_including({:conditions => {:from_id => @person.id, :caretaker => true}})).and_return([relationship])
+        relationship = mock_model(Relationship, :from => @caretaker)
+        Relationship.should_receive(:find).with(:all, hash_including({:conditions => {:to_id => @person.id, :relationship_type => Relationship::CARETAKER }})).and_return([relationship])
         @person.caretakers.should == [@caretaker]
       end
     end
   end
   
-  describe "#relationship" do
+  describe "#relationship_with(person)" do
     before(:each) do
       @person = Factory.create :person
       @caretaker = Factory.create :person
     end
     
-    it "returns the relationship" do
-      relationship = mock_model(Relationship, :from => @person, :to => @caretaker, :caretaker => true, :relationship_type => 'aunty')
-      Relationship.stub!(:find => relationship)
-      @person.caretaker_relationship(@caretaker).should == 'aunty'
+    context "with more than one relationship" do
+      it "returns a comma-separated list of relationships" do
+        relationship1 = mock_model(Relationship, :relationship_type => Relationship::CARETAKER)
+        relationship2 = mock_model(Relationship, :relationship_type => "aunt")
+        Relationship.stub!(:find => [relationship1, relationship2])
+        @person.relationship_with(@caretaker).should == "#{Relationship::CARETAKER}, aunt"
+      end
     end
     
-    it "returns a blank string if no relationship type" do
-      Relationship.stub!(:find => nil)
-      @person.caretaker_relationship(@caretaker).should == ''
+    context "with one relationship" do
+      it "returns the relationship" do
+        relationship1 = mock_model(Relationship, :relationship_type => Relationship::CARETAKER)
+        Relationship.stub!(:find => [relationship1])
+        @person.relationship_with(@caretaker).should == "#{Relationship::CARETAKER}"
+      end
+    end
+    
+    context "with no relationships" do
+      it "returns a blank string" do
+        Relationship.stub!(:find => [])
+        @person.relationship_with(@caretaker).should == ''
+      end
     end
   end
   
@@ -113,14 +126,14 @@ describe Person do
     end
     
     it "removes the caretaker from the person" do
-      @person.add_caretaker(@caretaker, 'aunty')
+      @person.add_caretaker(@caretaker)
       @person.remove_caretaker(@caretaker)
       @person.reload.caretakers.should == []
     end
     
     it "removes all instance of the caretaker from the person" do
-      @person.add_caretaker(@caretaker, 'aunty')
-      @person.add_caretaker(@caretaker, 'sister')
+      @person.add_caretaker(@caretaker)
+      @person.add_caretaker(@caretaker)
       @person.remove_caretaker(@caretaker)
       @person.reload.caretakers.should == []
     end

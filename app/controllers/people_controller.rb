@@ -62,7 +62,7 @@ class PeopleController < ApplicationController
   def add_caretaker
     @person = object
     caretaker = Person.find(params[:person_id])
-    @person.add_caretaker(caretaker, params[:relationship_type])
+    @person.add_caretaker(caretaker)
     redirect_to(caretakers_person_path(@person))
   end
   

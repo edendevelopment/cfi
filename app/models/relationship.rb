@@ -9,6 +9,10 @@ class Relationship < ActiveRecord::Base
   validate :ensure_people_are_different
   validate :ensure_unique_relationship
   
+  PARENT = 'parent'
+  SIBLING = 'sibling'
+  CARETAKER = 'caretaker'
+  
   def other_half(person)
     from == person ? to : from
   end
