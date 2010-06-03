@@ -79,7 +79,7 @@ class Person < ActiveRecord::Base
   end
   
   def relationship_with(person)
-    Relationship.including_people([self]).map do |relationship|
+    Relationship.including_people([self, person]).map do |relationship|
       relationship.relationship_to(self)
     end.join(", ")
   end
