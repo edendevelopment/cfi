@@ -2,4 +2,4 @@
 %p
   %a{:href => new_course_path} add course
 %ul#courses
-  = render :partial => 'course', :collection => Course.all
+  = render :partial => 'course', :collection => Course.all(:include => :students)
