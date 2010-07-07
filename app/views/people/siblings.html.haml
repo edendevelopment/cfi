@@ -7,7 +7,8 @@
         = render :partial => "people/person", :locals => {:person => sibling, :village => true}
 
   - form_tag add_sibling_person_path(@person), :method => :post, :id => "add-sibling" do
-    = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
+    = text_field_tag(:person_search)
+    = text_field_tag(:person_id)
     = submit_tag "Add sibling"
 
   %p= link_to "Back", @person
