@@ -23,6 +23,7 @@ group :test do
   gem "rspec-rails"
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'culerity'
   gem 'cucumber-rails'
   gem 'metric_fu'
   gem 'reek'
