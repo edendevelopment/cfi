@@ -8,7 +8,9 @@ When /^I add the person "([^\"]*)"$/ do |name|
 end
 
 When /^I add the sibling "([^\"]*)"$/ do |name|
-  select name, :from => "person_id"
+  fill_in 'person_search', :with => name
+  page.should have_css('.ac_results:visible')
+  find(:css, ".ac_results ul li:contains('#{name}')").click
   click_button "Add sibling"
 end
 

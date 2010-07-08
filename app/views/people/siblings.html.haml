@@ -1,3 +1,6 @@
+:javascript
+  var data = #{Person.all.to_json(:only => [:id, :name])}
+
 = person_section_header("siblings")
 .people
   %ul
@@ -8,7 +11,7 @@
 
   - form_tag add_sibling_person_path(@person), :method => :post, :id => "add-sibling" do
     = text_field_tag(:person_search)
-    = text_field_tag(:person_id)
+    = hidden_field_tag(:person_id)
     = submit_tag "Add sibling"
 
   %p= link_to "Back", @person
