@@ -7,7 +7,19 @@ $().ready(function() {
 
 People = {
   autocomplete: function() {
-    $("#person_search").autocomplete(data, {
+    var search_field = $("<input />").attr('id', 'person_search').
+      attr('type', 'text').
+      attr('autocomplete', 'off').
+      attr('name', 'person_search');
+
+    var id_field = $('<input />').attr('id', 'person_id').
+      attr('type', 'hidden').
+      attr('name', 'person_id');
+
+    $('#person_id').replaceWith(id_field);
+    id_field.before(search_field);
+
+    $("#person_search").autocomplete(people_data, {
       width: 320,
       max: 4,
       highlight: false,

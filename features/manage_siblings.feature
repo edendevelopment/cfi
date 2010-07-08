@@ -3,7 +3,6 @@ Feature: Manage siblings
   As a user
   I want to be able to add and remove siblings from a person
   
-  @wip @javascript
   Scenario: Add siblings
     Given a person called "Oum Bora"
     And a person called "Person A"

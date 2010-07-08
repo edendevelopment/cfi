@@ -1,6 +1,3 @@
-:javascript
-  var data = #{Person.all.to_json(:only => [:id, :name])}
-
 = person_section_header("siblings")
 .people
   %ul
@@ -10,8 +7,8 @@
         = render :partial => "people/person", :locals => {:person => sibling, :village => true}
 
   - form_tag add_sibling_person_path(@person), :method => :post, :id => "add-sibling" do
-    = text_field_tag(:person_search)
-    = hidden_field_tag(:person_id)
+    = label_tag 'person_id', 'Sibling'
+    = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
     = submit_tag "Add sibling"
 
   %p= link_to "Back", @person

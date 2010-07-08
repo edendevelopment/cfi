@@ -7,7 +7,7 @@
         = render :partial => "people/person", :locals => {:person => caretaker, :relationship => @person.relationship_with(caretaker)}
 
   - form_tag add_caretaker_person_path(@person), :method => :post, :id => "add_caretaker" do
-    = label_tag 'Caretaker'
+    = label_tag 'person_id', 'Caretaker'
     = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
     %br
     = submit_tag "Add caretaker"

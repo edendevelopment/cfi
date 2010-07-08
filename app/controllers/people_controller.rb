@@ -1,5 +1,9 @@
 class PeopleController < ApplicationController
   resource_controller
+
+  index.wants.js do
+    render :template => 'people/index.erb.js'
+  end
   
   create.failure.wants.html do
     redirect_to people_path
