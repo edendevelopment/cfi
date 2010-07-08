@@ -14,6 +14,8 @@ People = {
       multiple: false,
       scroll: true,
       scrollHeight: 300,
+      matchContains: true,
+      mustMatch: true,
       formatItem: function(row) { return row['name']; }
     });
 
