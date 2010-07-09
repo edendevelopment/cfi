@@ -25,7 +25,11 @@ class Person < ActiveRecord::Base
   validates_presence_of :gender
 
   def name_and_village
-    "#{name} (Village: #{village_name})"
+    village = village_name
+    returning String.new do |str|
+      str << name
+      str << " (Village: #{village})" unless village.blank?
+    end
   end
   
   def date_of_birth_with_confirmation

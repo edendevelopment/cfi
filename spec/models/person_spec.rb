@@ -1,6 +1,22 @@
 require 'spec_helper'
 
 describe Person do
+
+  describe 'name and village' do
+    before do
+      @person = Person.new(:name => 'Bob')
+    end
+
+    it 'includes the village when there is one' do
+      @person.stub!(:village_name => 'a village')
+      @person.name_and_village.should == 'Bob (Village: a village)'
+    end
+
+    it "doesn't show the village when there isn't one" do
+      @person.stub!(:village_name => '')
+      @person.name_and_village.should == 'Bob'
+    end
+  end
   
   describe "comments" do
     before do
