@@ -6,9 +6,6 @@
         = button_to "Remove", { :controller => 'people', :action => 'remove_sibling', :id => @person.id, :sibling_id => sibling.id }, :confirm => "Are you sure you want to remove #{sibling.name} as a sibling from #{@person.name}?", :method => :delete
         = render :partial => "people/person", :locals => {:person => sibling, :village => true}
 
-  - form_tag add_sibling_person_path(@person), :method => :post, :id => "add-sibling" do
-    = label_tag 'person_id', 'Sibling'
-    = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
-    = submit_tag "Add sibling"
+  = render :partial => 'add_relationship', :locals => {:relationship => 'sibling', :path => add_sibling_person_path(@person)}
 
   %p= link_to "Back", @person

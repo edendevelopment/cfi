@@ -6,8 +6,6 @@
         = button_to "Remove", { :controller => 'people', :action => 'remove_caretaker', :id => @person.id, :caretaker_id => caretaker.id }, :confirm => "Are you sure you want to remove #{caretaker.name} as a caretaker from #{@person.name}?", :method => :delete
         = render :partial => "people/person", :locals => {:person => caretaker, :relationship => @person.relationship_with(caretaker)}
 
-  - form_tag add_caretaker_person_path(@person), :method => :post, :id => "add_caretaker" do
-    = label_tag 'person_id', 'Caretaker'
-    = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village)
-    %br
-    = submit_tag "Add caretaker"
+  = render :partial => 'add_relationship', :locals => {:relationship => 'caretaker', :path => add_caretaker_person_path(@person)}
+
+  %p= link_to "Back", @person
