@@ -28,7 +28,7 @@ People = {
       scrollHeight: 300,
       matchContains: true,
       mustMatch: true,
-      formatItem: function(row) { return row['name']; }
+      formatItem: function(row) { return row['name_and_village']; }
     });
 
     $("#person_search").result(function(input_field, result) {
