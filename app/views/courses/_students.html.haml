@@ -6,7 +6,7 @@
         = render :partial => "people/person", :locals => {:person => student.person}
       
   - form_tag course_students_path(course), :method => :post, :class => "add_student" do
-    = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village)
+    = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village), :class => 'student_id', :id => nil
     = submit_tag "Add"
 
 :javascript

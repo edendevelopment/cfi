@@ -6,33 +6,40 @@ $().ready(function() {
 })
 
 People = {
-  autocomplete: function() {
-    var search_field = $("<input />").attr('id', 'person_search').
+  search_field: function(type) {
+    return $("<input />").addClass(type + '_search').
       attr('type', 'text').
       attr('autocomplete', 'off').
-      attr('name', 'person_search');
+      attr('name', type + '_search')
+  },
 
-    var id_field = $('<input />').attr('id', 'person_id').
+  id_field: function(type) {
+    return $('<input />').addClass(type + '_id').
       attr('type', 'hidden').
-      attr('name', 'person_id');
+      attr('name', type + '_id')
+  },
 
-    $('#person_id').replaceWith(id_field);
-    id_field.before(search_field);
+  autocomplete: function() {
+    $.each(['person', 'student'], function(index, type) {
+      
+      $('.' + type + '_id').replaceWith(People.id_field(type));
+      $('.' + type + '_id').before(People.search_field(type));
 
-    $("#person_search").autocomplete(people_data, {
-      width: 320,
-      max: 4,
-      highlight: false,
-      multiple: false,
-      scroll: true,
-      scrollHeight: 300,
-      matchContains: true,
-      mustMatch: true,
-      formatItem: function(row) { return row['name_and_village']; }
-    });
+      $('.' + type + '_search').autocomplete(people_data, {
+        width: 320,
+        max: 4,
+        highlight: false,
+        multiple: false,
+        scroll: true,
+        scrollHeight: 300,
+        matchContains: true,
+        mustMatch: true,
+        formatItem: function(row) { return row['name_and_village']; }
+      });
 
-    $("#person_search").result(function(input_field, result) {
-      $('#person_id').val(result['id']);
+      $('.' + type + '_search').result(function(input_field, result) {
+        $('.' + type + '_id').val(result['id']);
+      });
     });
   }
 }
