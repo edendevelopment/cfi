@@ -21,11 +21,16 @@ People = {
 
   autocomplete: function() {
     $.each(['person', 'student'], function(index, type) {
+      if (type == 'student') {
+        data = student_data;
+      } else {
+        data = people_data;
+      }
       
       $('.' + type + '_id').replaceWith(People.id_field(type));
       $('.' + type + '_id').before(People.search_field(type));
 
-      $('.' + type + '_search').autocomplete(people_data, {
+      $('.' + type + '_search').autocomplete(data, {
         width: 320,
         max: 4,
         highlight: false,
