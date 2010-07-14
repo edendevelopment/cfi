@@ -20,7 +20,7 @@
         success: function(responseText) {
           var data = $(responseText);
           course_element.html(data);
-          ajax_up_add_student_form(data.find('.add_student'));
+          // TODO: Add autocomplete functionality here
         }
       });
     })
