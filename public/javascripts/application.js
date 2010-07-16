@@ -3,7 +3,7 @@
 
 $().ready(function() {
   People.student_data = student_data;
-  People.people_data = student_data;
+  People.people_data = people_data;
   People.autocomplete();
 })
 
@@ -43,7 +43,6 @@ People = {
 
   autocomplete: function() {
     $.each(['person', 'student'], function(index, type) {
-      data = People.data_for_type(type);
       $('.' + type + '_id').replace_with_hidden_id_field(type);
       $('.' + type + '_id').add_autocomplete_field(type);
     });
@@ -55,6 +54,7 @@ jQuery.fn.replace_with_hidden_id_field = function(type) {
 }
 
 jQuery.fn.add_autocomplete_field = function(type) {
+  if (this.length == 0) { return; }
   this.before(People.search_field(type)); // adds the search field
   current_parent = this.parent();
   current_parent.find('.' + type + '_search')
