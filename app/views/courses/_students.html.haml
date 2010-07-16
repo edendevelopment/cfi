@@ -20,7 +20,8 @@
         success: function(responseText) {
           var data = $(responseText);
           course_element.html(data);
-          // TODO: Add autocomplete functionality here
+          $(course_element.find('.student_id')).replace_with_hidden_id_field('student');
+          $(course_element.find('.student_id')).add_autocomplete_field('student');
         }
       });
     })

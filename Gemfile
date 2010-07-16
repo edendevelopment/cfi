@@ -20,6 +20,7 @@ gem 'jelly'
 gem 'acts_as_commentable'
 
 group :test do
+  gem 'jasmine'
   gem "rspec-rails"
   gem 'capybara'
   gem 'database_cleaner'
