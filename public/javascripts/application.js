@@ -31,7 +31,7 @@ People = {
 
   autocomplete_settings: {
     width: 320,
-    max: 4,
+    max: 10,
     highlight: false,
     multiple: false,
     scroll: true,
