@@ -2,6 +2,7 @@ $.fn.ajaxDelete = function(target) {
   $(this).each(function(index, form) {
     form = $(form);
     var delete_link = $('<a href="#" class="ajax-delete">Remove</a>');
+    var person_li_node = form.closest('li');
     delete_link.click(function() {
       if (form.find('input[type=submit]').attr('onclick')()) {
         var action = form.attr('action') + '.js';
@@ -9,14 +10,8 @@ $.fn.ajaxDelete = function(target) {
           url: action,
           data: { _method: 'delete'},
           type: 'POST',
-          success: function(responseText) {
-            var course_people = delete_link.closest(target);
-            var course_node = course_people.parent();
-            console.log('delete_link', delete_link);
-            console.log('course_people, pre replaceWith', course_people);
-            course_people.replaceWith(responseText);
-            console.log('course_people, post replaceWith', course_people);
-            course_node.find('.people .button-to').ajaxDelete('.people');
+          success: function() {
+            person_li_node.remove();
            }
         });
       }

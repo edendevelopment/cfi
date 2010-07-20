@@ -1,0 +1,3 @@
+%li[student]
+  = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
+  = render :partial => "people/person", :locals => {:person => student.person}

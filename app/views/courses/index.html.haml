@@ -11,30 +11,6 @@
         %span.teacher= course.teacher
         %span.students
           = link_to "students", course_path(course)
-      
-      .student_list
-        .student_management
-          = render :partial => 'courses/students', :locals => {:course => course}
-      
-          - form_tag course_students_path(course), :method => :post, :class => "add_student" do
-            = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village), :class => 'student_id', :id => nil
-            = submit_tag "Add"
-            
-:javascript
-  $('document').ready(function() {
-    $('.people .button-to').ajaxDelete('.people');
 
-    $('.add_student').each(function(index, element) {
-      element = $(element);
-      var people_element = element.prev('.people');
-      element.ajaxForm({
-        url: element.attr('action') + ".js",
-        success: function(responseText) {
-          var data = $(responseText);
-          var course_node = people_element.parent();
-          people_element.replaceWith(data);
-          course_node.find('.people .button-to').ajaxDelete('.people');
-        }
-      });
-    });
-  });
+      .student_list
+        = render :partial => 'courses/students', :locals => {:course => course}

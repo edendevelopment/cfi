@@ -41,7 +41,7 @@ describe Courses::StudentsController do
     
       it "sends the student list partial to the page" do
         do_request
-        response.should render_template('courses/_students')
+        response.should render_template('courses/_student')
       end
     end
   end
@@ -80,7 +80,7 @@ describe Courses::StudentsController do
   
       it "sends the student list partial to the page" do
         do_request
-        response.should render_template('courses/_students')
+        response.should be_success
       end
     end
   end

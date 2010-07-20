@@ -5,6 +5,22 @@ $().ready(function() {
   People.student_data = student_data;
   People.people_data = people_data;
   People.autocomplete();
+
+  $('.people .button-to').ajaxDelete('.people');
+
+  $('.add_student').each(function(index, element) {
+    element = $(element);
+    var people_element = element.prev('.people');
+    element.ajaxForm({
+      url: element.attr('action') + ".js",
+      success: function(responseText) {
+        var data = $(responseText);
+        people_element.append(data);
+        element.find('.student_search').val('');
+        people_element.find('.button-to').ajaxDelete('.people');
+      }
+    });
+  });
 })
 
 People = {
@@ -60,6 +76,8 @@ jQuery.fn.add_autocomplete_field = function(type) {
   current_parent.find('.' + type + '_search')
     .autocomplete(People.data_for_type(type), People.autocomplete_settings)
     .result(function(input_field, result) {
-      $(this).parent().find('.' + type + '_id').val(result['id']);
+      if (result != undefined) {
+        $(this).parent().find('.' + type + '_id').val(result['id']);       // Set hidden form element
+      }
     });
 }
