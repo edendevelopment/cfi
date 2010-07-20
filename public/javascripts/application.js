@@ -56,7 +56,7 @@ jQuery.fn.replace_with_hidden_id_field = function(type) {
 jQuery.fn.add_autocomplete_field = function(type) {
   if (this.length == 0) { return; }
   this.before(People.search_field(type)); // adds the search field
-  current_parent = this.parent();
+  var current_parent = this.parent();
   current_parent.find('.' + type + '_search')
     .autocomplete(People.data_for_type(type), People.autocomplete_settings)
     .result(function(input_field, result) {

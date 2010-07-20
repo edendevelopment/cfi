@@ -10,7 +10,13 @@ $.fn.ajaxDelete = function(target) {
           data: { _method: 'delete'},
           type: 'POST',
           success: function(responseText) {
-            delete_link.closest(target).replaceWith(responseText);
+            var course_people = delete_link.closest(target);
+            var course_node = course_people.parent();
+            console.log('delete_link', delete_link);
+            console.log('course_people, pre replaceWith', course_people);
+            course_people.replaceWith(responseText);
+            console.log('course_people, post replaceWith', course_people);
+            course_node.find('.people .button-to').ajaxDelete('.people');
            }
         });
       }

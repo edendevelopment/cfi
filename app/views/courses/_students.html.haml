@@ -1,28 +1,5 @@
-.student_management
-  %ul.people
-    - course.students.each do |student|
-      %li[student]
-        = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
-        = render :partial => "people/person", :locals => {:person => student.person}
-      
-  - form_tag course_students_path(course), :method => :post, :class => "add_student" do
-    = select_tag 'student_id', options_from_collection_for_select(course.eligible_students, :id, :name_and_village), :class => 'student_id', :id => nil
-    = submit_tag "Add"
-
-:javascript
-  $('document').ready(function() {
-    $('.people .button-to').ajaxDelete('.student_management');
-    $('.add_student').each(function(index, element) {
-      element = $(element);
-      var course_element = element.closest('.student_management');
-      element.ajaxForm({
-        url: element.attr('action') + ".js",
-        success: function(responseText) {
-          var data = $(responseText);
-          course_element.html(data);
-          $(course_element.find('.student_id')).replace_with_hidden_id_field('student');
-          $(course_element.find('.student_id')).add_autocomplete_field('student');
-        }
-      });
-    })
-  });
+%ul.people
+  - course.students.each do |student|
+    %li[student]
+      = button_to "Remove", { :controller => 'courses/students', :action => 'destroy', :course_id => course.id, :id => student.id }, :confirm => "Are you sure you want to remove #{student.name} from #{course.name}?", :method => :delete
+      = render :partial => "people/person", :locals => {:person => student.person}
