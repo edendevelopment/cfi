@@ -4,48 +4,42 @@
 $().ready(function() {
   People.student_data = student_data;
   People.people_data = people_data;
-  People.autocomplete();
-
-  $('.people .button-to').ajaxDelete('.people');
-
-  $('.add_student').each(function(index, element) {
-    element = $(element);
-    var people_element = element.prev('.people');
-    element.ajaxForm({
-      url: element.attr('action') + ".js",
-      success: function(responseText) {
-        var data = $(responseText);
-        people_element.append(data);
-        element.find('.student_search').val('');
-        people_element.find('.button-to').ajaxDelete('.people');
-      }
-    });
-  });
+  PeopleRelationshipsAutocompletion.setup();
 })
 
-People = {
-  student_data: undefined,
-  people_data: undefined,
-  search_field: function(type) {
-    return $("<input type='text'/>").addClass(type + '_search').
-      attr('autocomplete', 'off').
-      attr('name', type + '_search');
+
+
+PeopleRelationshipsAutocompletion = {
+  setup: function() {
+    this.setup_autocomplete();
+    this.setup_user_removal();
   },
 
-  id_field: function(type) {
-    return $("<input type='hidden'/>").addClass(type + '_id').
-      attr('name', type + '_id');
+  setup_autocomplete: function() {
+    $.each(['person', 'student'], function(index, type) {
+      $('.' + type + '_id').replace_with_hidden_id_field(type);
+      $('.' + type + '_id').add_autocomplete_field(type);
+    });
   },
 
-  data_for_type: function(type) {
-    if (type == 'student') {
-      return People.student_data;
-    } else {
-      return People.people_data;
-    }
+  setup_user_removal: function() {
+    $('.people .button-to').ajaxDelete('.people');
+    $('.add_student').each(function(index, element) {
+      element = $(element);
+      var people_element = element.prev('.people');
+      element.ajaxForm({
+        url: element.attr('action') + ".js",
+        success: function(responseText) {
+          var data = $(responseText);
+          people_element.append(data);
+          element.find('.student_search').val('');
+          people_element.find('.button-to').ajaxDelete('.people');
+        }
+      });
+    });
   },
 
-  autocomplete_settings: {
+  settings: {
     width: 320,
     max: 10,
     highlight: false,
@@ -55,26 +49,36 @@ People = {
     matchContains: true,
     mustMatch: true,
     formatItem: function(row) { return row['name_and_village']; }
-  },
+  }
+}
 
-  autocomplete: function() {
-    $.each(['person', 'student'], function(index, type) {
-      $('.' + type + '_id').replace_with_hidden_id_field(type);
-      $('.' + type + '_id').add_autocomplete_field(type);
-    });
+People = {
+  student_data: undefined,
+  people_data: undefined,
+  data_for_type: function(type) {
+    if (type == 'student') {
+      return People.student_data;
+    } else {
+      return People.people_data;
+    }
   }
 }
 
 jQuery.fn.replace_with_hidden_id_field = function(type) {
-  this.replaceWith(People.id_field(type));
+  id_field = $("<input type='hidden'/>").addClass(type + '_id')
+             .attr('name', type + '_id');
+  this.replaceWith(id_field);
 }
 
 jQuery.fn.add_autocomplete_field = function(type) {
   if (this.length == 0) { return; }
-  this.before(People.search_field(type)); // adds the search field
+  search_field = $("<input type='text'/>").addClass(type + '_search')
+                 .attr('autocomplete', 'off')
+                 .attr('name', type + '_search');
+  this.before(search_field);
   var current_parent = this.parent();
   current_parent.find('.' + type + '_search')
-    .autocomplete(People.data_for_type(type), People.autocomplete_settings)
+    .autocomplete(People.data_for_type(type), PeopleRelationshipsAutocompletion.settings)
     .result(function(input_field, result) {
       if (result != undefined) {
         $(this).parent().find('.' + type + '_id').val(result['id']);       // Set hidden form element
