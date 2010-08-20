@@ -10,11 +10,6 @@ describe 'index' do
     render_it
   end
 
-  it 'binds student_data in rendered file' do
-    render_it
-    response.body.include?('var student_data =').should be_true
-  end
-
   it 'renders the students as JSON' do
     all_students = mock(:data)
     Student.stub!(:all => all_students)

@@ -2,17 +2,27 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $().ready(function() {
-  People.student_data = student_data;
-  People.people_data = people_data;
   PeopleRelationshipsAutocompletion.setup();
 })
 
-
-
 PeopleRelationshipsAutocompletion = {
   setup: function() {
-    this.setup_autocomplete();
-    this.setup_user_removal();
+    if ($('.person_id, .student_id').size() > 0) {
+      this.load_data(function(){
+        PeopleRelationshipsAutocompletion.setup_autocomplete();
+        PeopleRelationshipsAutocompletion.setup_user_removal();
+      });
+    }
+  },
+
+  load_data: function(callback) {
+    $.getJSON('/students.js', function(data) {
+      People.student_data = data;
+      $.getJSON('/people.js', function(data) {
+        People.people_data = data;
+        callback();
+      });
+    });
   },
 
   setup_autocomplete: function() {
