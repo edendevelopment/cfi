@@ -26,6 +26,10 @@
           %li= link_to 'courses', courses_path
           %li= link_to 'villages', villages_path
           %li= link_to 'admin', admin_path
+          - if user_signed_in?
+            %li= link_to 'sign out', destroy_user_session_path
+          - else
+            %li= link_to 'sign in', user_session_path
 
       #content 
         %p.notice= flash[:notice]
