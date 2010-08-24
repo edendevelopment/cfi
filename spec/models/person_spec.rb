@@ -185,10 +185,10 @@ describe Person do
 
   describe "pagination letters" do
     it "gets the first letter of each group of people names" do
-      p1, p2, p3 = ['Chauar Barep', 'Charlie Brown', 'Tom Cartfud'].map do |name|
+      people = ['Chauar Barep', 'Charlie Brown', 'Tom Cartfud'].map do |name|
         mock_person_called name
       end
-      Person.stub!(:all => [p1, p2, p3])
+      Person.stub!(:all => people)
       Person.pagination_letters.should == ['C', 'T']
     end
   end
