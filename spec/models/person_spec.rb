@@ -214,7 +214,7 @@ describe Person do
     end
   end
 
-  describe "paginated group" do
+  describe "alphabetical group" do
     it 'looks for people beginning with the letter given' do
       people = mock(:people)
       Person.should_receive(:find).with(:all, hash_including(:conditions => ["name LIKE ?", "J%"])).and_return(people)
@@ -225,6 +225,11 @@ describe Person do
       Person.stub!(:first_letter => 'C')
       Person.should_receive(:find).with(:all, hash_including(:conditions => ["name LIKE ?", "C%"]))
       Person.alphabetical_group
+    end
+
+    it 'sorts people by name' do
+      Person.should_receive(:find).with(:all, hash_including(:order => :name))
+      Person.alphabetical_group('G')
     end
   end
 end

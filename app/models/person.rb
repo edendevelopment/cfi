@@ -99,7 +99,7 @@ class Person < ActiveRecord::Base
   end
 
   def self.alphabetical_group(letter = nil)
-    find(:all, :conditions => ['name LIKE ?', "#{letter || first_letter}%"])
+    find(:all, :conditions => ['name LIKE ?', "#{letter || first_letter}%"], :order => :name)
   end
   
   private
