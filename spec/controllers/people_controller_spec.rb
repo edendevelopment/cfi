@@ -3,7 +3,25 @@ require 'spec_helper'
 describe PeopleController do
   before(:each) do
     @person = mock_model(Person)
-    Person.stub_find!(@person)
+  end
+
+  describe "paginated view of people" do
+    before do
+      log_in
+    end
+
+    it "looks for people alphabetically" do
+      people = mock(:people_array)
+      Person.should_not_receive(:all)
+      Person.should_receive(:alphabetical_group).and_return(people)
+      get :index
+      assigns[:people].should == people
+    end
+
+    it "looks for people with the letter specified" do
+      Person.should_receive(:alphabetical_group).with('Z')
+      get :index, :letter => "Z"
+    end
   end
 
   describe "creating new person" do

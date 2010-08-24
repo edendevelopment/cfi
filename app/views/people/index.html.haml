@@ -18,6 +18,10 @@
 
 %h2 List of people
 
+%ul.pagination
+  - Person.pagination_letters.each do |letter|
+    %li= link_to letter, people_path(:letter => letter)
+
 %ul.people
-  - Person.all.each do |person|
+  - @people.each do |person|
     %li= render :partial => "people/person", :locals => {:person => person}

@@ -87,6 +87,20 @@ class Person < ActiveRecord::Base
       relationship.relationship_to(self)
     end.join(", ")
   end
+
+  def self.pagination_letters
+    all.sort_by(&:name).group_by {|group| group.name[0].chr.upcase}.keys
+  end
+
+  def self.first_letter
+    first_person = Person.find(:first, :order => :name)
+    return 'A' if first_person.nil?
+    first_person.name[0].chr.upcase
+  end
+
+  def self.alphabetical_group(letter = nil)
+    find(:all, :conditions => ['name LIKE ?', "#{letter || first_letter}%"])
+  end
   
   private
   def add_relationship(person, relationship_type)

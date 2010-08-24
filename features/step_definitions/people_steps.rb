@@ -2,6 +2,27 @@ Given /^a person called "([^\"]*)"$/ do |name|
   person = Factory.create :person, :name => name
 end
 
+Given /^these people:$/ do |table|
+  table.raw.each do |row|
+    Given %{a person called "#{row[0]}"}
+  end
+end
+
+Then /^I should see letter blocks in this order:$/ do |table|
+  table.raw.each_with_index do |row, index|
+    page.body.should have_tag("ul.pagination li:nth-child(#{index+1}) a", :content => row[0])
+  end
+  page.body.should have_tag("ul.pagination li", :count => table.raw.size)
+end
+
+Then /^I should see these people:$/ do |table|
+  table.raw.each_with_index do |row, index|
+    page.body.should have_tag("ul.people li:nth-child(#{index+1}) .person .name", :content => row[0])
+  end
+  page.body.should have_tag('ul.people li', :count => table.raw.size)
+end
+
+
 When /^I add the person "([^\"]*)"$/ do |name|
   fill_in "person_name", :with => name
   click_button "Add person"

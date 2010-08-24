@@ -1,8 +1,13 @@
 class PeopleController < ApplicationController
   resource_controller
 
-  index.wants.js do
-    render :template => 'people/index.erb.js'
+  def index
+    respond_to do |format|
+      format.html do
+        @people = Person.alphabetical_group(params[:letter])
+      end
+      format.js { render :template => 'people/index.erb.js' }
+    end
   end
   
   create.failure.wants.html do

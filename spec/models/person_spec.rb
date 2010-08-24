@@ -177,6 +177,54 @@ describe Person do
         @person.date_of_birth_with_confirmation.should == "1999-11-23 (Unconfirmed)"
       end
     end
-    
+  end
+
+  def mock_person_called(name)
+    mock(:person, :name => name)
+  end
+
+  describe "pagination letters" do
+    it "gets the first letter of each group of people names" do
+      p1, p2, p3 = ['Chauar Barep', 'Charlie Brown', 'Tom Cartfud'].map do |name|
+        mock_person_called name
+      end
+      Person.stub!(:all => [p1, p2, p3])
+      Person.pagination_letters.should == ['C', 'T']
+    end
+  end
+
+  describe "first letter" do
+    before do
+      @person = mock(:person, :name => "Chuab Chareb")
+      Person.stub!(:find => @person)
+    end
+
+    it "finds the first person sorted by name" do
+      Person.should_receive(:find).with(:first, :order => :name)
+      Person.first_letter
+    end
+
+    it "returns the first letter of that person's name" do
+      Person.first_letter.should == 'C'
+    end
+
+    it "returns 'A' if there are no people" do
+      Person.stub!(:find => nil)
+      Person.first_letter.should == 'A'
+    end
+  end
+
+  describe "paginated group" do
+    it 'looks for people beginning with the letter given' do
+      people = mock(:people)
+      Person.should_receive(:find).with(:all, hash_including(:conditions => ["name LIKE ?", "J%"])).and_return(people)
+      Person.alphabetical_group('J').should == people
+    end
+
+    it 'chooses a letter automagically if no letter is passed' do
+      Person.stub!(:first_letter => 'C')
+      Person.should_receive(:find).with(:all, hash_including(:conditions => ["name LIKE ?", "C%"]))
+      Person.alphabetical_group
+    end
   end
 end
