@@ -1,4 +1,9 @@
 %h1 Users
+
+%ul.pagination
+  - User.pagination_letters.each do |letter|
+    %li= link_to letter, users_path(:letter => letter)
+
 %ul
   - @users.each do |user|
     %li

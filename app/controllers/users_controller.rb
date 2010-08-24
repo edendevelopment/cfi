@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   resource_controller
+
+  def index
+    @users = User.alphabetical_group(params[:letter])
+  end
   
   new_action.wants.html { render :edit }
   
