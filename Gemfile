@@ -13,7 +13,7 @@ gem 'resource_controller'
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly'
-gem 'devise'
+gem 'devise', "1.0.8"
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'jelly'
