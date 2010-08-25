@@ -1,7 +1,7 @@
 module PaginateAlphabetically
   def paginate_alphabetically(params)
-    self.extend ClassMethods
     @attribute = params[:by]
+    self.extend ClassMethods
   end
 
   module ClassMethods
