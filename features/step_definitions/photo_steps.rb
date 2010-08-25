@@ -6,7 +6,7 @@ end
 
 Then /^I should see the photo "([^\"]*)" with comment "([^\"]*)"$/ do |file_name, comment|
   with_scope(".photo") do
-    page.should have_css("img[src*='#{file_name}']")
+    page.should have_css("img")
     page.should have_css(".comment", comment)
   end
 end
