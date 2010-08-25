@@ -7,7 +7,10 @@
 %ul
   - @users.each do |user|
     %li
+      = h user.name
+      &mdash;
       = h user.email
+      &mdash;
       = link_to 'edit', edit_user_path(user)
 
 = link_to 'Add user', new_user_path

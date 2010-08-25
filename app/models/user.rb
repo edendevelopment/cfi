@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :name
 
-  paginate_alphabetically :by => :email
+  paginate_alphabetically :by => :name
 
 end
