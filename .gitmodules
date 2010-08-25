@@ -1,3 +1,0 @@
-[submodule "vendor/plugins/paginate_alphabetically"]
-	path = vendor/plugins/paginate_alphabetically
-	url = git@github.com:edendevelopment/paginate_alphabetically.git
