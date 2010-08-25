@@ -1,4 +1,6 @@
 class Person < ActiveRecord::Base
+  paginate_alphabetically :by => :name
+
   acts_as_commentable
   has_many :photos
   has_one :student
@@ -23,9 +25,6 @@ class Person < ActiveRecord::Base
   
   validates_presence_of :name
   validates_presence_of :gender
-
-  extend AlphabeticalPagination
-  sort_by :name
 
   def name_and_village
     village = village_name
