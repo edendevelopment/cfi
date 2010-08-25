@@ -29,6 +29,12 @@ h3. View (haml example)
     - @users.each do |user|
       %li= user.surname
 
+
+h2. Testing
+
+The tests use a sqlite3 in-memory database to be able to run separately from your application.
+
+  ruby vendor/plugins/paginate_alphabetically/test/paginate_alphabetically_test.rb
   
 
 
