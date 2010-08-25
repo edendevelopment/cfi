@@ -12,7 +12,7 @@ gem 'resource_controller'
 
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly'
+gem 'dragonfly', '0.6.2'
 gem 'devise', "1.0.8"
 gem 'formtastic'
 gem 'validation_reflection'
