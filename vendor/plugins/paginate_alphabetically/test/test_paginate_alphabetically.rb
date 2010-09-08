@@ -9,7 +9,7 @@ end
 
 class PaginateAlphabeticallyTest < ActiveSupport::TestCase
   def setup
-    %w(One Two Three Four Five Six).map {|name| Thing.create!(:name => name)}
+    %w(one two Three four Five Six).map {|name| Thing.create!(:name => name)}
   end
 
   def test_pagination_letters
@@ -26,11 +26,11 @@ class PaginateAlphabeticallyTest < ActiveSupport::TestCase
   end
 
   def test_alphabetical_group_without_specifying_letter
-    assert_equal ['Five', 'Four'], Thing.alphabetical_group.map(&:name)
+    assert_equal ['Five', 'four'], Thing.alphabetical_group.map(&:name)
   end
 
   def test_alphabetical_group_specifying_letter
-    assert_equal ['Three', 'Two'], Thing.alphabetical_group('t').map(&:name)
+    assert_equal ['Three', 'two'], Thing.alphabetical_group('t').map(&:name)
   end
 
   def test_class_without_pagination_has_no_pagination_methods
