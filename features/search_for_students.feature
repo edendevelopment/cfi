@@ -17,3 +17,8 @@ Feature: Search for students
     Then I should see these people:
       | Chuab Chareb       |
       | Chuab Aat          |
+
+  Scenario: No results for a search
+    Given I am a new, authenticated user
+    When I search people for "Chuab"
+    Then I should see "No people found."

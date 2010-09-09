@@ -14,6 +14,10 @@
     - Person.pagination_letters.each do |letter|
       %li= link_to letter, people_path(:letter => letter)
 
-%ul.people
-  - @people.each do |person|
-    %li= render :partial => "people/person", :locals => {:person => person, :village => true, :date_of_birth => true}
+- if @people.any?
+  %ul.people
+    - @people.each do |person|
+      %li= render :partial => "people/person", :locals => {:person => person, :village => true, :date_of_birth => true}
+
+- else
+  %p No people found.
