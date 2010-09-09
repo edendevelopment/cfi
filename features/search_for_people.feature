@@ -1,9 +1,9 @@
-Feature: Search for students
-  In order to find a student more easily
+Feature: Search for people
+  In order to find a person more easily
   As a user
-  I want to search for students by name
+  I want to search for people by name
 
-  Scenario: User searches for a student
+  Scenario: User searches for a person
     Given I am a new, authenticated user
     And these people:
       | Chuab Chareb       |
