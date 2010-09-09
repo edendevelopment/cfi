@@ -114,10 +114,20 @@ body
 
   ul.pagination
     margin-bottom: 1em
+    list-style: none
+    color: #ccc
 
     li
       display: inline
-      
+      font-size: 1.1em
+
+      &:before
+        content: '| '
+
+      a
+        padding: 0 2px
+        +hover_link
+
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body.three-col
