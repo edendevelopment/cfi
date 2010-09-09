@@ -4,11 +4,15 @@
 
 = render :partial => 'people/search'
 
-%h2 List of people
+- if params[:search]
+  %h2 Search results
+  %p= link_to '&laquo; back', people_path
+- else
+  %h2 List of people
 
-%ul.pagination
-  - Person.pagination_letters.each do |letter|
-    %li= link_to letter, people_path(:letter => letter)
+  %ul.pagination
+    - Person.pagination_letters.each do |letter|
+      %li= link_to letter, people_path(:letter => letter)
 
 %ul.people
   - @people.each do |person|
