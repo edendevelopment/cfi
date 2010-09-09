@@ -1,5 +1,6 @@
 - village ||= false
 - relationship ||= false
+- date_of_birth ||= false
 
 .person
   .image
@@ -15,3 +16,8 @@
       Relationship:
       %span.relationship-type-name
       = relationship
+
+  - if date_of_birth && person.date_of_birth
+    .date-of-birth
+      Date of birth:
+      = person.date_of_birth

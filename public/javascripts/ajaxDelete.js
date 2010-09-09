@@ -1,7 +1,7 @@
 $.fn.ajaxDelete = function(target) {
   $(this).each(function(index, form) {
     form = $(form);
-    var delete_link = $('<a href="#" class="ajax-delete">Remove</a>');
+    var delete_link = $('<a href="#" class="ajax-delete"><img src="/images/delete.png" alt="Remove" title="Remove" /></a>');
     var person_li_node = form.closest('li');
     delete_link.click(function() {
       if (form.find('input[type=submit]').attr('onclick')()) {

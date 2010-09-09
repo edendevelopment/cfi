@@ -165,13 +165,28 @@ ul.people
       +last
 
     .person
+      background-color: white
       border: 1px solid #aaa
       +box_shadow(1px, 3px, 5px, #ccc)
       padding: 15px
       height: 100px
+
+      a
+        color: #444
       
       .image
+        border: 1px solid #aaa
         float: left
 
       .name
         float: right
+        font-size: 1.2em
+        padding: 5px 0
+        font-weight: bold
+        a
+          +hover_link
+
+      .village, .date-of-birth
+        clear: right
+        float: right
+        font-size: 0.9em

@@ -24,4 +24,4 @@
 
 %ul.people
   - @people.each do |person|
-    %li= render :partial => "people/person", :locals => {:person => person}
+    %li= render :partial => "people/person", :locals => {:person => person, :village => true, :date_of_birth => true}
