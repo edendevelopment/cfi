@@ -10,3 +10,9 @@ Then /^I should see the photo "([^\"]*)" with comment "([^\"]*)"$/ do |file_name
     page.should have_css(".comment", comment)
   end
 end
+
+When /^I search people for "([^"]*)"$/ do |name|
+  visit people_path
+  fill_in 'search', :with => name
+  click_button 'Search'
+end

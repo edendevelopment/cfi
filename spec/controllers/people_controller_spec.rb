@@ -24,6 +24,24 @@ describe PeopleController do
     end
   end
 
+  describe "searching for people" do
+    before do
+      log_in
+    end
+
+    it "searches for people" do
+      Person.should_receive(:search).with('Tom')
+      get :index, :search => 'Tom'
+    end
+
+    it "returns what it finds" do
+      results = mock(:people_array)
+      Person.stub!(:search => results)
+      get :index, :search => 'Steve'
+      assigns[:people].should == results
+    end
+  end
+
   describe "creating new person" do
     before(:each) do
       log_in

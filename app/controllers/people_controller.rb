@@ -4,7 +4,11 @@ class PeopleController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @people = Person.alphabetical_group(params[:letter])
+        if params[:search]
+          @people = Person.search(params[:search])
+        else
+          @people = Person.alphabetical_group(params[:letter])
+        end
       end
       format.js { render :template => 'people/index.erb.js' }
     end

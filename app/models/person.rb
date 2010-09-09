@@ -90,6 +90,9 @@ class Person < ActiveRecord::Base
     end.join(", ")
   end
 
+  def self.search(name)
+    find(:all, :conditions => ['name LIKE ?', "%#{name}%"])
+  end
   
   private
   def add_relationship(person, relationship_type)

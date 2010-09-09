@@ -232,4 +232,17 @@ describe Person do
       Person.alphabetical_group('G')
     end
   end
+
+  describe "searching people" do
+    it "searches by name" do
+      Person.should_receive(:find).with(:all, :conditions => ['name LIKE ?', '%Spencer%'])
+      Person.search('Spencer')
+    end
+
+    it "returns what it finds" do
+      results = mock(:people)
+      Person.stub!(:find => results)
+      Person.search('Enrique').should == results
+    end
+  end
 end
