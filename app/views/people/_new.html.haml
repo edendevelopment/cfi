@@ -1,0 +1,16 @@
+%h2.add-new-person-control Add new person
+.add-new-person
+  - form_for Person.new do |f|
+    %p.field
+      = f.label :name
+      = f.text_field :name
+      
+    %p.field
+      %label
+        = f.radio_button :gender, 'Female', :checked => true
+        Female
+      %label
+        = f.radio_button :gender, 'Male'
+        Male
+
+    = f.submit "Add person"
