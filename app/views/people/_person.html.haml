@@ -3,10 +3,7 @@
 
 .person
   .image
-    - if person.image
-      = image_tag person.image.url('40x40#')
-    - else
-      = image_tag "default-person-40.png"
+    = link_to(person_image_with_size(person, 80), person)
   .name
     = link_to person.name, person
   - if village == true && person.village
@@ -18,4 +15,3 @@
       Relationship:
       %span.relationship-type-name
       = relationship
-      

@@ -1,0 +1,43 @@
+=box_gradient(!start_colour, !stop_colour)
+  // FF3.6
+  background-image= "-moz-linear-gradient(top, #{!start_colour}, #{!stop_colour})"
+  
+  // Saf4 +, Chrome
+  background-image= "-webkit-gradient(linear,left bottom,left top,from(#{!stop_colour}),to(#{!start_colour}))"
+  
+  // IE6, IE7
+  filter= "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{!start_colour}', endColorstr='#{!stop_colour}')"
+  
+  // IE8
+  -ms-filter= "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{!start_colour}', endColorstr='#{!stop_colour}')"
+
+=box_shadow(!h_offset, !v_offset, !distance, !colour)
+  // FF3.5+
+  -moz-box-shadow= !h_offset !v_offset !distance !colour
+  
+  // Saf3.0+, Chrome
+  -webkit-box-shadow= !h_offset !v_offset !distance !colour
+  
+  // Opera 10.5, IE 9.0
+  box-shadow= !h_offset !v_offset !distance !colour
+  
+  // IE6, IE7
+  //filter= "progid:DXImageTransform.Microsoft.dropshadow(OffX=#{!h_offset}, OffY=#{!v_offset}, Color='#{!colour}')"
+  
+  // IE8
+  //-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=#{!h_offset}, OffY=#{!v_offset}, Color='#{!colour}')"
+
+=font_face(!font_name)  
+  @font-face
+    font-family: 'WebFont'
+    //IE6+
+    src= "url('#{!font_name}.eot')"
+    
+    //                FF3.6                                     Saf3+, Chrome, Opera10+
+    src= "local('☺'), url('#{!font_name}.woff') format('woff'), url('#{!font_name}.ttf') format('truetype')"
+
+=opacity(!value)
+  filter: alpha(opacity= !value * 100)
+  opacity: !value
+  -moz-opacity= !value
+  -khtml-opacity= !value

@@ -113,7 +113,6 @@
   .edit-comment
     font-size: 0.8em
 
-  
 .people
   +column(12)
   
@@ -125,7 +124,7 @@
       .button-to
         float: right
       
-      .person        
+      .person
         .image
           float: left
           margin-right: 5px
@@ -153,3 +152,26 @@
 
 .person_search, .student_search
   width: 315px
+
+ul.people
+  +column(24)
+  +last
+
+  li
+    +column(8)
+    margin-bottom: 1em
+
+    &:nth-child(3n)
+      +last
+
+    .person
+      border: 1px solid #aaa
+      +box_shadow(1px, 3px, 5px, #ccc)
+      padding: 15px
+      height: 100px
+      
+      .image
+        float: left
+
+      .name
+        float: right

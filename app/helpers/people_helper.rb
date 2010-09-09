@@ -46,4 +46,9 @@ module PeopleHelper
       end
     end
   end
+
+  def person_image_with_size(person, size)
+    return image_tag("default-person-#{size}.png") if person.image.nil?
+    image_tag(person.image.url("#{size}x#{size}#")) 
+  end
 end
