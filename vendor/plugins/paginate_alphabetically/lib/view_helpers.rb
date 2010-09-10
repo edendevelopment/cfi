@@ -15,7 +15,7 @@ module PaginateAlphabetically
 
     def paginated_letter(available_letters, letter)
       if available_letters.include?(letter)
-        link_to(letter, "?letter=#{letter}")
+        link_to(letter, "#{request.path}?letter=#{letter}")
       else
         letter
       end

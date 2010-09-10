@@ -10,9 +10,7 @@
 - else
   %h2 List of people
 
-  %ul.pagination
-    - Person.pagination_letters.each do |letter|
-      %li= link_to letter, people_path(:letter => letter)
+  = alphabetically_paginate(@people)
 
 - if @people.any?
   %ul.people

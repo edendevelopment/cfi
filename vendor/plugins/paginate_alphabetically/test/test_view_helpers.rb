@@ -1,6 +1,15 @@
 require File.expand_path(File.join(File.dirname(__FILE__), 'helper'))
 include PaginateAlphabetically::ViewHelpers
 
+
+module PaginateAlphabetically
+  module ViewHelpers
+    def request
+      stub(:path => '')
+    end
+  end
+end
+
 class ViewHelperTest < ActiveSupport::TestCase
   def setup
     @result = alphabetically_paginate([Thing.create!(:name => 'a')])

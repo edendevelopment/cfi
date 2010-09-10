@@ -14,15 +14,10 @@ Feature: View people list
       | Chuab Aat          |
       | Pleak Chan Boromey |
     When I go to the person list page
-    Then I should see letter blocks in this order:
-      | C |
-      | P |
-      | S |
-      | Y |
-    And I should see these people:
+    Then I should see these people:
       | Chuab Aat    |
       | Chuab Chareb |
 
-    When I follow "Y"
+    When I follow "S" within ".pagination"
     Then I should see these people:
-      | Ya |
+      | Seam Makara |
