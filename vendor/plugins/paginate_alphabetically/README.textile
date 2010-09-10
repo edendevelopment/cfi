@@ -21,9 +21,7 @@ end
 
 h3. View (haml example)
   
-bc. %ul.pagination
-  - User.pagination_letters.each do |letter|
-    %li= link_to letter, users_path(:letter => letter)
+bc. = alphabetically_paginate(@users)
 %ul.users
   - @users.each do |user|
     %li= user.surname
