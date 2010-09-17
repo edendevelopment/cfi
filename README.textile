@@ -1,0 +1,9 @@
+h2. Children's Future International
+
+"Children's Future International":http://www.childrensfutureinternational.org/ is a charity in Cambodia that cares for vulnerable children and provides food, shelter, education, protection and a sense of community.
+
+One of the greatest challenges for the charity is keeping track of the children: where they are, who they live with, what support they need and are receiving. "Eden Development":http://edendevelopment.co.uk/ have begun making this web application to help solve these problems.
+
+This project is open source, we welcome user contributions, and we are happy for other organisations to make use of the code.
+
+The project tracker is available at "http://www.pivotaltracker.com/projects/54322":http://www.pivotaltracker.com/projects/54322
