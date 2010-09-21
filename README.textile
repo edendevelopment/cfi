@@ -28,4 +28,4 @@ David Henry (5)
 Erin Staniland (4)
 Matt Patterson (3)
 
-(list generated with [this script](http://gist.github.com/589281))
+(list generated with http://gist.github.com/589281)
