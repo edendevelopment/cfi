@@ -7,3 +7,25 @@ One of the greatest challenges for the charity is keeping track of the children:
 This project is open source, we welcome user contributions, and we are happy for other organisations to make use of the code.
 
 The project tracker is available at "http://www.pivotaltracker.com/projects/54322":http://www.pivotaltracker.com/projects/54322
+
+h2. Latest author list
+
+This list shows all the authors of the project, along with the number of commits they've made (as of 21st September 2010).
+
+Big thanks to all the contributors so far! If you want your name on the list, please submit a patch for inclusion.
+
+James Hunt (72)
+aimee daniells (54)
+Richard Patching (38)
+Tom Crayford (36)
+Steve Tooke (24)
+Pablo Brasero (17)
+Tristan Harris (11)
+Enrique Comba Riepenhausen (9)
+Elliot Crosby-McCullough (7)
+Chris Parsons (7)
+David Henry (5)
+Erin Staniland (4)
+Matt Patterson (3)
+
+(list generated with [this script](http://gist.github.com/589281))
