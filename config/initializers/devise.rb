@@ -68,6 +68,7 @@ Devise.setup do |config|
   # (requires mongo_ext installed) and :data_mapper (experimental).
   # require 'devise/orm/mongo_mapper'
   # config.orm = :mongo_mapper
+  require 'devise/orm/active_record'
 
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "sessions/users/new". It's turned off by default because it's slower if you
