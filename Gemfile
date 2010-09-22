@@ -1,8 +1,7 @@
 # Edit this Gemfile to bundle your application's dependencies.
 source 'http://gemcutter.org'
 
-
-gem "rails", "= 2.3.5"
+gem "rails", "= 2.3.9"
 gem "mysql"
 
 gem 'haml'
