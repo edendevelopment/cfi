@@ -1,18 +1,18 @@
 # Edit this Gemfile to bundle your application's dependencies.
 source 'http://gemcutter.org'
 
-gem "rails", "= 2.3.9"
+gem "rails", "= 3.0.0"
 gem "mysql"
 
 gem 'haml'
 gem 'compass'
 
-gem 'resource_controller'
+# gem 'resource_controller'
 
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '0.6.2'
-gem 'devise', "1.0.8"
+gem 'devise', "1.1.2"
 gem 'formtastic'
 gem 'validation_reflection'
 gem 'jelly'
