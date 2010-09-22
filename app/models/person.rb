@@ -28,7 +28,7 @@ class Person < ActiveRecord::Base
 
   def name_and_village
     village = village_name
-    returning String.new do |str|
+    String.new.tap do |str|
       str << name
       str << " (Village: #{village})" unless village.blank?
     end
