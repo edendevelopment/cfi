@@ -16,9 +16,13 @@ gem 'validation_reflection'
 gem 'jelly'
 gem 'acts_as_commentable'
 
+group :development do
+  gem "rspec-rails", "2.0.0.beta.22" # needed for rake tasks
+end
+
 group :test do
   gem 'jasmine'
-  gem "rspec-rails"
+  gem "rspec-rails", "2.0.0.beta.22"
   gem 'capybara'
   gem 'database_cleaner'
   gem 'culerity'
