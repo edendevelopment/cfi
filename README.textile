@@ -4,15 +4,19 @@ h2. Children's Future International
 
 One of the greatest challenges for the charity is keeping track of the children: where they are, who they live with, what support they need and are receiving. "Eden Development":http://edendevelopment.co.uk/ have begun making this web application to help solve these problems.
 
+h2. Contributing
+
 This project is open source, we welcome user contributions, and we are happy for other organisations to make use of the code.
 
-The project tracker is available at "http://www.pivotaltracker.com/projects/54322":http://www.pivotaltracker.com/projects/54322
+Please look at the github issues list for an idea of things to do. Refactors towards cleaner code are also always welcome. The wiki will in future have bigger feature request pages for things that we can add in.
+
+If you are working on an issue, please tag it as 'grabbed' and make a note as a comment that you're working on it. When you're done, submit a pull request. You need to ensure that your code includes suitable tests for the changes and that all tests pass before your patch will be added in.
 
 h2. Latest author list
 
 This list shows all the authors of the project, along with the number of commits they've made (as of 21st September 2010).
 
-Big thanks to all the contributors so far! If you want your name on the list, please submit a patch for inclusion.
+Big thanks to all the contributors so far! If you want your name on the list, please submit a patch for inclusion!
 
 James Hunt (72)
 aimee daniells (54)
