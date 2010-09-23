@@ -4,4 +4,6 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+task :default => [:"cucumber:all", :spec]
+
 Cfi::Application.load_tasks
