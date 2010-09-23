@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
-  resource_controller
-  create.wants.html { redirect_to courses_path }
+  # create.wants.html { redirect_to courses_path }
+  def create
+    redirect_to courses_path
+  end
 end

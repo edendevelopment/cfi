@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
-  resource_controller
-
-  index.wants.js do
+  # index.wants.js do
+  def index
     render :template => 'students/index.erb.js'
   end
 

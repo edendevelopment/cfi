@@ -1,8 +1,8 @@
 class PhotosController < ApplicationController
-  resource_controller
-  belongs_to :person
+  # belongs_to :person
   
-  create.wants.html do
+  # create.wants.html do
+  def create
     redirect_to person_photos_path(@person)
   end
 end

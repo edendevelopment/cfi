@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  resource_controller
   
   def create
     person = find_person(params[:person_id])

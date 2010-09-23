@@ -7,8 +7,6 @@ gem "mysql"
 gem 'haml'
 gem 'compass'
 
-# gem 'resource_controller'
-
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '0.6.2'

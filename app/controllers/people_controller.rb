@@ -1,5 +1,4 @@
 class PeopleController < ApplicationController
-  resource_controller
 
   def index
     respond_to do |format|
@@ -14,7 +13,8 @@ class PeopleController < ApplicationController
     end
   end
   
-  create.failure.wants.html do
+  # create.failure.wants.html do
+  def create
     redirect_to people_path
     flash[:error] = "Couldn't add person"
   end
