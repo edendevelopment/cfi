@@ -53,7 +53,7 @@ describe CommentsController do
       
       context "with a valid comment" do
         it "finds the comment" do
-          @person.comments.should_receive(:find).with("#{@comment.id}")
+          @person.comments.should_receive(:find).with(@comment.id)
           do_modifying_request(:get, :edit)
         end
       end
@@ -65,7 +65,7 @@ describe CommentsController do
           @person.stub!(:update_comment)
         end
         it "finds the comment" do
-          @person.comments.should_receive(:find).with("#{@comment.id}")
+          @person.comments.should_receive(:find).with(@comment.id)
           do_modifying_request(:put, :update)
         end
         
