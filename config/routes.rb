@@ -7,7 +7,20 @@ Cfi::Application.routes.draw do
     resources :students, :controller => 'courses/students'
   end
 
-  resources :people, :member => {:make_student => :post, :basic_information => :get, :address => :get, :siblings => :get, :photo => :get, :public_education_info => :get, :obligations => :get, :social_development_info => :get, :add_sibling => :post, :remove_sibling => :delete, :add_caretaker => :post, :caretakers => :get, :remove_caretaker => :delete} do
+  resources :people do
+    member do
+      post   :make_student
+      get    :basic_information
+      get    :address
+      get    :siblings
+      get    :social_development_info
+      post   :add_sibling
+      delete :remove_sibling
+      post   :add_caretaker
+      get    :caretakers
+      delete :remove_caretaker
+    end
+    
     resources :photos
     resources :comments
   end
