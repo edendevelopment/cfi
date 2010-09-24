@@ -47,6 +47,11 @@ describe PeopleController do
       log_in
       Person.stub!(:new).and_return(@person)
       @person.stub!(:save).and_return(false)
+      
+      # Looks like inherited_resources 1.1.2 checks
+      # errors.empty? for success / failure
+      # TODO: Report as an issue?
+      @person.stub!(:errors).and_return(["Not empty"])
     end
     
     def do_request

@@ -1,4 +1,5 @@
-class PeopleController < ApplicationController
+class PeopleController < InheritedResources::Base
+  respond_to :html
 
   def index
     respond_to do |format|
@@ -13,15 +14,12 @@ class PeopleController < ApplicationController
     end
   end
   
-  # create.failure.wants.html do
   def create
-    @person = Person.new(params[:person])
-
-    if @person.save
-      redirect_to(@person, :notice => 'Person was successfully created.')
-    else
-      redirect_to people_path
-      flash[:error] = "Couldn't add person"
+    create! do |success, failure|
+      failure.html do 
+        flash[:error] = "Couldn't add person"
+        redirect_to people_url
+      end
     end
   end
 
