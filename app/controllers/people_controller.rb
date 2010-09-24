@@ -14,12 +14,10 @@ class PeopleController < InheritedResources::Base
     end
   end
   
-  def create
-    create! do |success, failure|
-      failure.html do 
-        flash[:error] = "Couldn't add person"
-        redirect_to people_url
-      end
+  create! do |success, failure|
+    failure.html do 
+      flash[:error] = "Couldn't add person"
+      redirect_to people_url
     end
   end
 
