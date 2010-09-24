@@ -1,24 +1,25 @@
-class VillagesController < ApplicationController  
-  # index.before do
+class VillagesController < InheritedResources::Base
+  respond_to :html
+    
   def index
     @village = Village.new
+    index!
   end
   
-  # create do
   def create
-    wants.html { back_to_view(@village.name, :created) }
-    
-    failure.wants.html { render :template => "villages/index" }
+    create! do |success, failure|
+      success.html do 
+        flash[:notice] = "Village #{@village.name} :created"
+        redirect_to villages_path
+      end
+      
+      failure.html do
+        render "villages/index"
+      end
+    end
   end
   
-  # update do
   def update
-    wants.html { back_to_view(@village_name, :saved) }
-  end
-
-  private
-  def back_to_view(name, action)
-    flash[:notice] = "Village #{name} #{action}"
-    redirect_to villages_path
+    update!(:notice => "Village #{@village_name} saved") { villages_path }
   end
 end
