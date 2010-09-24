@@ -15,8 +15,14 @@ class PeopleController < ApplicationController
   
   # create.failure.wants.html do
   def create
-    redirect_to people_path
-    flash[:error] = "Couldn't add person"
+    @person = Person.new(params[:person])
+
+    if @person.save
+      redirect_to(@person, :notice => 'Person was successfully created.')
+    else
+      redirect_to people_path
+      flash[:error] = "Couldn't add person"
+    end
   end
 
   def make_student
@@ -85,6 +91,10 @@ class PeopleController < ApplicationController
     @person.remove_caretaker(caretaker)
     redirect_to(caretakers_person_path(@person))
   end
-  
+
+private
+  def object
+    Person.find(params[:id])
+  end
 end
 
