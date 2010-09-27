@@ -59,10 +59,10 @@ class Relationship < ActiveRecord::Base
   
   private
   def ensure_people_are_different
-    errors.add_to_base "You can't join a person to themselves" if from == to
+    errors.add :base, "You can't join a person to themselves" if from == to
   end
   
   def ensure_unique_relationship
-    errors.add_to_base "These two people already have that relationship" unless Relationship.including_people([from, to], relationship_type).empty?
+    errors.add :base, "These two people already have that relationship" unless Relationship.including_people([from, to], relationship_type).empty?
   end
 end
