@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'layouts/application' do
   context 'not signed in' do
     before do
-      template.stub!(:user_signed_in? => false)
+      view.stub!(:user_signed_in? => false)
     end
     it 'does not have a sign out link' do
       render
@@ -18,7 +18,7 @@ describe 'layouts/application' do
 
   context 'signed in' do
     before do
-      template.stub!(:user_signed_in? => true)
+      view.stub!(:user_signed_in? => true)
     end
     it 'has a sign out link' do
       render
