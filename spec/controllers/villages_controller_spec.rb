@@ -31,6 +31,11 @@ describe VillagesController do
     context "on failure" do
       before(:each) do
         @village.stub!(:save => false)
+        
+        # Looks like inherited_resources 1.1.2 checks
+        # errors.empty? for success / failure
+        # TODO: Report as an issue?
+        @village.stub!(:errors => ["Not empty"])
       end
       
       it "renders the index page" do
