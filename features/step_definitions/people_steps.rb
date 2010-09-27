@@ -10,16 +10,16 @@ end
 
 Then /^I should see letter blocks in this order:$/ do |table|
   table.raw.each_with_index do |row, index|
-    page.body.should have_tag("ul.pagination li:nth-child(#{index+1}) a", :content => row[0])
+    page.should have_css("ul.pagination li:nth-child(#{index+1}) a", :content => row[0])
   end
-  page.body.should have_tag("ul.pagination li", :count => table.raw.size)
+  page.should have_css("ul.pagination li", :count => table.raw.size)
 end
 
 Then /^I should see these people:$/ do |table|
   table.raw.each_with_index do |row, index|
-    page.body.should have_tag("ul.people li:nth-child(#{index+1}) .person .name", :content => row[0])
+    page.should have_css("ul.people li:nth-child(#{index+1}) .person .name", :content => row[0])
   end
-  page.body.should have_tag('ul.people li', :count => table.raw.size)
+  page.should have_css('ul.people li', :count => table.raw.size)
 end
 
 
