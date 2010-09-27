@@ -43,7 +43,7 @@ class Person < ActiveRecord::Base
   end
 
   def recent_comments
-    comments.find(:all, :order => "created_at desc")
+    comments.order("created_at desc")
   end
   
   def update_comment(comment, new_comment_text, user)
@@ -77,11 +77,11 @@ class Person < ActiveRecord::Base
   end
   
   def caretakers
-    Relationship.find(:all, :conditions => {:to_id => self.id, :relationship_type => Relationship::CARETAKER}).map(&:from)
+    Relationship.where(:to_id => self.id, :relationship_type => Relationship::CARETAKER).map(&:from)
   end
   
   def remove_caretaker(caretaker)
-    Relationship.find(:all, :conditions => {:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER}).each(&:destroy)
+    Relationship.where(:from_id => caretaker.id, :to_id => self.id, :relationship_type => Relationship::CARETAKER).each(&:destroy)
   end
   
   def relationship_with(person)
@@ -91,7 +91,7 @@ class Person < ActiveRecord::Base
   end
 
   def self.search(name)
-    find(:all, :conditions => ['name LIKE ?', "%#{name}%"])
+    Person.where('name LIKE ?', "%#{name}%")
   end
   
   private

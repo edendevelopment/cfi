@@ -98,7 +98,7 @@ describe Person do
     context "caretakers" do
       it "returning a list of the persons caretakers" do
         relationship = mock_model(Relationship, :from => @caretaker)
-        Relationship.should_receive(:find).with(:all, hash_including({:conditions => {:to_id => @person.id, :relationship_type => Relationship::CARETAKER }})).and_return([relationship])
+        Relationship.should_receive(:where).with(hash_including(:to_id => @person.id, :relationship_type => Relationship::CARETAKER)).and_return([relationship])
         @person.caretakers.should == [@caretaker]
       end
     end
@@ -185,13 +185,13 @@ describe Person do
 
   describe "searching people" do
     it "searches by name" do
-      Person.should_receive(:find).with(:all, :conditions => ['name LIKE ?', '%Spencer%'])
+      Person.should_receive(:where).with('name LIKE ?', '%Spencer%')
       Person.search('Spencer')
     end
 
     it "returns what it finds" do
       results = mock(:people)
-      Person.stub!(:find => results)
+      Person.stub!(:where => results)
       Person.search('Enrique').should == results
     end
   end

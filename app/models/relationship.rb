@@ -45,7 +45,7 @@ class Relationship < ActiveRecord::Base
       substitions << type
     end
     
-    find(:all, :conditions => [conditions.join(" AND ")] + substitions)
+    where([conditions.join(" AND ")] + substitions)
   end
   
   def relationship_to(person)
