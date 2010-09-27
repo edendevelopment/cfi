@@ -61,19 +61,19 @@ describe Relationship do
     it "requires a 'from' person" do
       relationship = Relationship.new
       relationship.should_not be_valid
-      relationship.errors.on(:from).should_not be_nil
+      relationship.errors[:from].should_not be_nil
     end
     
     it "requires a 'to' person" do
       relationship = Relationship.new
       relationship.should_not be_valid
-      relationship.errors.on(:to).should_not be_nil
+      relationship.errors[:to].should_not be_nil
     end
     
     it "requires a relationship_type" do
       relationship = Relationship.new
       relationship.should_not be_valid
-      relationship.errors.on(:relationship_type).should_not be_nil
+      relationship.errors[:relationship_type].should_not be_nil
     end
     
     it "doesn't allow adding a relationship from person 1 to person1" do

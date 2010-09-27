@@ -5,7 +5,7 @@ describe Course do
     it "requires a name" do
       course = Course.new
       course.valid?
-      course.errors.on(:name).should_not be_nil
+      course.errors[:name].should_not be_nil
     end
   end
   
