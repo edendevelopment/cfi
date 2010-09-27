@@ -1,4 +1,4 @@
-- form_for @comment, :url => person_comment_path(@person, @comment), :method => :put do |form|
+= form_for @comment, :url => person_comment_path(@person, @comment), :method => :put do |form|
   = form.text_area :comment
   = form.submit 'Update'
   

@@ -1,5 +1,5 @@
-- person_form_for("social development inf") do |form|
-  - form.fields_for :social_development_info do |fields|
+= person_form_for("social development inf") do |form|
+  = form.fields_for :social_development_info do |fields|
     %p.field
       = fields.label :type_of_housing
       %br

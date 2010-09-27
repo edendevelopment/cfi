@@ -1,6 +1,6 @@
 %h2.add-new-person-control Add new person
 .add-new-person
-  - form_for Person.new do |f|
+  = form_for Person.new do |f|
     %p.field
       = f.label :name
       = f.text_field :name

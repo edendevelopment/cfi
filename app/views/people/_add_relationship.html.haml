@@ -1,4 +1,4 @@
-- form_tag path, :method => :post, :id => "add-relationship" do
+= form_tag path, :method => :post, :id => "add-relationship" do
   = label_tag 'person_id', relationship.capitalize
   = select_tag :person_id, options_from_collection_for_select(Person.all, :id, :name_and_village), :class => 'person_id'
   = submit_tag "Add #{relationship}"

@@ -1,5 +1,5 @@
-- person_form_for("obligations") do |form|
-  - form.fields_for :obligations do |fields|
+= person_form_for("obligations") do |form|
+  = form.fields_for :obligations do |fields|
     %p.field
       = fields.label :means_to_support_family
       %br

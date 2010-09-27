@@ -1,5 +1,5 @@
-- person_form_for("address") do |form|
-  - form.fields_for :address do |fields|
+= person_form_for("address") do |form|
+  = form.fields_for :address do |fields|
     %p.field
       = fields.label :house_number
       %br

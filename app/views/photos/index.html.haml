@@ -9,7 +9,7 @@
         = photo.comment
 
 %h3 Add new photo
-- form_for [@person, Photo.new], :html => {:multipart => true} do |f|
+= form_for [@person, Photo.new], :html => {:multipart => true} do |f|
   %div
     = f.label :image
     = f.file_field :image
