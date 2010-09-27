@@ -1,5 +1,4 @@
-class CoursesController < ApplicationController
-  # create.wants.html { redirect_to courses_path }
+class CoursesController < InheritedResources::Base
   def create
     redirect_to courses_path
   end

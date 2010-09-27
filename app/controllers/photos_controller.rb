@@ -1,7 +1,6 @@
-class PhotosController < ApplicationController
-  # belongs_to :person
+class PhotosController < InheritedResources::Base
+  belongs_to :person
   
-  # create.wants.html do
   def create
     redirect_to person_photos_path(@person)
   end
