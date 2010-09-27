@@ -16,7 +16,7 @@ describe PeopleHelper do
       it "links to that image" do
         @image.stub!(:url => 'fake-image-url')
         result = helper.person_image_with_size(@person, 80)
-        result.should have_tag('img[src=/images/fake-image-url]')
+        result.should include('src="/images/fake-image-url"')
       end
     end
 
