@@ -13,6 +13,9 @@ Cfi::Application.routes.draw do
       get    :basic_information
       get    :address
       get    :siblings
+      get    :photo
+      get    :public_education_info
+      get    :obligations
       get    :social_development_info
       post   :add_sibling
       delete :remove_sibling
