@@ -7,12 +7,12 @@ describe 'layouts/application' do
     end
     it 'does not have a sign out link' do
       render
-      response.body.should_not include('sign out')
+      rendered.should_not include('sign out')
     end
 
     it 'has a sign in link' do
       render
-      response.body.should include('sign in')
+      rendered.should include('sign in')
     end
   end
 
@@ -22,12 +22,12 @@ describe 'layouts/application' do
     end
     it 'has a sign out link' do
       render
-      response.body.should include('sign out')
+      rendered.should include('sign out')
     end
 
     it 'does not have a sign in link' do
       render
-      response.body.should_not include('sign in')
+      rendered.should_not include('sign in')
     end
   end
 end
