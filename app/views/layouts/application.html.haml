@@ -9,7 +9,7 @@
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     
     = javascript_include_tag :jelly, *application_jelly_files
-    = spread_jelly
+    = spread_jelly.html_safe
     = javascript_include_tag 'application', 'ajaxDelete', 'lib/jquery.form', 'jquery-autocomplete/jquery.autocomplete'
 
     
