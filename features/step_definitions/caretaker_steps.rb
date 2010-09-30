@@ -4,7 +4,7 @@ end
 
 Then /^I should see caretaker "([^\"]*)"$/ do |caretaker_name|
   within('ul') do
-    page.should have_css('li', caretaker_name)
+    page.should have_css('li', :text => caretaker_name)
   end
 end
 
@@ -21,7 +21,7 @@ end
 
 Then /^I should not see caretaker "([^\"]*)"$/ do |caretaker_name|
    within('.people ul') do
-    page.should_not have_css('li', caretaker_name)
+    page.should_not have_css('li', :text => caretaker_name)
   end
 end
 

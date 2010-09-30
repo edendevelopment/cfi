@@ -11,7 +11,7 @@ gem 'inherited_resources', '1.1.2'
 
 gem 'rmagick',    :require => 'RMagick'
 gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly', '0.6.2'
+gem 'dragonfly'
 gem 'devise', "1.1.2"
 gem 'formtastic'
 gem 'validation_reflection'
