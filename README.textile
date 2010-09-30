@@ -14,22 +14,24 @@ If you are working on an issue, please tag it as 'grabbed' and make a note as a 
 
 h2. Latest author list
 
-This list shows all the authors of the project, along with the number of commits they've made (as of 21st September 2010).
+This list shows all the authors of the project, along with the number of commits they've made.
 
 Big thanks to all the contributors so far! If you want your name on the list, please submit a patch for inclusion!
 
 James Hunt (72)
 aimee daniells (54)
+Louis Rose (44)
 Richard Patching (38)
 Tom Crayford (36)
 Steve Tooke (24)
 Pablo Brasero (17)
 Tristan Harris (11)
+Chris Parsons (11)
 Enrique Comba Riepenhausen (9)
 Elliot Crosby-McCullough (7)
-Chris Parsons (7)
 David Henry (5)
 Erin Staniland (4)
 Matt Patterson (3)
 
-(list generated with http://gist.github.com/589281)
+http://gist.github.com/589281
+Generated on Thu 30 Sep 2010 07:01:59 BST
