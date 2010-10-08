@@ -10,8 +10,8 @@ gem 'compass'
 gem 'inherited_resources', '1.1.2'
 
 gem 'rmagick',    :require => 'RMagick'
-gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly'
+gem 'aws-s3', :require => 'aws/s3'
+gem 'dragonfly', '~>0.7.5'
 gem 'devise', "1.1.2"
 gem 'formtastic'
 gem 'validation_reflection'
@@ -20,10 +20,12 @@ gem 'acts_as_commentable'
 
 group :development do
   gem "rspec-rails", "2.0.0.beta.22" # needed for rake tasks
+  gem 'rack-cache', :require => 'rack/cache'
 end
 
 group :test do
   gem 'jasmine'
+  gem 'rack-cache', :require => 'rack/cache'
   gem "rspec-rails", "2.0.0.beta.22"
   gem 'capybara'
   gem 'database_cleaner'
