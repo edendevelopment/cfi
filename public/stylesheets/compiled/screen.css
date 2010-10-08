@@ -1,0 +1,150 @@
+html, body { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+html { font-size: 100.01%; }
+
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+blockquote, q { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; quotes: "" ""; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+
+th, td, caption { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; text-align: left; font-weight: normal; vertical-align: middle; }
+
+table { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border-collapse: separate; border-spacing: 0; vertical-align: middle; }
+
+a img { border: none; }
+
+@import url(blueprint/scaffolding.css);
+.people-section.show-page #person .box { padding: 10px; }
+.people-section.show-page #person .section { overflow: hidden; *zoom: 1; margin-bottom: 10px; }
+.people-section.show-page #person .top-section { border: 1px solid #dddddd; }
+.people-section.show-page #person .photo-block { display: inline; float: left; margin-right: 10px; width: 230px; font-size: 0.8em; }
+* html .people-section.show-page #person .photo-block { overflow-x: hidden; }
+.people-section.show-page #person .photo-block .photo { border: 1px solid #dddddd; }
+.people-section.show-page #person .basic-information { display: inline; float: left; margin-right: 10px; width: 350px; }
+* html .people-section.show-page #person .basic-information { overflow-x: hidden; }
+.people-section.show-page #person .basic-information .label { width: 100px; }
+.people-section.show-page #person .address { display: inline; float: left; margin-right: 0; width: 350px; width: 340px; }
+* html .people-section.show-page #person .address { overflow-x: hidden; }
+.people-section.show-page #person .student-status { margin-bottom: 5px; }
+.people-section.show-page #person .siblings { display: inline; float: left; margin-right: 0; width: 470px; }
+* html .people-section.show-page #person .siblings { overflow-x: hidden; }
+.people-section.show-page #person .siblings .box { border: 1px solid #dddddd; }
+.people-section.show-page #person .siblings ul { list-style-type: none; }
+.people-section.show-page #person .caretakers { display: inline; float: left; margin-right: 0; width: 470px; }
+* html .people-section.show-page #person .caretakers { overflow-x: hidden; }
+.people-section.show-page #person .caretakers .box { border: 1px solid #dddddd; }
+.people-section.show-page #person .caretakers ul { list-style-type: none; }
+.people-section.show-page #person .social-development-info .box { border: 1px solid #dddddd; }
+.people-section.show-page #person .public-education-info { display: inline; float: left; margin-right: 10px; width: 470px; }
+* html .people-section.show-page #person .public-education-info { overflow-x: hidden; }
+.people-section.show-page #person .public-education-info .box { border: 1px solid #dddddd; }
+.people-section.show-page #person .public-education-info .label { width: 165px; }
+.people-section.show-page #person .obligations { display: inline; float: left; margin-right: 10px; width: 470px; }
+* html .people-section.show-page #person .obligations { overflow-x: hidden; }
+.people-section.show-page #person .obligations .box { border: 1px solid #dddddd; }
+.people-section.show-page #person .obligations .label { width: 170px; }
+.people-section.show-page #person #comments { display: inline; float: left; margin-right: 10px; width: 950px; }
+* html .people-section.show-page #person #comments { overflow-x: hidden; }
+.people-section.show-page #person #comments textarea { width: 100%; height: 150px; margin-bottom: 10px; margin-top: 10px; }
+.people-section.show-page #person #comments ul { margin-top: 10px; list-style-type: none; }
+.people-section.show-page #person #comments li { padding: 10px; }
+.people-section.show-page #person #comments li:nth-child(odd) { background-color: #e7cddc; }
+.people-section.show-page #person #comments li .info { font-size: 0.8em; }
+.people-section.show-page #person #comments .box { border: 1px solid #dddddd; }
+.people-section.show-page #person h1 { color: black; }
+.people-section.show-page #person div { overflow: hidden; *zoom: 1; }
+.people-section.show-page #person .label { font-weight: bold; float: left; width: 150px; }
+.people-section.siblings-page .people, .people-section.caretakers-page .people { width: 250px; }
+.people-section.siblings-page .people .button-to, .people-section.caretakers-page .people .button-to { float: right; }
+.people-section.siblings-page #add-relationship, .people-section.caretakers-page #add-relationship { margin-top: 10px; margin-bottom: 10px; }
+.people-section .edit-comment { font-size: 0.8em; }
+
+.people { display: inline; float: left; margin-right: 10px; width: 470px; }
+* html .people { overflow-x: hidden; }
+.people ul li { overflow: hidden; *zoom: 1; margin-bottom: 10px; }
+.people ul li .button-to { float: right; }
+.people ul li .person .image { float: left; margin-right: 5px; }
+.people ul li .person .name a { color: #333333; }
+.people ul li .person .village { color: #666666; font-size: 0.7em; line-height: 1em; }
+.people ul li .person .village a { color: #666666; }
+.people ul li .person .relationship-type { color: #666666; font-size: 0.7em; line-height: 1em; }
+.people ul li .person .relationship-type .relationship-type-name { color: #666666; }
+
+.edit_person textarea { width: 500px; height: 150px; }
+
+.person_search, .student_search { width: 315px; }
+
+.add-new-person-control { cursor: pointer; }
+
+ul.people { display: inline; float: left; margin-right: 10px; width: 950px; margin-right: 0; }
+* html ul.people { overflow-x: hidden; }
+ul.people li { display: inline; float: left; margin-right: 10px; width: 310px; margin-bottom: 1em; }
+* html ul.people li { overflow-x: hidden; }
+ul.people li:nth-child(3n) { margin-right: 0; }
+ul.people li .person { background-color: white; border: 1px solid #aaaaaa; -moz-box-shadow: 1px 3px 5px #cccccc; -webkit-box-shadow: 1px 3px 5px #cccccc; box-shadow: 1px 3px 5px #cccccc; padding: 15px; height: 100px; }
+ul.people li .person a { color: #444444; }
+ul.people li .person .image { border: 1px solid #aaaaaa; float: left; }
+ul.people li .person .name { float: right; width: 190px; text-align: right; font-size: 1.2em; padding: 5px 0; font-weight: bold; }
+ul.people li .person .name a { text-decoration: none; }
+ul.people li .person .name a:hover { text-decoration: underline; }
+ul.people li .person .village, ul.people li .person .date-of-birth { clear: right; float: right; font-size: 0.9em; }
+
+.courses-section dt { float: left; width: 100px; font-weight: bold; }
+.courses-section .course .student_list { margin: 1em 0; }
+.courses-section #students { margin-bottom: 10px; }
+.courses-section form.add_student { margin-top: 10px; clear: both; }
+.courses-section .people form.button_to { float: right; padding-left: 10px; }
+.courses-section .people .ajax-delete { float: right; padding: 5px; }
+
+.photos-section h3 { margin-top: 10px; }
+.photos-section form div { margin-top: 10px; }
+.photos-section form label { float: left; width: 100px; clear: both; }
+.photos-section ul.photos { overflow: hidden; *zoom: 1; list-style: none; }
+.photos-section ul.photos li.photo { float: left; border: 1px solid #aaaaaa; padding: 5px; padding-bottom: 0px; margin: 5px; nth-child(3n+1)-clear: left; }
+.photos-section ul.photos li.photo p { width: 250px; }
+.photos-section div.photo { margin: 10px 0px; }
+
+.villages-section #villages { width: 300px; margin-top: 20px; }
+.villages-section #villages li { list-style: disc; }
+.villages-section #villages li:nth-child(odd) { background-color: #e7cddc; }
+
+* { margin: 0; padding: 0; }
+
+body { color: #333333; font-family: Helvetica, non-serif; font-size: 16px; line-height: 1.5em; }
+body .site { width: 950px; margin: 0 auto; overflow: hidden; *zoom: 1; }
+body #wrapper { background-color: white; }
+body #wrapper #header { background-color: #cfb0c2; }
+body #wrapper #header h1, body #wrapper #header h2 { margin-bottom: 0.25em; }
+body #wrapper #header .site { padding-top: 1em; padding-bottom: 1.1em; }
+body #wrapper #footer { margin-bottom: 20px; }
+body #wrapper #menu { overflow: hidden; *zoom: 1; background-color: #873967; font-size: 120%; font-weight: bold; }
+body #wrapper #menu li { float: left; list-style-type: none; padding-right: 5px; }
+body #wrapper #menu li a { color: white; display: inline-block; padding: 8px 3px; text-decoration: none; }
+body #wrapper #menu li a:hover { color: #333333; }
+body #wrapper #content { color: #555555; margin-top: 1em; }
+body #wrapper #content h1, body #wrapper #content h2, body #wrapper #content h3, body #wrapper #content h4 { margin-bottom: 0.5em; margin-top: 10px; }
+body #wrapper #content h1 { font-size: 1.6em; }
+body #wrapper #content h2 { font-size: 1.3em; }
+body #wrapper #content h3 { font-size: 1.2em; }
+body #wrapper #content h4 { font-size: 1.1em; }
+body #wrapper #content p { margin-bottom: 0.8em; }
+body #wrapper #content input[type=text] { font-size: 1em; padding: 3px; color: #555555; border: 1px solid #555555; }
+body #wrapper #content input[type=text]:focus { background-color: #e7d4df; }
+body #wrapper #content label { font-weight: bold; }
+body #wrapper #content .site { padding-top: 0.5em; }
+body #wrapper #content ul#courses { display: table; }
+body #wrapper #content ul#courses li.course { display: table-row; }
+body #wrapper #content ul#courses li.course:nth-child(odd) { background-color: #e7cddc; }
+body #wrapper #content ul#courses li.course span { display: table-cell; padding: 3px; }
+body ul.pagination { margin-bottom: 1em; list-style: none; color: #cccccc; }
+body ul.pagination li { display: inline; font-size: 1.1em; }
+body ul.pagination li a { padding: 0 2px; text-decoration: none; }
+body ul.pagination li a:hover { text-decoration: underline; }
+
+body.three-col #container { width: 950px; margin: 0 auto; overflow: hidden; *zoom: 1; }
+body.three-col #header, body.three-col #footer { display: inline; float: left; margin-right: 10px; width: 950px; }
+* html body.three-col #header, * html body.three-col #footer { overflow-x: hidden; }
+body.three-col #sidebar { display: inline; float: left; margin-right: 10px; width: 310px; }
+* html body.three-col #sidebar { overflow-x: hidden; }
+body.three-col #content { display: inline; float: left; margin-right: 0; width: 630px; }
+* html body.three-col #content { overflow-x: hidden; }
