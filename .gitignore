@@ -11,4 +11,3 @@ capybara-*
 .bundle
 public/system/*
 clean/*
-Gemfile.lock
