@@ -5,9 +5,9 @@
   - else
     = button_to "Make #{@person.name} a student", make_student_person_path(@person)
 
-= output_fields_for(@person) do |output|
+- output_fields_for(@person) do |output|
   = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
-  = output.text "gender" 
-  = output.text "religion" 
+  = output.text "gender"
+  = output.text "religion"
 
 = link_to "Edit basic information", basic_information_person_path(@person)

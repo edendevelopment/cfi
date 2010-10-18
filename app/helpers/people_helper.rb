@@ -6,7 +6,7 @@ module PeopleHelper
   def person_form_for(type_name)
     concat person_section_header(type_name)
     form_for @person, :html => { :multipart => true } do |form|
-      concat yield(form)
+      yield(form)
       concat form.submit("Save")
       concat " or "
       concat link_to("cancel", person_path(@person))

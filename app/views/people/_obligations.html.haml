@@ -1,6 +1,6 @@
 %h2 Obligations
 
-= output_fields_for(@person.obligations) do |output|
+- output_fields_for(@person.obligations) do |output|
   = output.text "means_to_support_family"
   = output.boolean "support_required"
   = output.text "work_obligations"

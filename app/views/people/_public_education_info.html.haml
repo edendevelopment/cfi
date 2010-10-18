@@ -1,6 +1,6 @@
 %h2 Public education info
 
-= output_fields_for(@person.public_education_info) do |output|
+- output_fields_for(@person.public_education_info) do |output|
   = output.boolean "attending"
   = output.text 'grade'
   = output.text "performance"
