@@ -17,10 +17,12 @@ gem 'formtastic'
 gem 'validation_reflection'
 gem 'jelly'
 gem 'acts_as_commentable'
+gem 'ssl_requirement'
 
 group :development do
   gem "rspec-rails", "2.0.0.beta.22" # needed for rake tasks
   gem 'rack-cache', :require => 'rack/cache'
+  gem 'heroku_san'
 end
 
 group :test do
