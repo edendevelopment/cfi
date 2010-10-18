@@ -28,5 +28,5 @@ Cfi::Application.configure do
   # Enable threaded mode
   # config.threadsafe!
 
-  config.action_mailer.default_url_options = { :host => "cfi.stage.edendevelopment.co.uk" }
-endß
+  config.action_mailer.default_url_options = { :host => "kariskids-admin-staging.heroku.com" }
+end
