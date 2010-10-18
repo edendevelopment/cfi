@@ -1,4 +1,4 @@
 apps:
   # shorthand: heroku app
-  production: cfi
-  staging: cfi-staging
+  production: kariskids-admin
+  staging: kariskids-admin-staging
