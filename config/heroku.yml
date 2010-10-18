@@ -1,0 +1,4 @@
+apps:
+  # shorthand: heroku app
+  production: cfi
+  staging: cfi-staging
