@@ -1,0 +1,7 @@
+.person_management
+  %ul.people
+    = render :partial => 'households/person', :collection => household.people, :locals => {:household => household}
+
+  = form_tag household_people_path(household), :method => :post, :class => "add_person" do
+    = select_tag 'person_id', options_from_collection_for_select(household.eligible_people, :id, :name_and_caretaker), :class => 'person_id', :id => nil
+    = submit_tag "Add"

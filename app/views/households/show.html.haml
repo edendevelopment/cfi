@@ -1,0 +1,21 @@
+%h1= @household.caretaker
+#household
+  %dl
+    %dt Caretaker
+    %dd= @household.caretaker
+
+    %dt Description
+    %dd= @household.description
+
+    %dt Contact Information
+    %dd= @household.contact_information
+
+    %dt Address
+    %dd= @household.address
+
+  %p= link_to "Edit", edit_household_path(@household)
+
+  #people
+    %h2 People
+    = render :partial => "people", :locals => { :household => @household }
+    

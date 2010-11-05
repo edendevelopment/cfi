@@ -1,0 +1,3 @@
+%li[person]
+  = button_to "Remove", { :controller => 'households/people', :action => 'destroy', :household_id => household.id, :id => person.id }, :confirm => "Are you sure you want to remove #{person.name} from #{household.caretaker}?", :method => :delete
+  = render :partial => "people/person", :locals => {:person => person}

@@ -1,0 +1,11 @@
+%li.household[household]
+  %div
+    %span.caretaker= link_to household.caretaker, household_path(household)
+    %span.description= household.description
+    %span.contact_information= household.contact_information
+    %span.address= household.address
+    %span.people
+      = link_to "people", household_path(household)
+  
+  .person_list
+    = render :partial => 'people', :locals => { :household => household }

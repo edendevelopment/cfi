@@ -14,6 +14,8 @@ module NavigationHelpers
       new_course_path
     when 'the course list page'
       courses_path
+    when 'the household list page'
+      households_path
     when 'the person list page'
       people_path    
     when 'the new person page'
@@ -26,6 +28,8 @@ module NavigationHelpers
       person_photos_path(Person.find_by_name($1))
     when /the page for course "([^\"]+)"/
       course_path(Course.find_by_name($1))
+    when /the page for household "([^\"]+)"/
+      household_path(Household.find_by_caretaker($1))
     when 'login'
       new_user_session_path
     when 'the villages page'

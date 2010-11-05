@@ -14,6 +14,10 @@ Factory.define :course do |course|
   course.sequence(:name) {|n| "Course #{n}"}
 end
 
+Factory.define :household do |household|
+  household.sequence(:caretaker) {|n| "Household #{n}"}
+end
+
 Factory.define :user do |user|
   user.sequence(:name) { |n| "User #{n}" }
   user.sequence(:email) { |n| "user_#{n}@example.com" }
