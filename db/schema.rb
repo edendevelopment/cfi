@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603112708) do
+ActiveRecord::Schema.define(:version => 20101102004443) do
 
   create_table "addresses", :force => true do |t|
     t.integer "person_id"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
     t.integer "student_id"
   end
 
+  create_table "households", :force => true do |t|
+    t.string   "caretaker"
+    t.string   "description"
+    t.string   "contact_information"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "obligations", :force => true do |t|
     t.integer "person_id"
     t.boolean "support_required",        :default => false
@@ -65,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
     t.string   "image_uid"
     t.string   "religion",                :default => ""
     t.boolean  "date_of_birth_confirmed", :default => false, :null => false
+    t.integer  "household_id"
   end
 
   create_table "photos", :force => true do |t|

@@ -2,49 +2,50 @@ require 'spec_helper'
 
 describe Household do
   describe "validations" do
-    it "requires a name" do
-      course = Course.new
-      course.valid?
-      course.errors[:name].should_not be_nil
+    it "requires a caretaker" do
+      household = Household.new
+      household.valid?
+      household.errors[:caretaker].should_not be_nil
     end
   end
   
-  describe "adding a student" do
+  describe "adding a person" do
     before(:each) do
-      @course = Factory.create :course
-      @student = Factory.create :student
+      @household = Factory.create :household
+      @person = Factory.create :person
     end
     
-    it "adds the student" do
-      @course.add_student(@student)
-      @course.reload.students.should == [@student]
+    it "adds the person" do
+      @household.add_person(@person)
+      @household.reload.people.should == [@person]
     end
     
-    it "only adds the student once" do
-      @course.add_student(@student)
-      @course.add_student(@student)
-      @course.students.should == [@student]
+    it "only adds the person once" do
+      @household.add_person(@person)
+      @household.add_person(@person)
+      @household.people.should == [@person]
     end
   end
   
-  describe "removing a student" do
-    it "removes the student" do
-      @course = Factory.create :course
-      @student = Factory.create :student
-      @course.add_student(@student)
-      @course.remove_student(@student)
-      @course.reload.students.should == []
+  describe "removing a person" do
+    it "removes the person" do
+      @household = Factory.create :household
+      @person = Factory.create :person
+      @household.add_person(@person)
+      @household.remove_person(@person)
+      @household.reload.people.should == []
     end
   end
   
-  describe "eligible students" do
-    it "returns all students not already in the class" do
-      alice = Factory.create :student
-      bob = Factory.create :student
-      charles = Factory.create :student
-      course = Factory.create :course
-      course.add_student(bob)
-      course.eligible_students.sort_by(&:name).should == [alice, charles].sort_by(&:name)
+  describe "eligible persons" do
+    it "returns all people not already in a household" do
+      alice = Factory.create :person
+      bob = Factory.create :person
+      charles = Factory.create :person
+      household1 = Factory.create :household
+      household2 = Factory.create :household
+      household1.add_person(bob)
+      household2.eligible_people.sort_by(&:name).should == [alice, charles].sort_by(&:name)
     end
   end
 end
