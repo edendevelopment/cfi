@@ -1,7 +1,6 @@
-# Edit this Gemfile to bundle your application's dependencies.
-source 'http://gemcutter.org'
+source :rubygems
 
-gem "rails", "= 3.0.0"
+gem "rails", "= 3.0.1"
 gem "mysql"
 
 gem 'haml'
@@ -18,9 +17,10 @@ gem 'validation_reflection'
 gem 'jelly'
 gem 'acts_as_commentable'
 gem 'ssl_requirement'
+gem 'escape_utils'
 
 group :development do
-  gem "rspec-rails", "2.0.0.beta.22" # needed for rake tasks
+  gem "rspec-rails"
   gem 'rack-cache', :require => 'rack/cache'
   gem 'heroku_san', '1.0.2'
 end
@@ -28,7 +28,7 @@ end
 group :test do
   gem 'jasmine'
   gem 'rack-cache', :require => 'rack/cache'
-  gem "rspec-rails", "2.0.0.beta.22"
+  gem "rspec-rails"
   gem 'capybara'
   gem 'database_cleaner'
   gem 'culerity'
