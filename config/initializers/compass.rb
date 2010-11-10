@@ -8,4 +8,4 @@ Sass::Plugin.options[:never_update] = false
 # Make stylesheets compile to tmp
 require "fileutils"
 FileUtils.mkdir_p(Rails.root.join("tmp", "stylesheets", "compiled"))
-ActionController::Dispatcher.middleware.use(Rack::Static, :root => "tmp/", :urls => ["/stylesheets/compiled"])
+Rails.application.config.middleware.use(Rack::Static, :root => "tmp/", :urls => ["/stylesheets/compiled"])
