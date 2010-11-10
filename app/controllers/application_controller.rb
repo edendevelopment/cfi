@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   include SslRequirement
   def ssl_required?
-    Rails.env == 'production'
+    Rails.env == 'production' || Rails.env == 'staging'
   end
 
   protect_from_forgery
