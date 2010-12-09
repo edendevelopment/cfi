@@ -11,6 +11,7 @@ Cfi::Application.routes.draw do
 
   resources :households do
     resources :people, :controller => 'households/people'
+    resources :notes
   end
 
   resources :people do

@@ -1,0 +1,3 @@
+= form_for @note, :url => household_note_path(@household, @note), :method => :put do |form|
+  = form.text_area :comment
+  = form.submit 'Update'

@@ -32,3 +32,10 @@ When /^I remove "([^\"]*)" from the household$/ do |person_name|
     click_button "Remove"
   end
 end
+
+Then /^"([^\"]*)" should be a note for household "([^\"]*)"$/ do |note, household_name|
+  page.should have_content(household_name)
+  within ("#notes .comment_text") do
+    page.should have_content(note)
+  end
+end
