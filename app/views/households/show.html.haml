@@ -19,7 +19,8 @@
     #people
       %h2 People
       = render :partial => "people", :locals => { :household => @household }
-    
-  .section
-    #notes
-      = render :partial => 'notes'
+
+  -if current_user.is_social_worker?
+    .section
+      #notes
+        = render :partial => 'notes'

@@ -24,6 +24,12 @@ Feature: Social worker adds notes to a household
     Then I should be on the page for household "Hun"
     And "Nice and clean and bright!" should be a note for household "Hun"
   
-  Scenario: Social worker adds pictures to notes
   Scenario: Non social worker cannot access any of the notes
+    Given I am a new, authenticated user
+    And a household called "Hun"
+    And a note "Nice and clean!" for household "Hun" and user "test@example.com"
+    When I go to the page for household "Hun"
+    Then I should not see "Nice and clean!"
+
+  Scenario: Social worker adds pictures to notes
 
