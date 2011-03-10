@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.0.1)
     activesupport (3.0.1)
     acts_as_commentable (3.0.0)
+    archive-tar-minitar (0.5.2)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     arrayfields (4.7.4)
@@ -55,6 +56,7 @@ GEM
       main
       ruby_parser (~> 2.0.4)
       sexp_processor (~> 3.0.3)
+    columnize (0.3.2)
     compass (0.10.5)
       haml (>= 3.0.4)
     configuration (1.1.0)
@@ -126,6 +128,8 @@ GEM
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
     mail (2.2.9)
       activesupport (>= 2.3.6)
       i18n (~> 0.4.1)
@@ -196,9 +200,19 @@ GEM
       rspec-expectations (= 2.0.0.beta.22)
     rspec-rails (2.0.0.beta.22)
       rspec (= 2.0.0.beta.22)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
     ruby2ruby (1.2.5)
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     rubyforge (2.0.4)
@@ -255,5 +269,6 @@ DEPENDENCIES
   rmagick
   roodi
   rspec-rails
+  ruby-debug19
   ssl_requirement
   validation_reflection

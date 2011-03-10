@@ -23,6 +23,7 @@ group :development do
   gem "rspec-rails"
   gem 'rack-cache', :require => 'rack/cache'
   gem 'heroku_san', '1.0.2'
+  gem 'ruby-debug19'
 end
 
 group :test do
@@ -39,4 +40,5 @@ group :test do
   gem 'googlecharts'
   gem 'launchy'
   gem 'factory_girl'
+  gem 'ruby-debug19'
 end

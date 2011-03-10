@@ -12,6 +12,12 @@ Given /^a household called "([^\"]*)"$/ do |caretaker|
   Factory.create :household, :caretaker => caretaker
 end
 
+Given /^a note "([^\"]*)" for household "([^\"]*)" and user "([^\"]*)"$/ do |note, caretaker, email|
+  household = Household.find_by_caretaker caretaker
+  user = User.find_by_email(email)
+  Factory.create :comment, :comment => note, :commentable_id => household.id, :commentable_type => 'Household', :user => user, :created_at => Time.new, :updated_at => Time.new
+end
+
 When /^I add "([^\"]*)" to the household$/ do |person_name|
   select person_name, :from => "person_id"
   click "Add"

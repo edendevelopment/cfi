@@ -9,8 +9,3 @@ Feature: Photo album
     When I go to the photos page for "Oum Bora"
     And I add the photo "sample.jpg" with comment "This is a photo"
     Then I should see the photo "sample.jpg" with comment "This is a photo"
-  
-  
-  
-
-  

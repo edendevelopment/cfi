@@ -12,6 +12,18 @@ Feature: Social worker adds notes to a household
     Then "Nice and clean!" should be a note for household "Hun"
 
   Scenario: Social worker changes notes after the fact
+    Given I am a new, authenticated social worker with email "test@example.com" and password "password"
+    And a household called "Hun"
+    And a note "Nice and clean!" for household "Hun" and user "test@example.com"
+    When I go to the page for household "Hun"
+    And I follow "Edit" within ".edit-comment"
+    Then I should be on the note edit page for "Nice and clean!" on household "Hun"
+    And the "comment_comment" field should contain "Nice and clean!"
+    And I fill in "comment_comment" with "Nice and clean and bright!"
+    And I press "Update"
+    Then I should be on the page for household "Hun"
+    And "Nice and clean and bright!" should be a note for household "Hun"
+  
   Scenario: Social worker adds pictures to notes
   Scenario: Non social worker cannot access any of the notes
 

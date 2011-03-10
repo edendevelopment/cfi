@@ -1,15 +1,14 @@
 %h2 Notes
 %p= link_to "Add a note", "#add_note"
-%ul
-  - @household.recent_notes.each do |note|
-    %li
-      .comment_text= simple_format note.comment
-      .info
-        by
-        = link_to note.user.name
-        = distance_of_time_in_words_to_now(note.updated_at)
-        ago
-      .edit-comment= link_to 'Edit', edit_household_note_path(@household.id, note.id)
+- @household.recent_notes.each do |note|
+  .box
+    .comment_text= simple_format note.comment
+    .info
+      by
+      = link_to note.user.name
+      = distance_of_time_in_words_to_now(note.updated_at)
+      ago
+    .edit-comment= link_to 'Edit', edit_household_note_path(@household.id, note.id)
 = form_tag household_notes_path(@household.id), :id => "add_note" do
   = text_area_tag :note
   = submit_tag 'Add note'

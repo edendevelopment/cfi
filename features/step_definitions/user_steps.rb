@@ -32,10 +32,11 @@ Given 'I am a new, authenticated user' do
   And %{a logged in user "#{email}" with password "#{password}"}
 end
 
-Given 'I am a new, authenticated social worker' do
-  email = 'test@example.com'
-  password = 'password'
+Given /I am a new, authenticated social worker(?:| with email "([^\"]*)" and password "([^\"]*)")$/ do |email, password|
+  email = 'test@example.com' if !email
+  password = 'password' if !password
 
   Given %{I have one social worker "#{email}" with password "#{password}"}
   And %{a logged in user "#{email}" with password "#{password}"}
 end
+

@@ -38,6 +38,8 @@ module NavigationHelpers
       village_path(Village.find_by_name($1))
     when /the caretaker page for "([^\"]+)"/
       caretakers_person_path(Person.find_by_name($1))
+    when /the note edit page for "([^\"]+)" on household "([^\"]+)"/
+      edit_household_note_path(Household.find_by_caretaker($2), Comment.find_by_comment($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

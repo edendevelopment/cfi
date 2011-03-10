@@ -31,3 +31,9 @@ end
 Factory.define :address do |address|
   
 end
+
+Factory.define :comment do |comment|
+  comment.sequence(:comment) {|n| "Household #{n}"}
+  comment.association :user
+end
+
