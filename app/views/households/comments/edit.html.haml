@@ -1,0 +1,11 @@
+= form_for [@household, @comment], :method => :put, :html => { :multipart => true } do |form|
+  %p.field
+    = form.label :comment
+    %br
+    = form.text_area :comment
+  %p.field
+    = form.label :image
+    %br
+    = form.file_field :image
+  %p.controls
+    = form.submit 'Update'

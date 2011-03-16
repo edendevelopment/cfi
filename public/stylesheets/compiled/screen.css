@@ -290,28 +290,24 @@ a img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 113, ../../../app/stylesheets/partials/_people.sass */
-.people-section .edit-comment {
-  font-size: 0.8em;
-}
 
-/* line 117, ../../../app/stylesheets/partials/_people.sass */
+/* line 114, ../../../app/stylesheets/partials/_people.sass */
 .edit_person textarea {
   width: 500px;
   height: 150px;
 }
 
-/* line 121, ../../../app/stylesheets/partials/_people.sass */
+/* line 118, ../../../app/stylesheets/partials/_people.sass */
 .person_search, .student_search {
   width: 315px;
 }
 
-/* line 124, ../../../app/stylesheets/partials/_people.sass */
+/* line 121, ../../../app/stylesheets/partials/_people.sass */
 .add-new-person-control {
   cursor: pointer;
 }
 
-/* line 127, ../../../app/stylesheets/partials/_people.sass */
+/* line 124, ../../../app/stylesheets/partials/_people.sass */
 ul.people {
   display: inline;
   float: left;
@@ -323,7 +319,7 @@ ul.people {
 * html ul.people {
   overflow-x: hidden;
 }
-/* line 131, ../../../app/stylesheets/partials/_people.sass */
+/* line 128, ../../../app/stylesheets/partials/_people.sass */
 ul.people li {
   display: inline;
   float: left;
@@ -335,11 +331,11 @@ ul.people li {
 * html ul.people li {
   overflow-x: hidden;
 }
-/* line 135, ../../../app/stylesheets/partials/_people.sass */
+/* line 132, ../../../app/stylesheets/partials/_people.sass */
 ul.people li:nth-child(3n) {
   margin-right: 0;
 }
-/* line 138, ../../../app/stylesheets/partials/_people.sass */
+/* line 135, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person {
   background-color: white;
   border: 1px solid #aaaaaa;
@@ -349,16 +345,16 @@ ul.people li .person {
   padding: 15px;
   height: 100px;
 }
-/* line 145, ../../../app/stylesheets/partials/_people.sass */
+/* line 142, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person a {
   color: #444444;
 }
-/* line 148, ../../../app/stylesheets/partials/_people.sass */
+/* line 145, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person .image {
   border: 1px solid #aaaaaa;
   float: left;
 }
-/* line 152, ../../../app/stylesheets/partials/_people.sass */
+/* line 149, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person .name {
   float: right;
   width: 190px;
@@ -367,7 +363,7 @@ ul.people li .person .name {
   padding: 5px 0;
   font-weight: bold;
 }
-/* line 159, ../../../app/stylesheets/partials/_people.sass */
+/* line 156, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person .name a {
   text-decoration: none;
 }
@@ -375,7 +371,7 @@ ul.people li .person .name a {
 ul.people li .person .name a:hover {
   text-decoration: underline;
 }
-/* line 162, ../../../app/stylesheets/partials/_people.sass */
+/* line 159, ../../../app/stylesheets/partials/_people.sass */
 ul.people li .person .village, ul.people li .person .date-of-birth {
   clear: right;
   float: right;
@@ -506,10 +502,24 @@ ul.people li .person .village, ul.people li .person .date-of-birth {
   float: right;
   padding: 5px;
 }
-/* line 37, ../../../app/stylesheets/partials/_households.sass */
+/* line 38, ../../../app/stylesheets/partials/_households.sass */
 .households-section #notes .box {
   border: 1px solid #dddddd;
   margin-bottom: 10px;
+}
+/* line 42, ../../../app/stylesheets/partials/_households.sass */
+.households-section #notes .edit-comment {
+  font-size: 0.8em;
+}
+/* line 45, ../../../app/stylesheets/partials/_households.sass */
+.households-section #notes .delete-comment {
+  font-size: 0.8em;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+/* line 50, ../../../app/stylesheets/partials/_households.sass */
+.households-section #notes .delete-comment .button_to {
+  float: right;
 }
 
 /* line 16, ../../../app/stylesheets/screen.sass */

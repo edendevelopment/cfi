@@ -45,3 +45,16 @@ Then /^"([^\"]*)" should be a note for household "([^\"]*)"$/ do |note, househol
     page.should have_content(note)
   end
 end
+
+When /^I add the note "([^\"]*)" with photo "([^\"]*)" to the household$/ do |note, file_name|
+  attach_file "comment_image", Rails.root.join('test', 'fixtures', file_name)
+  fill_in "Note", :with => note
+  click_button "Add note"
+end
+
+Then /^I should see the note "([^\"]*)" with photo "([^\"]*)"$/ do |note, file_name|
+  with_scope(".box") do
+    page.should have_css(".photo")
+    page.should have_css(".comment_text", :text => note)
+  end
+end

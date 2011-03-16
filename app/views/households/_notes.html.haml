@@ -2,13 +2,24 @@
 %p= link_to "Add a note", "#add_note"
 - @household.recent_notes.each do |note|
   .box
+    .delete-comment= button_to 'Remove', { :controller => 'households/comments', :action => 'destroy', :household_id => @household.id, :id => note.id }, :confirm => "Are you sure you want to remove the note?", :method => :delete
+    -if !note.image.nil?
+      %div.photo= image_tag(note.image.url("200x200"))
     .comment_text= simple_format note.comment
     .info
       by
       = link_to note.user.name
       = distance_of_time_in_words_to_now(note.updated_at)
       ago
-    .edit-comment= link_to 'Edit', edit_household_note_path(@household.id, note.id)
-= form_tag household_notes_path(@household.id), :id => "add_note" do
-  = text_area_tag :note
-  = submit_tag 'Add note'
+    .edit-comment= link_to 'Edit', edit_household_comment_path(@household, note)
+= form_for [@household, Comment.new], :html => { :multipart => true } do |form|
+  %p.field
+    = form.label :comment, "Note"
+    %br
+    = form.text_area :comment, :rows => 10, :columns => 50, :size => "50x10"
+  %p.field
+    = form.label :image
+    %br
+    = form.file_field :image
+  %p.controls
+    = submit_tag 'Add note'

@@ -8,7 +8,7 @@ gem 'compass'
 
 gem 'inherited_resources', '1.1.2'
 
-gem 'rmagick',    :require => 'RMagick'
+gem 'rmagick', "= 2.12.2", :require => 'RMagick'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly', '~>0.7.5'
 gem 'devise', "1.1.2"
@@ -24,6 +24,7 @@ group :development do
   gem 'rack-cache', :require => 'rack/cache'
   gem 'heroku_san', '1.0.2'
   gem 'ruby-debug19'
+  gem 'thin'
 end
 
 group :test do

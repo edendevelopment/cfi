@@ -22,16 +22,4 @@ class Household < ActiveRecord::Base
   def recent_notes
     comments.order("created_at desc")
   end
-  
-  def add_note(note_text, user)
-    comments.create!(:comment => note_text, :user => user)
-  end
-
-  def update_note(note, new_note_text, user)
-    note = comments.find(note.id)
-    note.comment = new_note_text
-    note.user_id = user.id
-    note.updated_at = DateTime.now
-    note.save
-  end  
 end
