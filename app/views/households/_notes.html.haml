@@ -8,11 +8,12 @@
     .comment_text= simple_format note.comment
     .info
       by
-      = link_to note.user.name
+      = link_to note.user.name, edit_user_path(note.user)
       = distance_of_time_in_words_to_now(note.updated_at)
       ago
     .edit-comment= link_to 'Edit', edit_household_comment_path(@household, note)
 = form_for [@household, Comment.new], :html => { :multipart => true } do |form|
+  %a{ :name => "add_note" }
   %p.field
     = form.label :comment, "Note"
     %br
