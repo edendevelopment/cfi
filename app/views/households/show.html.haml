@@ -1,6 +1,10 @@
 %h1= @household.caretaker
 #household
   %dl
+    -if !@household.image.nil?
+      %dt
+      %dd#household_image= image_tag(@household.image.url("400x400"))
+
     %dt Caretaker
     %dd= @household.caretaker
 
@@ -14,6 +18,7 @@
     %dd= @household.address
 
   %p= link_to "Edit", edit_household_path(@household)
+  %p= link_to "Remove image", edit_household_path(@household)
 
   .section
     #people

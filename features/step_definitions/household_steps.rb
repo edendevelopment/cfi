@@ -58,3 +58,24 @@ Then /^I should see the note "([^\"]*)" with photo "([^\"]*)"$/ do |note, file_n
     page.should have_css(".comment_text", :text => note)
   end
 end
+
+When /^I add the photo "([^\"]*)" to the household$/ do |file_name|
+  attach_file "household_image", Rails.root.join('test', 'fixtures', file_name)
+end
+
+Then /^I should see a picture for the household$/ do
+  page.should have_xpath("//dd[@id='household_image']")
+end
+
+Then /^I should not see a picture for the household$/ do
+  page.should_not have_xpath("//dd[@id='household_image']")
+end
+
+Given /^a picture "([^"]*)" for household "([^"]*)"$/ do |file_name, household_name|
+  When "I go to the page for household \"#{household_name}\""
+  And "I follow \"Edit\""
+  And "I add the photo \"#{file_name}\" to the household"
+  And "I press \"Update\""
+  Then "I should be on the page for household \"#{household_name}\""
+  And "I should see a picture for the household"
+end

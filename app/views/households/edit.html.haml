@@ -1,3 +1,3 @@
 %h1 Update household
-- form_for @household do |form|
+- form_for @household, :html => {:multipart => true} do |form|
   = render "form", :submit_text => 'Update', :form => form

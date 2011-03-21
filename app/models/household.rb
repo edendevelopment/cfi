@@ -7,6 +7,8 @@ class Household < ActiveRecord::Base
   
   acts_as_commentable
 
+  image_accessor :image
+
   def eligible_people
     Person.find_with_no_household
   end
