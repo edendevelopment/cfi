@@ -12,6 +12,10 @@ Cfi::Application.routes.draw do
   resources :households do
     resources :people, :controller => 'households/people'
     resources :comments, :controller => 'households/comments'
+
+    member do
+      delete :destroy_image
+    end
   end
 
   resources :people do

@@ -18,7 +18,8 @@
     %dd= @household.address
 
   %p= link_to "Edit", edit_household_path(@household)
-  %p= link_to "Remove image", edit_household_path(@household)
+  -if !@household.image.nil?
+    %p= button_to 'Remove picture', { :action => 'destroy_image', :household_id => @household.id }, :confirm => "Are you sure you want to remove the note?", :method => :delete
 
   .section
     #people
