@@ -59,7 +59,7 @@ Then /^I should see the note "([^\"]*)" with photo "([^\"]*)"$/ do |note, file_n
   end
 end
 
-When /^I add the photo "([^\"]*)" to the household$/ do |file_name|
+When /^I add the picture "([^\"]*)" to the household$/ do |file_name|
   attach_file "household_image", Rails.root.join('test', 'fixtures', file_name)
 end
 
@@ -74,8 +74,18 @@ end
 Given /^a picture "([^"]*)" for household "([^"]*)"$/ do |file_name, household_name|
   When "I go to the page for household \"#{household_name}\""
   And "I follow \"Edit\""
-  And "I add the photo \"#{file_name}\" to the household"
+  And "I add the picture \"#{file_name}\" to the household"
   And "I press \"Update\""
   Then "I should be on the page for household \"#{household_name}\""
   And "I should see a picture for the household"
 end
+
+When /^I upload a picture for household "([^"]*)"$/ do |household_name|
+  Given "a picture \"sample.jpg\" for household \"#{household_name}\""
+end
+
+When /^I remove the picture for household "([^"]*)"/ do |household_name|
+  When "I go to the page for household \"#{household_name}\""
+  And "I press \"Remove picture\""
+  Then "I should be on the page for household \"#{household_name}\""
+end  
