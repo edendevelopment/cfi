@@ -71,17 +71,17 @@ Then /^I should not see a picture for the household$/ do
   page.should_not have_xpath("//dd[@id='household_image']")
 end
 
-Given /^a picture "([^"]*)" for household "([^"]*)"$/ do |file_name, household_name|
+Given /^a picture(?: "([^"]*)")? for household "([^"]*)"$/ do |file_name, household_name|
   When "I go to the page for household \"#{household_name}\""
   And "I follow \"Edit\""
-  And "I add the picture \"#{file_name}\" to the household"
+  And "I add the picture \"#{file_name.nil? ? "sample.jpg" : file_name}\" to the household"
   And "I press \"Update\""
   Then "I should be on the page for household \"#{household_name}\""
   And "I should see a picture for the household"
 end
 
 When /^I upload a picture for household "([^"]*)"$/ do |household_name|
-  Given "a picture \"sample.jpg\" for household \"#{household_name}\""
+  Given "a picture for household \"#{household_name}\""
 end
 
 When /^I remove the picture for household "([^"]*)"/ do |household_name|

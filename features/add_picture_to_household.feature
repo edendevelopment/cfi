@@ -12,7 +12,7 @@ Feature: User adds picture to household
   Scenario: User removes picture from household
     Given I am a new, authenticated user
     And a household called "Hun"
-    And a picture "sample.jpg" for household "Hun"
+    And a picture for household "Hun"
     When I remove the picture for household "Hun"
     Then I should not see a picture for the household
 
