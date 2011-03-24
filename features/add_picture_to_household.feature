@@ -14,5 +14,5 @@ Feature: User adds picture to household
     And a household called "Hun"
     And a picture "sample.jpg" for household "Hun"
     When I remove the picture for household "Hun"
-    And I should not see a picture for the household
+    Then I should not see a picture for the household
 
