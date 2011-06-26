@@ -1,24 +1,18 @@
-/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-html, body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-/* line 6, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 4, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html {
-  font-size: 100.01%;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-/* line 16, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
-pre, a, abbr, acronym, address, code, del, dfn, em, img,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+/* line 18, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+.bp-reset-element, body, h1, h2, h3, h4, h5, h6, article, aside, dialog, figure, footer, header, hgroup, nav, section, blockquote, q, th, td, caption, table,
+div, span, object, iframe, p,
+pre, a, abbr, acronym, address,
+code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend,
+caption, tbody, tfoot, thead, tr {
   margin: 0;
   padding: 0;
   border: 0;
@@ -29,54 +23,36 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, th
   vertical-align: baseline;
 }
 
-/* line 18, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote, q {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
   quotes: "" "";
 }
-/* line 45, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 67, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
-/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 th, td, caption {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
+  float: none !important;
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 table {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 a img {
   border: none;
 }
@@ -104,7 +80,7 @@ a img {
   width: 230px;
   font-size: 0.8em;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .photo-block {
   overflow-x: hidden;
 }
@@ -119,7 +95,7 @@ a img {
   margin-right: 10px;
   width: 350px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .basic-information {
   overflow-x: hidden;
 }
@@ -135,7 +111,7 @@ a img {
   width: 350px;
   width: 340px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .address {
   overflow-x: hidden;
 }
@@ -150,7 +126,7 @@ a img {
   margin-right: 0;
   width: 470px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .siblings {
   overflow-x: hidden;
 }
@@ -169,7 +145,7 @@ a img {
   margin-right: 0;
   width: 470px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .caretakers {
   overflow-x: hidden;
 }
@@ -192,7 +168,7 @@ a img {
   margin-right: 10px;
   width: 470px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .public-education-info {
   overflow-x: hidden;
 }
@@ -211,7 +187,7 @@ a img {
   margin-right: 10px;
   width: 470px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person .obligations {
   overflow-x: hidden;
 }
@@ -230,7 +206,7 @@ a img {
   margin-right: 10px;
   width: 950px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html .people-section.show-page #person #comments {
   overflow-x: hidden;
 }
@@ -315,7 +291,7 @@ ul.people {
   width: 950px;
   margin-right: 0;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html ul.people {
   overflow-x: hidden;
 }
@@ -327,7 +303,7 @@ ul.people li {
   width: 310px;
   margin-bottom: 1em;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html ul.people li {
   overflow-x: hidden;
 }
@@ -706,7 +682,7 @@ body.three-col #header, body.three-col #footer {
   margin-right: 10px;
   width: 950px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.three-col #header, * html body.three-col #footer {
   overflow-x: hidden;
 }
@@ -717,7 +693,7 @@ body.three-col #sidebar {
   margin-right: 10px;
   width: 310px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.three-col #sidebar {
   overflow-x: hidden;
 }
@@ -728,7 +704,7 @@ body.three-col #content {
   margin-right: 0;
   width: 630px;
 }
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+/* line 147, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.three-col #content {
   overflow-x: hidden;
 }
