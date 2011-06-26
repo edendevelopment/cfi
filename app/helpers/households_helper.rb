@@ -1,0 +1,2 @@
+module HouseholdsHelper
+end

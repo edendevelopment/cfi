@@ -1,10 +1,21 @@
 Cfi::Application.routes.draw do
+  resources :households
+
   devise_for :users
 
   resources :users
 
   resources :courses do
     resources :students, :controller => 'courses/students'
+  end
+
+  resources :households do
+    resources :people, :controller => 'households/people'
+    resources :comments, :controller => 'households/comments'
+
+    member do
+      delete :destroy_image
+    end
   end
 
   resources :people do

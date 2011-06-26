@@ -1,0 +1,23 @@
+= form.error_messages
+%p.field
+  = form.label :caretaker
+  %br
+  = form.text_field :caretaker
+%p.field
+  = form.label :description
+  %br
+  = form.text_field :description
+%p.field
+  = form.label :contact_information
+  %br
+  = form.text_field :contact_information
+%p.field
+  = form.label :address
+  %br
+  = form.text_field :address
+%p.field
+  = form.label :image
+  %br
+  = form.file_field :image
+%p.controls
+  = form.submit submit_text

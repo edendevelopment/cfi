@@ -7,8 +7,11 @@ class User < ActiveRecord::Base
   validates_presence_of :name
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :name
+  attr_accessible :email, :password, :password_confirmation, :name, :social_worker
 
   paginate_alphabetically :by => :name
 
+  def is_social_worker?
+    self.social_worker
+  end
 end

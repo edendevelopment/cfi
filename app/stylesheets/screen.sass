@@ -11,6 +11,7 @@
 @import partials/courses.sass
 @import partials/photos.sass
 @import partials/villages.sass
+@import partials/households.sass
 
 *
   margin: 0
@@ -111,6 +112,18 @@ body
             display: table-cell
             padding: 3px
 
+      ul#households
+        display: table
+
+        li.household
+          display: table-row
+
+          &:nth-child(odd)
+            background-color: #e7cddc
+
+          span
+            display: table-cell
+            padding: 3px
 
   ul.pagination
     margin-bottom: 1em

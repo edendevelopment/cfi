@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uid"
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -56,6 +57,16 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
     t.integer "student_id"
   end
 
+  create_table "households", :force => true do |t|
+    t.string   "caretaker"
+    t.string   "description"
+    t.string   "contact_information"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_uid"
+  end
+
   create_table "obligations", :force => true do |t|
     t.integer "person_id"
     t.boolean "support_required",        :default => false
@@ -74,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
     t.string   "image_uid"
     t.string   "religion",                :default => ""
     t.boolean  "date_of_birth_confirmed", :default => false, :null => false
+    t.integer  "household_id"
   end
 
   create_table "photos", :force => true do |t|
@@ -122,15 +134,16 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "email",                               :default => "",    :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",    :null => false
+    t.string   "password_salt",                       :default => "",    :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name",                                :default => ""
+    t.boolean  "social_worker",                       :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

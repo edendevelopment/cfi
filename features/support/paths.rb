@@ -14,6 +14,8 @@ module NavigationHelpers
       new_course_path
     when 'the course list page'
       courses_path
+    when 'the household list page'
+      households_path
     when 'the person list page'
       people_path    
     when 'the new person page'
@@ -26,6 +28,8 @@ module NavigationHelpers
       person_photos_path(Person.find_by_name($1))
     when /the page for course "([^\"]+)"/
       course_path(Course.find_by_name($1))
+    when /the page for household "([^\"]+)"/
+      household_path(Household.find_by_caretaker($1))
     when 'login'
       new_user_session_path
     when 'the villages page'
@@ -34,6 +38,8 @@ module NavigationHelpers
       village_path(Village.find_by_name($1))
     when /the caretaker page for "([^\"]+)"/
       caretakers_person_path(Person.find_by_name($1))
+    when /the note edit page for "([^\"]+)" on household "([^\"]+)"/
+      edit_household_comment_path(Household.find_by_caretaker($2), Comment.find_by_comment($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

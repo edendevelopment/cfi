@@ -19,7 +19,10 @@ class Person < ActiveRecord::Base
 
   image_accessor :image
 
+  belongs_to :household
+
   delegate :name, :to => :village, :prefix => true, :allow_nil => true
+  delegate :caretaker, :to => :household, :prefix => true, :allow_nil => true
   
   delegate :house_number, :group_number, :village, :to => :address, :allow_nil => true
   
@@ -33,7 +36,15 @@ class Person < ActiveRecord::Base
       str << " (Village: #{village})" unless village.blank?
     end
   end
-  
+
+  def name_and_caretaker
+    household = household_caretaker
+    String.new.tap do |str|
+      str << name
+      str << " (Household: #{household})" unless household.blank?
+    end
+  end
+
   def date_of_birth_with_confirmation
     "#{date_of_birth} (#{ date_of_birth_confirmed  ? 'Confirmed' : 'Unconfirmed' })"
   end
@@ -94,6 +105,10 @@ class Person < ActiveRecord::Base
     Person.where('name LIKE ?', "%#{name}%")
   end
   
+  def self.find_with_no_household
+    Person.where(:household_id => nil)
+  end
+
   private
   def add_relationship(person, relationship_type)
     Relationship.create(:from_id => person.id, :to_id => self.id, :relationship_type => relationship_type)

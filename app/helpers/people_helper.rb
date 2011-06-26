@@ -17,6 +17,7 @@ module PeopleHelper
     return if object.nil?
     outputter = FieldOutputter.new(object)
     yield outputter
+    nil
   end
 
   class FieldOutputter < ActionView::Base
