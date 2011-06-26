@@ -42,7 +42,13 @@ show_courses:
   default: true
   type: boolean
 
+default_url_for_emails:
+  name: What is the first part of the URL for this site?
+  default: "cfi.heroku.com"
 
+default_url_for_emails_for_staging:
+  name: What is the first part of the URL for the demo site?
+  default: "cfi-staging.heroku.com"
 # site_description:
 #   name: Description for Google
 #   default: Lots of Awesomeness Here
