@@ -26,7 +26,8 @@
       %ul#menu
         .site
           %li= link_to 'people', people_path
-          %li= link_to 'courses', courses_path
+          - if Configurable.show_courses
+            %li= link_to 'courses', courses_path
           %li= link_to 'villages', villages_path
           %li= link_to 'households', households_path
           %li= link_to 'admin', admin_path

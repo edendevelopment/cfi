@@ -1,9 +1,9 @@
 %h1.name= @person.name
 .student-status
   - if @person.student
-    Student
+    = Configurable.programme_member_label
   - else
-    = button_to "Make #{@person.name} a student", make_student_person_path(@person)
+    = button_to "Make #{@person.name} a #{Configurable.programme_member_label}", make_student_person_path(@person)
 
 = output_fields_for(@person) do |output|
   = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"

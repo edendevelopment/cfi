@@ -33,6 +33,15 @@ site_color_menu:
   name: Menu Colour Hex
   default: "#873967"
 
+programme_member_label:
+  name: Programme member label
+  default: "student"
+
+show_courses:
+  name: Show the courses tab?
+  default: true
+  type: boolean
+
 
 # site_description:
 #   name: Description for Google
