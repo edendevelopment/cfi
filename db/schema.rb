@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603112708) do
+ActiveRecord::Schema.define(:version => 20110626201229) do
 
   create_table "addresses", :force => true do |t|
     t.integer "person_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment"
+    t.text     "comment",                        :default => ""
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "configurables", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "configurables", ["name"], :name => "index_configurables_on_name"
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -50,9 +59,9 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
   create_table "obligations", :force => true do |t|
     t.integer "person_id"
     t.boolean "support_required",        :default => false
-    t.text    "means_to_support_family"
-    t.text    "work_obligations"
-    t.text    "domestic_obligations"
+    t.text    "means_to_support_family", :default => ""
+    t.text    "work_obligations",        :default => ""
+    t.text    "domestic_obligations",    :default => ""
   end
 
   create_table "people", :force => true do |t|
@@ -79,11 +88,11 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
     t.integer "person_id"
     t.boolean "attending",           :default => false
     t.string  "grade",               :default => ""
-    t.text    "performance"
-    t.text    "attendance_patterns"
-    t.text    "past_attendance"
-    t.text    "name_of_schools"
-    t.text    "school_contact"
+    t.text    "performance",         :default => ""
+    t.text    "attendance_patterns", :default => ""
+    t.text    "past_attendance",     :default => ""
+    t.text    "name_of_schools",     :default => ""
+    t.text    "school_contact",      :default => ""
   end
 
   create_table "relationships", :force => true do |t|
@@ -96,16 +105,16 @@ ActiveRecord::Schema.define(:version => 20100603112708) do
 
   create_table "social_development_infos", :force => true do |t|
     t.integer "person_id"
-    t.text    "type_of_housing"
-    t.text    "permanence_of_housing"
-    t.text    "access_to_cfi_school"
-    t.text    "seasonal_factors"
-    t.text    "support_from_other_organisations"
-    t.text    "barriers_to_attending_public_school"
-    t.text    "ideas_of_carers_about_education"
-    t.text    "other_social_issues_or_dangers"
-    t.text    "history_of_abuse"
-    t.text    "observations_from_visits"
+    t.text    "type_of_housing",                     :default => ""
+    t.text    "permanence_of_housing",               :default => ""
+    t.text    "access_to_cfi_school",                :default => ""
+    t.text    "seasonal_factors",                    :default => ""
+    t.text    "support_from_other_organisations",    :default => ""
+    t.text    "barriers_to_attending_public_school", :default => ""
+    t.text    "ideas_of_carers_about_education",     :default => ""
+    t.text    "other_social_issues_or_dangers",      :default => ""
+    t.text    "history_of_abuse",                    :default => ""
+    t.text    "observations_from_visits",            :default => ""
   end
 
   create_table "students", :force => true do |t|
