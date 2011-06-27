@@ -10,6 +10,7 @@ Feature: Manage a person
     And I add the person "Oum Bora"
     Then I should be on the person page for "Oum Bora"
     When I go to the person list page
+    And I follow "O"
     Then I should see the person "Oum Bora"
 
   Scenario: Add basic person information

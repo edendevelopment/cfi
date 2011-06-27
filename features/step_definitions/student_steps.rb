@@ -13,6 +13,6 @@ end
 
 Then /^"([^\"]*)" should be a student$/ do |student_name|
   within(".student-status") do
-    page.should have_content("Student")
+    page.should have_content("student")
   end
 end

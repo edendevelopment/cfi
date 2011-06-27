@@ -3,9 +3,7 @@ Then /^"([^\"]*)" should have (\d+) caretakers$/ do |person_name, num_of_caretak
 end
 
 Then /^I should see caretaker "([^\"]*)"$/ do |caretaker_name|
-  within('ul') do
-    page.should have_css('li', :text => caretaker_name)
-  end
+  page.should have_css('li', :text => caretaker_name)
 end
 
 Given /^"([^\"]*)" has the caretaker "([^\"]*)"$/ do |person_name, caretaker_name|

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/edendevelopment/paginate_alphabetically.git
+  revision: f9ed9c1b043de06a2c60dd11a324b2eb4657635b
+  branch: bundler
+  specs:
+    paginate_alphabetically (0.3.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -85,7 +92,7 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
-    dragonfly (0.7.7)
+    dragonfly (0.9.4)
       rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -267,7 +274,7 @@ DEPENDENCIES
   culerity
   database_cleaner
   devise (= 1.1.2)
-  dragonfly (~> 0.7.5)
+  dragonfly
   escape_utils
   factory_girl
   formtastic
@@ -279,6 +286,7 @@ DEPENDENCIES
   jelly
   launchy
   metric_fu
+  paginate_alphabetically!
   pg
   rack-cache
   rails (= 3.0.7)

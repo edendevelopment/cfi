@@ -4,7 +4,7 @@
 %ul.photos
   - @person.photos.each do |photo|
     %li.photo
-      = link_to image_tag(photo.image.url('250x200')), person_photo_path(@person, photo)
+      = link_to image_tag(photo.image.thumb('250x200').url), person_photo_path(@person, photo)
       %p.comment
         = photo.comment
 

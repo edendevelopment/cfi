@@ -1,3 +1,4 @@
+require 'configurable_engine'
 Cfi::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
@@ -46,6 +47,4 @@ Cfi::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
-  config.action_mailer.default_url_options = { :host => Configurable.default_url_for_emails }
 end

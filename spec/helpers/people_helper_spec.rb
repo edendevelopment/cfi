@@ -4,17 +4,17 @@ describe PeopleHelper do
   describe "person image with size" do
     context "person has an image" do
       before do
-        @image = mock(:image, :url => 'whatever')
+        @image = mock(:image, :thumb => 'whatever')
         @person = mock(:person, :image => @image)
       end
 
       it "fetches this image" do
-        @image.should_receive(:url).with('80x80#')
+        @image.should_receive(:thumb).with('80x80#').and_return(mock(:image, :url => 'foo'))
         helper.person_image_with_size(@person, 80)
       end
 
       it "links to that image" do
-        @image.stub!(:url => 'fake-image-url')
+        @image.stub_chain(:thumb, :url => 'fake-image-url')
         result = helper.person_image_with_size(@person, 80)
         result.should include('src="/images/fake-image-url"')
       end
