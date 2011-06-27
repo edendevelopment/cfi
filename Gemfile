@@ -4,6 +4,7 @@ gem 'rails', '3.0.7'
 gem 'pg'
 
 gem 'configurable_engine'
+gem 'paginate_alphabetically', git: 'git://github.com/edendevelopment/paginate_alphabetically.git', branch: 'bundler'
 
 gem 'haml'
 gem 'compass'

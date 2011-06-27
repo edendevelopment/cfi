@@ -10,7 +10,7 @@
 - else
   %h2 List of people
 
-  = alphabetically_paginate(@people)
+  = alphabetically_paginate(@people, :always_display => true)
 
 - if @people.any?
   %ul.people
