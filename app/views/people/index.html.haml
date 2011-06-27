@@ -6,7 +6,7 @@
 
 - if params[:search]
   %h2 Search results
-  %p= link_to '&laquo; back', people_path
+  %p= link_to '&laquo; back'.html_safe, people_path
 - else
   %h2 List of people
 
