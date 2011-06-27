@@ -4,7 +4,7 @@ When /^I add a village called "([^\"]*)"$/ do |village_name|
 end
 
 Then /^I should see "([^\"]*)" in the list of villages$/ do |village_name|
-  with_scope("#villages li") do
+  within("#villages li") do
     page.should have_content(village_name)
   end
 end

@@ -13,7 +13,7 @@ gem 'inherited_resources', '1.1.2'
 
 gem 'rmagick', "= 2.12.2", :require => 'RMagick'
 gem 'aws-s3', :require => 'aws/s3'
-gem 'dragonfly', '~>0.7.5'
+gem 'dragonfly'
 gem 'devise', "1.1.2"
 gem 'formtastic'
 gem 'validation_reflection'

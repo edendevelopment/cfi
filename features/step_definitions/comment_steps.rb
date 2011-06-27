@@ -23,7 +23,7 @@ end
 
 When /^I edit the comment with "([^\"]*)"$/ do |text|
   within('#comments ul li') do
-    click 'Edit'
+    click_link_or_button 'Edit'
   end
   fill_in "comment_comment", :with => text
   click_button "Update"

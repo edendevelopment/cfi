@@ -48,6 +48,6 @@ module Cfi
     config.filter_parameters += [:password]
     
     config.action_mailer.default_url_options = { :host => "localhost:3000" }
-    config.middleware.insert_before 'Rack::Lock', 'Dragonfly::Middleware', :images, '/media'
+    config.middleware.insert_before 'Rack::Lock', 'Dragonfly::Middleware', :images
   end
 end

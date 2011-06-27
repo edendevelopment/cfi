@@ -40,7 +40,7 @@ end
 
 When /^I add "([^\"]*)" to the course$/ do |student_name|
   select student_name, :from => "student_id"
-  click "Add"
+  click_link_or_button "Add"
 end
 
 Then /^"([^\"]*)" should be taking the course "([^\"]*)"$/ do |student_name, course_name|
