@@ -2,6 +2,7 @@ source :rubygems
 
 gem "rails", "= 3.0.1"
 gem "mysql"
+gem "eventmachine", "=1.0.0.beta.3"
 
 gem 'haml'
 gem 'compass'
