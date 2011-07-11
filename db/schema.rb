@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110320233402) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title",            :limit => 50, :default => ""
+    t.string   "title",            :limit => 50
     t.text     "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20110320233402) do
   create_table "public_education_infos", :force => true do |t|
     t.integer "person_id"
     t.boolean "attending",           :default => false
-    t.string  "grade",               :default => ""
+    t.string  "grade"
     t.text    "performance"
     t.text    "attendance_patterns"
     t.text    "past_attendance"

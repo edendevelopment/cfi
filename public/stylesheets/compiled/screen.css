@@ -1,734 +1,94 @@
-/* line 4, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-html, body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
+/*
+Syntax error: File to import not found or unreadable: blueprint/reset.sass.
+              Load paths:
+                Compass::SpriteImporter
+                C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/public/stylesheets/sass
+                C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets
+                C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets
+                C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/compass/stylesheets
+        on line 2 of C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass
 
-/* line 6, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-html {
-  font-size: 100.01%;
-}
+1: // This import applies a global reset to any page that imports this stylesheet.
+2: @import blueprint/reset.sass
+3: // To configure blueprint, edit the partials/base.sass file.
+4: @import partials/base.sass
+5: // Import all the default blueprint modules so that we can access their mixins.
+6: @import blueprint.sass
+7: // Import the non-default scaffolding module.
 
-/* line 16, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
-pre, a, abbr, acronym, address, code, del, dfn, em, img,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-/* line 18, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-blockquote, q {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-  quotes: "" "";
-}
-/* line 45, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-}
-
-/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-th, td, caption {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-table {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-
-/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-@import url(blueprint/scaffolding.css);
-/* line 14, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .box {
-  padding: 10px;
-}
-/* line 17, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .section {
-  overflow: hidden;
-  *zoom: 1;
-  margin-bottom: 10px;
-}
-/* line 21, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .top-section {
-  border: 1px solid #dddddd;
-}
-/* line 24, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .photo-block {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 230px;
-  font-size: 0.8em;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .photo-block {
-  overflow-x: hidden;
-}
-/* line 28, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .photo-block .photo {
-  border: 1px solid #dddddd;
-}
-/* line 31, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .basic-information {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 350px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .basic-information {
-  overflow-x: hidden;
-}
-/* line 33, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .basic-information .label {
-  width: 100px;
-}
-/* line 36, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .address {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 350px;
-  width: 340px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .address {
-  overflow-x: hidden;
-}
-/* line 40, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .student-status {
-  margin-bottom: 5px;
-}
-/* line 43, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .siblings {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .siblings {
-  overflow-x: hidden;
-}
-/* line 6, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .siblings .box {
-  border: 1px solid #dddddd;
-}
-/* line 8, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .siblings ul {
-  list-style-type: none;
-}
-/* line 46, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .caretakers {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 470px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .caretakers {
-  overflow-x: hidden;
-}
-/* line 6, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .caretakers .box {
-  border: 1px solid #dddddd;
-}
-/* line 8, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .caretakers ul {
-  list-style-type: none;
-}
-/* line 50, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .social-development-info .box {
-  border: 1px solid #dddddd;
-}
-/* line 53, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .public-education-info {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 470px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .public-education-info {
-  overflow-x: hidden;
-}
-/* line 55, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .public-education-info .box {
-  border: 1px solid #dddddd;
-}
-/* line 57, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .public-education-info .label {
-  width: 165px;
-}
-/* line 60, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .obligations {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 470px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person .obligations {
-  overflow-x: hidden;
-}
-/* line 62, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .obligations .box {
-  border: 1px solid #dddddd;
-}
-/* line 64, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .obligations .label {
-  width: 170px;
-}
-/* line 67, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 950px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html .people-section.show-page #person #comments {
-  overflow-x: hidden;
-}
-/* line 69, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments textarea {
-  width: 100%;
-  height: 150px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-/* line 76, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments ul {
-  margin-top: 10px;
-  list-style-type: none;
-}
-/* line 80, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments li {
-  padding: 10px;
-}
-/* line 82, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments li:nth-child(odd) {
-  background-color: #e7cddc;
-}
-/* line 85, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments li .info {
-  font-size: 0.8em;
-}
-/* line 88, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person #comments .box {
-  border: 1px solid #dddddd;
-}
-/* line 91, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person h1 {
-  color: black;
-}
-/* line 94, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person div {
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 97, ../../../app/stylesheets/partials/_people.sass */
-.people-section.show-page #person .label {
-  font-weight: bold;
-  float: left;
-  width: 150px;
-}
-/* line 103, ../../../app/stylesheets/partials/_people.sass */
-.people-section.siblings-page .people, .people-section.caretakers-page .people {
-  width: 250px;
-}
-/* line 105, ../../../app/stylesheets/partials/_people.sass */
-.people-section.siblings-page .people .button-to, .people-section.caretakers-page .people .button-to {
-  float: right;
-}
-/* line 108, ../../../app/stylesheets/partials/_people.sass */
-.people-section.siblings-page #add-relationship, .people-section.caretakers-page #add-relationship {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-/* line 114, ../../../app/stylesheets/partials/_people.sass */
-.edit_person textarea {
-  width: 500px;
-  height: 150px;
-}
-
-/* line 118, ../../../app/stylesheets/partials/_people.sass */
-.person_search, .student_search {
-  width: 315px;
-}
-
-/* line 121, ../../../app/stylesheets/partials/_people.sass */
-.add-new-person-control {
-  cursor: pointer;
-}
-
-/* line 124, ../../../app/stylesheets/partials/_people.sass */
-ul.people {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 950px;
-  margin-right: 0;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html ul.people {
-  overflow-x: hidden;
-}
-/* line 128, ../../../app/stylesheets/partials/_people.sass */
-ul.people li {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 310px;
-  margin-bottom: 1em;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html ul.people li {
-  overflow-x: hidden;
-}
-/* line 132, ../../../app/stylesheets/partials/_people.sass */
-ul.people li:nth-child(3n) {
-  margin-right: 0;
-}
-/* line 135, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person {
-  background-color: white;
-  border: 1px solid #aaaaaa;
-  -moz-box-shadow: 1px 3px 5px #cccccc;
-  -webkit-box-shadow: 1px 3px 5px #cccccc;
-  box-shadow: 1px 3px 5px #cccccc;
-  padding: 15px;
-  height: 100px;
-}
-/* line 142, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person a {
-  color: #444444;
-}
-/* line 145, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person .image {
-  border: 1px solid #aaaaaa;
-  float: left;
-}
-/* line 149, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person .name {
-  float: right;
-  width: 190px;
-  text-align: right;
-  font-size: 1.2em;
-  padding: 5px 0;
-  font-weight: bold;
-}
-/* line 156, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person .name a {
-  text-decoration: none;
-}
-/* line 47, ../../../app/stylesheets/partials/_css3.sass */
-ul.people li .person .name a:hover {
-  text-decoration: underline;
-}
-/* line 159, ../../../app/stylesheets/partials/_people.sass */
-ul.people li .person .village, ul.people li .person .date-of-birth {
-  clear: right;
-  float: right;
-  font-size: 0.9em;
-}
-
-/* line 2, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section dt {
-  float: left;
-  width: 100px;
-  font-weight: bold;
-}
-/* line 7, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section .course .student_list {
-  margin: 1em 0;
-}
-/* line 10, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section #students {
-  margin-bottom: 10px;
-}
-/* line 13, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section form.add_student {
-  margin-top: 10px;
-  clear: both;
-}
-/* line 18, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section .people form.button_to {
-  float: right;
-  padding-left: 10px;
-}
-/* line 22, ../../../app/stylesheets/partials/_courses.sass */
-.courses-section .people .ajax-delete {
-  float: right;
-  padding: 5px;
-}
-
-/* line 2, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section h3 {
-  margin-top: 10px;
-}
-/* line 6, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section form div {
-  margin-top: 10px;
-}
-/* line 9, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section form label {
-  float: left;
-  width: 100px;
-  clear: both;
-}
-/* line 14, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section ul.photos {
-  overflow: hidden;
-  *zoom: 1;
-  list-style: none;
-}
-/* line 18, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section ul.photos li.photo {
-  float: left;
-  border: 1px solid #aaaaaa;
-  padding: 5px;
-  padding-bottom: 0px;
-  margin: 5px;
-  nth-child(3n+1)-clear: left;
-}
-/* line 28, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section ul.photos li.photo p {
-  width: 250px;
-}
-/* line 31, ../../../app/stylesheets/partials/_photos.sass */
-.photos-section div.photo {
-  margin: 10px 0px;
-}
-
-/* line 2, ../../../app/stylesheets/partials/_villages.sass */
-.villages-section #villages {
-  width: 300px;
-  margin-top: 20px;
-}
-/* line 5, ../../../app/stylesheets/partials/_villages.sass */
-.villages-section #villages li {
-  list-style: disc;
-}
-/* line 8, ../../../app/stylesheets/partials/_villages.sass */
-.villages-section #villages li:nth-child(odd) {
-  background-color: #e7cddc;
-}
-
-/* line 2, ../../../app/stylesheets/partials/_households.sass */
-.households-section dt {
-  float: left;
-  width: 100px;
-  font-weight: bold;
-  display: block;
-  clear: left;
-}
-/* line 9, ../../../app/stylesheets/partials/_households.sass */
-.households-section dd {
-  float: left;
-  width: 200px;
-  display: block;
-  clear: right;
-}
-/* line 15, ../../../app/stylesheets/partials/_households.sass */
-.households-section p {
-  clear: both;
-}
-/* line 18, ../../../app/stylesheets/partials/_households.sass */
-.households-section .household .person_list {
-  margin: 1em 0;
-}
-/* line 21, ../../../app/stylesheets/partials/_households.sass */
-.households-section #people {
-  margin-bottom: 10px;
-}
-/* line 24, ../../../app/stylesheets/partials/_households.sass */
-.households-section form.add_person {
-  margin-top: 10px;
-  clear: both;
-}
-/* line 29, ../../../app/stylesheets/partials/_households.sass */
-.households-section .people form.button_to {
-  float: right;
-  padding-left: 10px;
-}
-/* line 33, ../../../app/stylesheets/partials/_households.sass */
-.households-section .people .ajax-delete {
-  float: right;
-  padding: 5px;
-}
-/* line 38, ../../../app/stylesheets/partials/_households.sass */
-.households-section #notes .box {
-  border: 1px solid #dddddd;
-  margin-bottom: 10px;
-}
-/* line 42, ../../../app/stylesheets/partials/_households.sass */
-.households-section #notes .edit-comment {
-  font-size: 0.8em;
-}
-/* line 45, ../../../app/stylesheets/partials/_households.sass */
-.households-section #notes .delete-comment {
-  font-size: 0.8em;
-  padding-right: 10px;
-  padding-top: 10px;
-}
-/* line 50, ../../../app/stylesheets/partials/_households.sass */
-.households-section #notes .delete-comment .button_to {
-  float: right;
-}
-
-/* line 16, ../../../app/stylesheets/screen.sass */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 20, ../../../app/stylesheets/screen.sass */
-body {
-  color: #333333;
-  font-family: Helvetica, non-serif;
-  font-size: 16px;
-  line-height: 1.5em;
-}
-/* line 27, ../../../app/stylesheets/screen.sass */
-body .site {
-  width: 950px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 30, ../../../app/stylesheets/screen.sass */
-body #wrapper {
-  background-color: white;
-}
-/* line 33, ../../../app/stylesheets/screen.sass */
-body #wrapper #header {
-  background-color: #cfb0c2;
-}
-/* line 36, ../../../app/stylesheets/screen.sass */
-body #wrapper #header h1, body #wrapper #header h2 {
-  margin-bottom: 0.25em;
-}
-/* line 39, ../../../app/stylesheets/screen.sass */
-body #wrapper #header .site {
-  padding-top: 1em;
-  padding-bottom: 1.1em;
-}
-/* line 43, ../../../app/stylesheets/screen.sass */
-body #wrapper #footer {
-  margin-bottom: 20px;
-}
-/* line 46, ../../../app/stylesheets/screen.sass */
-body #wrapper #menu {
-  overflow: hidden;
-  *zoom: 1;
-  background-color: #873967;
-  font-size: 120%;
-  font-weight: bold;
-}
-/* line 52, ../../../app/stylesheets/screen.sass */
-body #wrapper #menu li {
-  float: left;
-  list-style-type: none;
-  padding-right: 5px;
-}
-/* line 57, ../../../app/stylesheets/screen.sass */
-body #wrapper #menu li a {
-  color: white;
-  display: inline-block;
-  padding: 8px 3px;
-  text-decoration: none;
-}
-/* line 63, ../../../app/stylesheets/screen.sass */
-body #wrapper #menu li a:hover {
-  color: #333333;
-}
-/* line 66, ../../../app/stylesheets/screen.sass */
-body #wrapper #content {
-  color: #555555;
-  margin-top: 1em;
-}
-/* line 70, ../../../app/stylesheets/screen.sass */
-body #wrapper #content h1, body #wrapper #content h2, body #wrapper #content h3, body #wrapper #content h4 {
-  margin-bottom: 0.5em;
-  margin-top: 10px;
-}
-/* line 74, ../../../app/stylesheets/screen.sass */
-body #wrapper #content h1 {
-  font-size: 1.6em;
-}
-/* line 76, ../../../app/stylesheets/screen.sass */
-body #wrapper #content h2 {
-  font-size: 1.3em;
-}
-/* line 78, ../../../app/stylesheets/screen.sass */
-body #wrapper #content h3 {
-  font-size: 1.2em;
-}
-/* line 80, ../../../app/stylesheets/screen.sass */
-body #wrapper #content h4 {
-  font-size: 1.1em;
-}
-/* line 83, ../../../app/stylesheets/screen.sass */
-body #wrapper #content p {
-  margin-bottom: 0.8em;
-}
-/* line 86, ../../../app/stylesheets/screen.sass */
-body #wrapper #content input[type=text] {
-  font-size: 1em;
-  padding: 3px;
-  color: #555555;
-  border: 1px solid #555555;
-}
-/* line 92, ../../../app/stylesheets/screen.sass */
-body #wrapper #content input[type=text]:focus {
-  background-color: #e7d4df;
-}
-/* line 95, ../../../app/stylesheets/screen.sass */
-body #wrapper #content label {
-  font-weight: bold;
-}
-/* line 99, ../../../app/stylesheets/screen.sass */
-body #wrapper #content .site {
-  padding-top: 0.5em;
-}
-/* line 102, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#courses {
-  display: table;
-}
-/* line 105, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#courses li.course {
-  display: table-row;
-}
-/* line 108, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#courses li.course:nth-child(odd) {
-  background-color: #e7cddc;
-}
-/* line 111, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#courses li.course span {
-  display: table-cell;
-  padding: 3px;
-}
-/* line 115, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#households {
-  display: table;
-}
-/* line 118, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#households li.household {
-  display: table-row;
-}
-/* line 121, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#households li.household:nth-child(odd) {
-  background-color: #e7cddc;
-}
-/* line 124, ../../../app/stylesheets/screen.sass */
-body #wrapper #content ul#households li.household span {
-  display: table-cell;
-  padding: 3px;
-}
-/* line 128, ../../../app/stylesheets/screen.sass */
-body ul.pagination {
-  margin-bottom: 1em;
-  list-style: none;
-  color: #cccccc;
-}
-/* line 133, ../../../app/stylesheets/screen.sass */
-body ul.pagination li {
-  display: inline;
-  font-size: 1.1em;
-}
-/* line 137, ../../../app/stylesheets/screen.sass */
-body ul.pagination li a {
-  padding: 0 2px;
-  text-decoration: none;
-}
-/* line 47, ../../../app/stylesheets/partials/_css3.sass */
-body ul.pagination li a:hover {
-  text-decoration: underline;
-}
-
-/* line 144, ../../../app/stylesheets/screen.sass */
-body.three-col #container {
-  width: 950px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 146, ../../../app/stylesheets/screen.sass */
-body.three-col #header, body.three-col #footer {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 950px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.three-col #header, * html body.three-col #footer {
-  overflow-x: hidden;
-}
-/* line 148, ../../../app/stylesheets/screen.sass */
-body.three-col #sidebar {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 310px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.three-col #sidebar {
-  overflow-x: hidden;
-}
-/* line 152, ../../../app/stylesheets/screen.sass */
-body.three-col #content {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 630px;
-}
-/* line 139, ../../../../.rvm/gems/ruby-1.9.2-p0@cfi/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.three-col #content {
-  overflow-x: hidden;
-}
+Backtrace:
+C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass:2
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:64:in `rescue in import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:42:in `import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:25:in `imported_file'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:18:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:18:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:7:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:291:in `_render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:239:in `block in render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/util.rb:297:in `silence_sass_warnings'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:239:in `render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:175:in `each'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:173:in `each'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin.rb:81:in `update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin.rb:54:in `check_for_updates'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/rack.rb:51:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:35:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/dragonfly-0.7.7/lib/dragonfly/middleware.rb:16:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+C:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: blueprint/reset.sass.\A               Load paths:\A                 Compass::SpriteImporter\A                 C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/public/stylesheets/sass\A                 C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets\A                 C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets\A                 C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/compass/stylesheets\A         on line 2 of C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass\A \A 1: // This import applies a global reset to any page that imports this stylesheet.\A 2: @import blueprint/reset.sass\A 3: // To configure blueprint, edit the partials/base.sass file.\A 4: @import partials/base.sass\A 5: // Import all the default blueprint modules so that we can access their mixins.\A 6: @import blueprint.sass\A 7: // Import the non-default scaffolding module."; }
