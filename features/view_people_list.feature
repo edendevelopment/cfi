@@ -14,10 +14,11 @@ Feature: View people list
       | Chuab Aat          |
       | Pleak Chan Boromey |
     When I go to the person list page
+    And I follow "C"
     Then I should see these people:
       | Chuab Aat    |
       | Chuab Chareb |
 
-    When I follow "S" within ".pagination"
+    When I follow "S"
     Then I should see these people:
       | Seam Makara |

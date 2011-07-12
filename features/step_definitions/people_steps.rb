@@ -16,8 +16,8 @@ Then /^I should see letter blocks in this order:$/ do |table|
 end
 
 Then /^I should see these people:$/ do |table|
-  table.raw.each_with_index do |row, index|
-    page.should have_css("ul.people li:nth-child(#{index+1}) .person .name", :content => row[0])
+  table.raw.map(&:first).each do |person_name|
+    page.should have_css("ul.people li .person .name", :content => person_name)
   end
   page.should have_css('ul.people li', :count => table.raw.size)
 end
@@ -53,7 +53,7 @@ Then /^I should not see the sibling "([^\"]*)"$/ do |name|
 end
 
 Then /^I should see the person "([^\"]*)"$/ do |name|
-  within('.people .person') do
+  within('.people') do
     page.should have_content(name)
     page.should have_css('img')
   end

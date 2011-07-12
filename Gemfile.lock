@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/edendevelopment/paginate_alphabetically.git
+  revision: f9ed9c1b043de06a2c60dd11a324b2eb4657635b
+  branch: bundler
+  specs:
+    paginate_alphabetically (0.3.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -61,15 +68,18 @@ GEM
       sexp_processor (~> 3.0.3)
     colored (1.2)
     columnize (0.3.4)
-    compass (0.11.4)
+    compass (0.11.5)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    configurable_engine (0.2.8)
+      activerecord (~> 3)
+      rails (~> 3)
     configuration (1.3.1)
-    cucumber (1.0.0)
+    cucumber (1.0.1)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
-      gherkin (~> 2.4.1)
+      gherkin (~> 2.4.5)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.5)
     cucumber-rails (1.0.2)
@@ -83,13 +93,14 @@ GEM
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
     diff-lcs (1.1.2)
-    dragonfly (0.7.7)
+    dragonfly (0.9.4)
       rack
     erubis (2.6.6)
       abstract (>= 1.0.0)
     escape_utils (0.2.3)
     eventmachine (1.0.0.beta.3)
     eventmachine (1.0.0.beta.3-x86-mingw32)
+    excon (0.6.4)
     factory_girl (1.3.3)
     fattr (2.2.0)
     ffi (1.0.9)
@@ -100,14 +111,25 @@ GEM
     flog (2.5.1)
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
+    fog (0.9.0)
+      builder
+      excon (~> 0.6.1)
+      formatador (>= 0.1.3)
+      json
+      mime-types
+      net-scp (>= 1.0.4)
+      net-ssh (>= 2.1.4)
+      nokogiri (>= 1.4.4)
+      ruby-hmac
+    formatador (0.1.5)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
     fssm (0.2.7)
-    gherkin (2.4.1)
+    gherkin (2.4.5)
       json (>= 1.4.6)
-    gherkin (2.4.1-x86-mingw32)
+    gherkin (2.4.5-x86-mingw32)
       json (>= 1.4.6)
     googlecharts (1.6.7)
     haml (3.1.2)
@@ -162,8 +184,13 @@ GEM
     mime-types (1.16)
     mysql (2.8.1)
     mysql (2.8.1-x86-mingw32)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.1.4)
     nokogiri (1.5.0)
     nokogiri (1.5.0-x86-mingw32)
+    pg (0.11.0)
+    pg (0.11.0-x86-mingw32)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-cache (1.0.2)
@@ -225,6 +252,7 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
+    ruby-hmac (0.4.0)
     ruby-progressbar (0.0.10)
     ruby2ruby (1.2.5)
       ruby_parser (~> 2.0)
@@ -272,14 +300,16 @@ DEPENDENCIES
   aws-s3
   capybara
   compass
+  configurable_engine
   cucumber-rails
   culerity
   database_cleaner
   devise (= 1.1.2)
-  dragonfly (~> 0.7.5)
+  dragonfly
   escape_utils
   eventmachine (= 1.0.0.beta.3)
   factory_girl
+  fog
   formtastic
   googlecharts
   haml
@@ -290,6 +320,8 @@ DEPENDENCIES
   launchy
   metric_fu
   mysql
+  paginate_alphabetically!
+  pg
   rack-cache
   rails (= 3.0.1)
   reek

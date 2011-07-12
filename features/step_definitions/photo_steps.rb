@@ -5,7 +5,7 @@ When /^I add the photo "([^\"]*)" with comment "([^\"]*)"$/ do |file_name, comme
 end
 
 Then /^I should see the photo "([^\"]*)" with comment "([^\"]*)"$/ do |file_name, comment|
-  with_scope(".photo") do
+  within(".photo") do
     page.should have_css("img")
     page.should have_css(".comment", :text => comment)
   end

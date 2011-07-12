@@ -1,0 +1,2 @@
+module Admin::ConfigurablesHelper
+end
