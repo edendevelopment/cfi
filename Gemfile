@@ -2,13 +2,16 @@ source :rubygems
 
 gem "rails", "= 3.0.1"
 gem "mysql"
+gem "eventmachine", "=1.0.0.beta.3"
+gem "bcrypt-ruby", "=2.1.2"
+gem "linecache", "=0.46"
 
 gem 'haml'
 gem 'compass'
 
 gem 'inherited_resources', '1.1.2'
 
-gem 'rmagick', "= 2.12.2", :require => 'RMagick'
+#gem 'rmagick', "= 2.12.2", :require => 'RMagick'
 gem 'aws-s3', :require => 'aws/s3'
 gem 'dragonfly', '~>0.7.5'
 gem 'devise', "1.1.2"
@@ -42,4 +45,5 @@ group :test do
   gem 'launchy'
   gem 'factory_girl'
   gem 'ruby-debug19'
+  
 end
