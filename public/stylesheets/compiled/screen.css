@@ -166,7 +166,7 @@ a img {
 }
 /* line 21, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .top-section {
-  border: 1px solid #dddddd;
+  border: 5px solid #000080;
 }
 /* line 24, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .photo-block {
@@ -602,7 +602,7 @@ ul.people li .person .village, ul.people li .person .date-of-birth {
 
 /* line 20, ../../../app/stylesheets/screen.sass */
 body {
-  color: #333333;
+  color: #000080;
   font-family: Helvetica, non-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -620,7 +620,7 @@ body #wrapper {
 }
 /* line 33, ../../../app/stylesheets/screen.sass */
 body #wrapper #header {
-  background-color: #cfb0c2;
+  background-color: #000080;
 }
 /* line 36, ../../../app/stylesheets/screen.sass */
 body #wrapper #header h1, body #wrapper #header h2 {
@@ -658,11 +658,11 @@ body #wrapper #menu li a {
 }
 /* line 63, ../../../app/stylesheets/screen.sass */
 body #wrapper #menu li a:hover {
-  color: #333333;
+  color: #000080;
 }
 /* line 66, ../../../app/stylesheets/screen.sass */
 body #wrapper #content {
-  color: #555555;
+  color: #000080;
   margin-top: 1em;
 }
 /* line 70, ../../../app/stylesheets/screen.sass */
@@ -694,8 +694,8 @@ body #wrapper #content p {
 body #wrapper #content input[type=text] {
   font-size: 1em;
   padding: 3px;
-  color: #555555;
-  border: 1px solid #555555;
+  color: #000080;
+  border: 1px solid #000080;
 }
 /* line 92, ../../../app/stylesheets/screen.sass */
 body #wrapper #content input[type=text]:focus {
@@ -736,7 +736,7 @@ body #wrapper #content ul#households li.household {
 }
 /* line 121, ../../../app/stylesheets/screen.sass */
 body #wrapper #content ul#households li.household:nth-child(odd) {
-  background-color: #e7cddc;
+  background-color: #000080;
 }
 /* line 124, ../../../app/stylesheets/screen.sass */
 body #wrapper #content ul#households li.household span {
