@@ -1,0 +1,42 @@
+%h1="Missing Pupil"
+
+%h2.name= @person.name
+
+%ul.photos
+  - @person.photos.each do |photo|
+    %li.photo
+      = link_to image_tag(photo.image.thumb('250x200').url), person_photo_path(@person, photo)
+      %p.comment
+        = photo.comment
+
+= output_fields_for(@person) do |output|
+  = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
+  = output.text "gender"
+  = output.text "religion"
+  
+
+= output_fields_for(@person) do |output|
+  = output.text "house_number"
+  = output.text 'group_number'
+  = output.text "village_name", :label => "Village"
+  
+ 
+%ul
+  - @person.recent_comments.each do |comment|
+    %li
+      .comment_text= simple_format comment.comment
+      .info
+        by
+        = link_to comment.user.name
+        = distance_of_time_in_words_to_now(comment.updated_at)
+        ago
+
+
+<div class="print">
+<script type="text/javascript">
+if (window.print) {document.write('<a href="javascript:window.print()">Print</a>'); }
+</Script>
+<br/>
+= link_to "Back to profile", person_path(@person)
+</div>
+

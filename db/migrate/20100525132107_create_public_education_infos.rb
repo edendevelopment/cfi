@@ -3,12 +3,12 @@ class CreatePublicEducationInfos < ActiveRecord::Migration
     create_table :public_education_infos do |t|
       t.references :person
       t.boolean :attending, :default => false
-      t.string :grade, :default => ""
-      t.text :performance, :default => ""
-      t.text :attendance_patterns, :default => ""
-      t.text :past_attendance, :default => ""
-      t.text :name_of_schools, :default => ""
-      t.text :school_contact, :default => ""
+      t.string :grade
+      t.text :performance
+      t.text :attendance_patterns
+      t.text :past_attendance
+      t.text :name_of_schools
+      t.text :school_contact
     end
   end
 

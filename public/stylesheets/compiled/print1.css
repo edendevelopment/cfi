@@ -1,0 +1,3 @@
+#header,#menu,#footer, #newflash{display: none;}
+body{visibility:visible;}
+.print{visibility:hidden;}

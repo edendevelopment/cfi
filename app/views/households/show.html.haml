@@ -3,7 +3,7 @@
   %dl
     -if !@household.image.nil?
       %dt
-      %dd#household_image= image_tag(@household.image.url("400x400"))
+      %dd#household_image= image_tag(@household.image.thumb("400x400").url)
 
     %dt Caretaker
     %dd= @household.caretaker

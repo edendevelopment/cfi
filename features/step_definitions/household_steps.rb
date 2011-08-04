@@ -20,7 +20,7 @@ end
 
 When /^I add "([^\"]*)" to the household$/ do |person_name|
   select person_name, :from => "person_id"
-  click "Add"
+  click_link_or_button "Add"
 end
 
 Then /^"([^\"]*)" should be living in the household "([^\"]*)"$/ do |person_name, household_name|
@@ -53,7 +53,7 @@ When /^I add the note "([^\"]*)" with photo "([^\"]*)" to the household$/ do |no
 end
 
 Then /^I should see the note "([^\"]*)" with photo "([^\"]*)"$/ do |note, file_name|
-  with_scope(".box") do
+  within(".box") do
     page.should have_css(".photo")
     page.should have_css(".comment_text", :text => note)
   end
