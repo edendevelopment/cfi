@@ -19,7 +19,7 @@
 #
 site_title:
   name: Site Title
-  default: "Bezallel Primary School"
+  default: "BEZALLEL PRIMARY SCHOOL UGANDA"
 
 site_strapline:
   name: Site Strapline
@@ -27,11 +27,11 @@ site_strapline:
 
 site_color_background:
   name: Background Colour Hex
-  default: "#cfb0c2"
+  default: "#a9a9a9"
 
 site_color_menu:
   name: Menu Colour Hex
-  default: "#873967"
+  default: "#191970"
 
 programme_member_label:
   name: Programme member label

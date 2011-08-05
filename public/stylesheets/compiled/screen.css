@@ -166,7 +166,7 @@ a img {
 }
 /* line 21, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .top-section {
-  border: 5px solid #000080;
+  border: 2px solid #696969;
 }
 /* line 24, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .photo-block {
@@ -228,7 +228,7 @@ a img {
 }
 /* line 6, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .siblings .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 8, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .siblings ul {
@@ -247,7 +247,7 @@ a img {
 }
 /* line 6, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .caretakers .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 8, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .caretakers ul {
@@ -255,7 +255,7 @@ a img {
 }
 /* line 50, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .social-development-info .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 53, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info {
@@ -270,7 +270,7 @@ a img {
 }
 /* line 55, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 57, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info .label {
@@ -289,7 +289,7 @@ a img {
 }
 /* line 62, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .obligations .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 64, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .obligations .label {
@@ -332,7 +332,7 @@ a img {
 }
 /* line 88, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person #comments .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 91, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person h1 {
@@ -602,7 +602,7 @@ ul.people li .person .village, ul.people li .person .date-of-birth {
 
 /* line 20, ../../../app/stylesheets/screen.sass */
 body {
-  color: #000080;
+  color: #800000;
   font-family: Helvetica, non-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -658,7 +658,7 @@ body #wrapper #menu li a {
 }
 /* line 63, ../../../app/stylesheets/screen.sass */
 body #wrapper #menu li a:hover {
-  color: #000080;
+  color: #cccccc;
 }
 /* line 66, ../../../app/stylesheets/screen.sass */
 body #wrapper #content {
@@ -685,6 +685,12 @@ body #wrapper #content h3 {
 /* line 80, ../../../app/stylesheets/screen.sass */
 body #wrapper #content h4 {
   font-size: 1.1em;
+}
+body #wrapper #content h5 {
+  font-size: 1.0em;
+}
+body #wrapper #content lin {
+  font-size: 1.7em;
 }
 /* line 83, ../../../app/stylesheets/screen.sass */
 body #wrapper #content p {

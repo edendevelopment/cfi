@@ -1,6 +1,6 @@
 %h1="Missing Pupil"
 
-%h1.name= @person.name
+%h2.name= @person.name
 
 %ul.photos
   - @person.photos.each do |photo|
@@ -8,17 +8,18 @@
       = link_to image_tag(photo.image.thumb('250x200').url), person_photo_path(@person, photo)
       %p.comment
         = photo.comment
-
-= output_fields_for(@person) do |output|
-  = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
-  = output.text "gender"
-  = output.text "religion"
+      
+%ul
+  = output_fields_for(@person) do |output|
+    = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
+    = output.text "gender"
+    = output.text "religion"
   
 
-= output_fields_for(@person) do |output|
-  = output.text "house_number"
-  = output.text 'group_number'
-  = output.text "village_name", :label => "Village"
+  = output_fields_for(@person) do |output|
+    = output.text "house_number"
+    = output.text 'group_number'
+    = output.text "village_name", :label => "Village"
   
  
 %ul
