@@ -8,6 +8,7 @@
       = link_to image_tag(photo.image.thumb('250x200').url), person_photo_path(@person, photo)
       %p.comment
         = photo.comment
+<<<<<<< HEAD
 
 = output_fields_for(@person) do |output|
   = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
@@ -19,6 +20,20 @@
   = output.text "house_number"
   = output.text 'group_number'
   = output.text "village_name", :label => "Village"
+=======
+      
+%ul
+  = output_fields_for(@person) do |output|
+    = output.text "date_of_birth_with_confirmation", :label_name => "Date of birth"
+    = output.text "gender"
+    = output.text "religion"
+  
+
+  = output_fields_for(@person) do |output|
+    = output.text "house_number"
+    = output.text 'group_number'
+    = output.text "village_name", :label => "Village"
+>>>>>>> 11ed7ab915bb9eb7d3c7231e280f6d0ca48e0ae4
   
  
 %ul
@@ -30,6 +45,7 @@
         = link_to comment.user.name
         = distance_of_time_in_words_to_now(comment.updated_at)
         ago
+<<<<<<< HEAD
 
 
 <div class="print">
@@ -37,6 +53,16 @@
 if (window.print) {document.write('<a href="javascript:window.print()">Print</a>'); }
 </Script>
 <br/>
+=======
+      
+      
+<div class="print">
+<script LANGUAGE="Javascript">
+<!-- Begin
+if (window.print) {document.write('<form>' + '<input type="button" name="print" value="Print" ' + 'onClick="javascript:window.print()"></form>'); }
+//End -->
+</SCRIPT>
+>>>>>>> 11ed7ab915bb9eb7d3c7231e280f6d0ca48e0ae4
 = link_to "Back to profile", person_path(@person)
 </div>
 
