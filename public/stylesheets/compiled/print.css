@@ -6,14 +6,7 @@ body.bp {
   background: none;
   font-size: 10pt;
 }
-<<<<<<< HEAD
-/* line 45, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-body.bp .container {
-  background: none;
-}
-/* line 47, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-=======
-/* line 45, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_print.scss */
+
 body.bp .container {
   background: none;
 }
@@ -104,22 +97,7 @@ body.bp .large {
 body.bp .quiet {
   color: #999999;
 }
-/* line 85, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-=======
-/* line 79, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-body.bp .small {
-  font-size: 0.9em;
-}
-/* line 81, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-body.bp .large {
-  font-size: 1.1em;
-}
-/* line 83, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_print.scss */
-body.bp .quiet {
-  color: #999999;
-}
-/* line 85, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_print.scss */
->>>>>>> edendevelopment/master
+
 body.bp .hide {
   display: none;
 }

@@ -27,11 +27,7 @@ site_strapline:
 
 site_color_background:
   name: Background Colour Hex
-<<<<<<< HEAD
   default: "#A9A9A9"
-=======
-  default: "#a9a9a9"
->>>>>>> 11ed7ab915bb9eb7d3c7231e280f6d0ca48e0ae4
 
 site_color_menu:
   name: Menu Colour Hex

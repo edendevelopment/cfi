@@ -616,7 +616,7 @@ body .site {
 }
 /* line 30, ../../../app/stylesheets/screen.sass */
 body #wrapper {
-  background-color: white;
+  background-color: #ffffcc;
 }
 /* line 33, ../../../app/stylesheets/screen.sass */
 body #wrapper #header {
@@ -658,16 +658,13 @@ body #wrapper #menu li a {
 }
 /* line 63, ../../../app/stylesheets/screen.sass */
 body #wrapper #menu li a:hover {
-<<<<<<< HEAD
   color: #CCCCCC;
-=======
-  color: #cccccc;
->>>>>>> 11ed7ab915bb9eb7d3c7231e280f6d0ca48e0ae4
 }
 /* line 66, ../../../app/stylesheets/screen.sass */
 body #wrapper #content {
   color: #000080;
   margin-top: 1em;
+  background-color: #ffffcc;
 }
 /* line 70, ../../../app/stylesheets/screen.sass */
 body #wrapper #content h1, body #wrapper #content h2, body #wrapper #content h3, body #wrapper #content h4 {
@@ -814,4 +811,3 @@ body.three-col #content {
 * html body.three-col #content {
   overflow-x: hidden;
 }
->>>>>>> edendevelopment/master
