@@ -1,7 +1,7 @@
 source :rubygems
 
 #<<<<<<< HEAD
-gem "rails", "= 3.0.1"
+gem "rails", "= 3.0.20"
 gem "mysql"
 gem "eventmachine", "=1.0.0.beta.3"
 #<<<<<<< HEAD
