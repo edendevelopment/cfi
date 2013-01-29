@@ -28,6 +28,7 @@ Cfi::Application.routes.draw do
       get    :public_education_info
       get    :obligations
       get    :social_development_info
+      get    :pupil
       post   :add_sibling
       delete :remove_sibling
       post   :add_caretaker

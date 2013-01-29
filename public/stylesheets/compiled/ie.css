@@ -2,11 +2,46 @@
 body.bp {
   text-align: center;
 }
+<<<<<<< HEAD
+/* line 44, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 44, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 * html body.bp legend {
   margin: 0px -8px 16px 0;
   padding: 0;
 }
+<<<<<<< HEAD
+/* line 48, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+html > body.bp p code {
+  *white-space: normal;
+}
+/* line 60, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp .container {
+  text-align: left;
+}
+/* line 62, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp sup {
+  vertical-align: text-top;
+}
+/* line 64, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp sub {
+  vertical-align: text-bottom;
+}
+/* line 66, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp hr {
+  margin: -8px auto 11px;
+}
+/* line 68, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp img {
+  -ms-interpolation-mode: bicubic;
+}
+/* line 70, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp fieldset {
+  padding-top: 0;
+}
+/* line 72, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 48, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 html > body.bp p code {
   *white-space: normal;
@@ -36,64 +71,120 @@ body.bp fieldset {
   padding-top: 0;
 }
 /* line 72, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp legend {
   margin-top: -0.2em;
   margin-bottom: 1em;
   margin-left: -0.5em;
 }
+<<<<<<< HEAD
+/* line 76, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp fieldset, body.bp #IE8#HACK {
+  padding-top: 1.4em;
+}
+/* line 77, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 76, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 body.bp fieldset, body.bp #IE8#HACK {
   padding-top: 1.4em;
 }
 /* line 77, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp legend, body.bp #IE8#HACK {
   margin-top: 0;
   margin-bottom: 0;
 }
+<<<<<<< HEAD
+/* line 78, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp textarea {
+  overflow: auto;
+}
+/* line 80, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 78, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 body.bp textarea {
   overflow: auto;
 }
 /* line 80, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp label {
   position: relative;
   top: -0.25em;
 }
+<<<<<<< HEAD
+/* line 84, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 84, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp input.text {
   margin: 0.5em 0;
   background-color: white;
   border: 1px solid #bbbbbb;
 }
+<<<<<<< HEAD
+/* line 88, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp input.text:focus {
+  border: 1px solid #666666;
+}
+/* line 90, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 88, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 body.bp input.text:focus {
   border: 1px solid #666666;
 }
 /* line 90, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp input.title {
   margin: 0.5em 0;
   background-color: white;
   border: 1px solid #bbbbbb;
 }
+<<<<<<< HEAD
+/* line 94, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp input.title:focus {
+  border: 1px solid #666666;
+}
+/* line 96, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 94, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 body.bp input.title:focus {
   border: 1px solid #666666;
 }
 /* line 96, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp input.checkbox {
   position: relative;
   top: 0.25em;
 }
+<<<<<<< HEAD
+/* line 99, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 99, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp input.radio {
   position: relative;
   top: 0.25em;
 }
+<<<<<<< HEAD
+/* line 102, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 102, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp input.button {
   position: relative;
   top: 0.25em;
 }
+<<<<<<< HEAD
+/* line 105, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp textarea {
+  margin: 0.5em 0;
+}
+/* line 107, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+body.bp select {
+  margin: 0.5em 0;
+}
+/* line 109, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+=======
 /* line 105, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
 body.bp textarea {
   margin: 0.5em 0;
@@ -103,6 +194,7 @@ body.bp select {
   margin: 0.5em 0;
 }
 /* line 109, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
+>>>>>>> edendevelopment/master
 body.bp button {
   position: relative;
   top: 0.25em;

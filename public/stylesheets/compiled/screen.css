@@ -1,3 +1,99 @@
+<<<<<<< HEAD
+/*
+Syntax error: File to import not found or unreadable: blueprint/reset.sass.
+              Load paths:
+                Compass::SpriteImporter
+                C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/public/stylesheets/sass
+                C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets
+                C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets
+                C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/compass/stylesheets
+        on line 2 of C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass
+
+1: // This import applies a global reset to any page that imports this stylesheet.
+2: @import blueprint/reset.sass
+3: // To configure blueprint, edit the partials/base.sass file.
+4: @import partials/base.sass
+5: // Import all the default blueprint modules so that we can access their mixins.
+6: @import blueprint.sass
+7: // Import the non-default scaffolding module.
+
+Backtrace:
+C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass:2
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:64:in `rescue in import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:42:in `import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/import_node.rb:25:in `imported_file'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:148:in `rescue in visit_import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:153:in `visit_import'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:18:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:18:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/visitors/perform.rb:7:in `visit'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:291:in `_render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:239:in `block in render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/util.rb:297:in `silence_sass_warnings'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/engine.rb:239:in `render'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:175:in `each'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:173:in `each'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin.rb:81:in `update_stylesheets'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin.rb:54:in `check_for_updates'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/sass-3.1.4/lib/sass/plugin/rack.rb:51:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:35:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/dragonfly-0.7.7/lib/dragonfly/middleware.rb:16:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+C:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+C:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: blueprint/reset.sass.\A               Load paths:\A                 Compass::SpriteImporter\A                 C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/public/stylesheets/sass\A                 C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets\A                 C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/blueprint/stylesheets\A                 C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.4/frameworks/compass/stylesheets\A         on line 2 of C:/Documents and Settings/USER.USER-8D994E82B2/rails-app/cfi-aberdeen/app/stylesheets/screen.sass\A \A 1: // This import applies a global reset to any page that imports this stylesheet.\A 2: @import blueprint/reset.sass\A 3: // To configure blueprint, edit the partials/base.sass file.\A 4: @import partials/base.sass\A 5: // Import all the default blueprint modules so that we can access their mixins.\A 6: @import blueprint.sass\A 7: // Import the non-default scaffolding module."; }
+=======
 /* line 4, ../../../../../.rvm/gems/ruby-1.9.2-p0@kariskids-admin/gems/compass-0.11.3/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
 html {
   margin: 0;
@@ -70,7 +166,7 @@ a img {
 }
 /* line 21, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .top-section {
-  border: 1px solid #dddddd;
+  border: 2px solid #696969;
 }
 /* line 24, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .photo-block {
@@ -132,7 +228,7 @@ a img {
 }
 /* line 6, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .siblings .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 8, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .siblings ul {
@@ -151,7 +247,7 @@ a img {
 }
 /* line 6, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .caretakers .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 8, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .caretakers ul {
@@ -159,7 +255,7 @@ a img {
 }
 /* line 50, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .social-development-info .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 53, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info {
@@ -174,7 +270,7 @@ a img {
 }
 /* line 55, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 57, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .public-education-info .label {
@@ -193,7 +289,7 @@ a img {
 }
 /* line 62, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .obligations .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 64, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person .obligations .label {
@@ -236,7 +332,7 @@ a img {
 }
 /* line 88, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person #comments .box {
-  border: 1px solid #dddddd;
+  border: 1px solid #696969;
 }
 /* line 91, ../../../app/stylesheets/partials/_people.sass */
 .people-section.show-page #person h1 {
@@ -506,7 +602,7 @@ ul.people li .person .village, ul.people li .person .date-of-birth {
 
 /* line 20, ../../../app/stylesheets/screen.sass */
 body {
-  color: #333333;
+  color: #800000;
   font-family: Helvetica, non-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -520,11 +616,11 @@ body .site {
 }
 /* line 30, ../../../app/stylesheets/screen.sass */
 body #wrapper {
-  background-color: white;
+  background-color: #ffffcc;
 }
 /* line 33, ../../../app/stylesheets/screen.sass */
 body #wrapper #header {
-  background-color: #cfb0c2;
+  background-color: #000080;
 }
 /* line 36, ../../../app/stylesheets/screen.sass */
 body #wrapper #header h1, body #wrapper #header h2 {
@@ -562,12 +658,13 @@ body #wrapper #menu li a {
 }
 /* line 63, ../../../app/stylesheets/screen.sass */
 body #wrapper #menu li a:hover {
-  color: #333333;
+  color: #CCCCCC;
 }
 /* line 66, ../../../app/stylesheets/screen.sass */
 body #wrapper #content {
-  color: #555555;
+  color: #000080;
   margin-top: 1em;
+  background-color: #ffffcc;
 }
 /* line 70, ../../../app/stylesheets/screen.sass */
 body #wrapper #content h1, body #wrapper #content h2, body #wrapper #content h3, body #wrapper #content h4 {
@@ -590,6 +687,12 @@ body #wrapper #content h3 {
 body #wrapper #content h4 {
   font-size: 1.1em;
 }
+body #wrapper #content h5 {
+  font-size: 1.0em;
+}
+body #wrapper #content lin {
+  font-size: 1.7em;
+}
 /* line 83, ../../../app/stylesheets/screen.sass */
 body #wrapper #content p {
   margin-bottom: 0.8em;
@@ -598,8 +701,8 @@ body #wrapper #content p {
 body #wrapper #content input[type=text] {
   font-size: 1em;
   padding: 3px;
-  color: #555555;
-  border: 1px solid #555555;
+  color: #000080;
+  border: 1px solid #000080;
 }
 /* line 92, ../../../app/stylesheets/screen.sass */
 body #wrapper #content input[type=text]:focus {
@@ -640,7 +743,7 @@ body #wrapper #content ul#households li.household {
 }
 /* line 121, ../../../app/stylesheets/screen.sass */
 body #wrapper #content ul#households li.household:nth-child(odd) {
-  background-color: #e7cddc;
+  background-color: #000080;
 }
 /* line 124, ../../../app/stylesheets/screen.sass */
 body #wrapper #content ul#households li.household span {

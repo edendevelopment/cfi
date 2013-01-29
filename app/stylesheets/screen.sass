@@ -67,7 +67,7 @@ body
       color: #555
       margin-top: 1em
 
-      h1, h2, h3, h4
+      h1, h2, h3, h4, lin
         margin-bottom: 0.5em
         margin-top: 10px
         
@@ -79,6 +79,8 @@ body
         font-size: 1.2em
       h4
         font-size: 1.1em
+      lin
+        font-size: 1.7em
 
       p
         margin-bottom: 0.8em
@@ -144,15 +146,27 @@ body.three-col
   #container
     @include container
   #header, #footer
+<<<<<<< HEAD
+    #+column(!blueprint_grid_columns)
+  #sidebar
+    #// One third of the grid columns, rounding down. With 24 cols, this is 8.
+    #!sidebar_columns = floor(!blueprint_grid_columns / 3)
+    #+column(!sidebar_columns)
+=======
     @include column($blueprint_grid_columns)
   #sidebar
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     $sidebar_columns: floor($blueprint_grid_columns / 3)
     @include column($sidebar_columns)
+>>>>>>> edendevelopment/master
   #content
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
     $content_columns: ceil(2 * $blueprint_grid_columns / 3)
     // true means it's the last column in the row
+<<<<<<< HEAD
+    #+column(!content_columns, true)
+=======
     @include column($content_columns, true)
+>>>>>>> edendevelopment/master
 

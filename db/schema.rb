@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title",            :limit => 50, :default => ""
-    t.text     "comment",                        :default => ""
+    t.string   "title",            :limit => 50
+    t.text     "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -70,9 +70,9 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
   create_table "obligations", :force => true do |t|
     t.integer "person_id"
     t.boolean "support_required",        :default => false
-    t.text    "means_to_support_family", :default => ""
-    t.text    "work_obligations",        :default => ""
-    t.text    "domestic_obligations",    :default => ""
+    t.text    "means_to_support_family"
+    t.text    "work_obligations"
+    t.text    "domestic_obligations"
   end
 
   create_table "people", :force => true do |t|
@@ -99,12 +99,12 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
   create_table "public_education_infos", :force => true do |t|
     t.integer "person_id"
     t.boolean "attending",           :default => false
-    t.string  "grade",               :default => ""
-    t.text    "performance",         :default => ""
-    t.text    "attendance_patterns", :default => ""
-    t.text    "past_attendance",     :default => ""
-    t.text    "name_of_schools",     :default => ""
-    t.text    "school_contact",      :default => ""
+    t.string  "grade"
+    t.text    "performance"
+    t.text    "attendance_patterns"
+    t.text    "past_attendance"
+    t.text    "name_of_schools"
+    t.text    "school_contact"
   end
 
   create_table "relationships", :force => true do |t|
@@ -117,16 +117,16 @@ ActiveRecord::Schema.define(:version => 20110626201229) do
 
   create_table "social_development_infos", :force => true do |t|
     t.integer "person_id"
-    t.text    "type_of_housing",                     :default => ""
-    t.text    "permanence_of_housing",               :default => ""
-    t.text    "access_to_cfi_school",                :default => ""
-    t.text    "seasonal_factors",                    :default => ""
-    t.text    "support_from_other_organisations",    :default => ""
-    t.text    "barriers_to_attending_public_school", :default => ""
-    t.text    "ideas_of_carers_about_education",     :default => ""
-    t.text    "other_social_issues_or_dangers",      :default => ""
-    t.text    "history_of_abuse",                    :default => ""
-    t.text    "observations_from_visits",            :default => ""
+    t.text    "type_of_housing"
+    t.text    "permanence_of_housing"
+    t.text    "access_to_cfi_school"
+    t.text    "seasonal_factors"
+    t.text    "support_from_other_organisations"
+    t.text    "barriers_to_attending_public_school"
+    t.text    "ideas_of_carers_about_education"
+    t.text    "other_social_issues_or_dangers"
+    t.text    "history_of_abuse"
+    t.text    "observations_from_visits"
   end
 
   create_table "students", :force => true do |t|

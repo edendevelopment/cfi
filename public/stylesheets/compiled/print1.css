@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+#header,#menu,#footer, #newflash{display: none;}
+body{visibility:visible;}
+.print{visibility:hidden;}
+=======
+#header, #newflash,#menu,#footer {display: none;}
+body {visibility:visible;}
+.print {visibility:hidden;}
+>>>>>>> 11ed7ab915bb9eb7d3c7231e280f6d0ca48e0ae4
